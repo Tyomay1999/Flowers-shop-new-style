@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kaisei HarunoUmi', serif;
+}
+a{
+  text-decoration: none;
+}
+body {
+  background: #e0dcb8;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.app::-webkit-scrollbar {
+  width: 1em;
+}
+
+.app::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(252, 0, 0, 0.3);
+}
+
+.app::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+/*.MuiSlider-track {*/
+/*  background: #236aa0 !important;*/
+/*  height: 7px !important;*/
+/*}*/
+/*.MuiSlider-rail {*/
+/*  height: 7px !important;*/
+/*  background: #236aa0 !important;*/
+/*  border-radius: 10px !important;*/
+/*}*/
+/*.MuiSlider-root{*/
+/*  color: black !important;*/
+/*}*/
+/*.MuiSlider-thumb {*/
+/*  width: 17px !important;*/
+/*  height: 17px !important;*/
+/*  background: whitesmoke !important;*/
+/*  border: 0.5px solid black !important;*/
+/*}*/
+/*.PrivateValueLabel-circle-9,PrivateValueLabel-circle-10{*/
+/*  margin-left: -1px !important;*/
+/*  margin-top: -7px !important;*/
+/*  width: 40px !important;*/
+/*  height: 40px !important;*/
+/*  background: #07406C !important;*/
+/*}*/
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+
+body {
+  background: #fff;
+}
+
+@media (max-width:450px){
+
+  html{
+      font-size: 50%;
+  }
+
+}

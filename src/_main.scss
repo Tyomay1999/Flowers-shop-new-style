@@ -1,0 +1,24 @@
+//constatns
+$headerheight: 80px !default;
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap');
+$FONT: 'Kaisei HarunoUmi', serif !default;
+body{
+    font-family: $FONT;
+}
+// COLORS
+$contentColor: #E19991 !default;
+$contentDark: #CD4040 !default;
+$textColorLigth: hsl(0, 0%, 96%) !default;
+$textColorDark: black !default;
+$buttonsLigthColor: #236aa0 !default;
+$buttonsDarkhColor: #236aa0 !default;
+$buttonsHoverLigth: red !default;
+$buttonsHoverDark: red !default;
+
+@mixin font ( $size: 16px,$weigth: 500,$color:black) {
+  font-family: $FONT;
+  font-size: $size;
+  font-weight: $weigth;
+  color: $color;
+}
