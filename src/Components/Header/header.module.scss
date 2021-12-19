@@ -1,87 +1,96 @@
-:root{
-    --pink:#e84393;
-}
+@import '../../main';
 
 .main {
     position: fixed;
-    top:0; left:0; right:0;
-    background:#fff;
-    padding:2rem 9%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: $sectionPadding;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-    .logo{
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+    .logo {
         font-size: 3rem;
-        color:#333;
+        color: #333;
         font-weight: bolder;
 
-        span{
-            color:var(--pink);
-        }
-    } 
-
-    .navbar a{
-        font-size: 2rem;
-        padding:0 1.5rem;
-        color:#666;
-        text-align: center;
-        &:hover{
-            color:var(--pink);
+        span {
+            color: $contentColor;
         }
     }
 
-    .icons i{
+    .navbar a {
+        font-size: 2rem;
+        padding: 0 1.5rem;
+        color: #666;
+        text-align: center;
+
+        &:hover {
+            color: $contentColor;
+        }
+    }
+
+    .icons i {
+        cursor: pointer;
         font-size: 2.5rem;
-        color:#333;
+        color: #333;
         margin-left: 1.5rem;
 
         &:hover {
-            color:var(--pink);
+            color: $contentColor;
         }
     }
-    .toggler{
+
+    .toggler {
         display: none;
     }
-    & > label{
+
+    &>label {
         font-size: 3rem;
-        color:#333;
+        color: #333;
         border-radius: .5rem;
-        padding:.5rem 1.5rem;
+        padding: .5rem 1.5rem;
         cursor: pointer;
-        border:.1rem solid rgba(0,0,0,.3);
+        border: .1rem solid rgba(0, 0, 0, .3);
         display: none;
     }
 }
+
 //media queries
-@media (max-width:991px){
-    .main{
-        padding:2rem;
+@media (max-width:991px) {
+    .main {
+        padding: 2rem;
     }
 }
-@media (max-width:768px){
-    .main > label{
+
+@media (max-width:768px) {
+    .main>label {
         display: block;
     }
 
-    .navbar{
-        position:absolute;
-        top:100%; left:0; right:0;
-        background:#eee;
-        border-top: .1rem solid rgba(0,0,0,.1);
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
-    .toggler:checked ~ .navbar{
-        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    .toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 
-    .navbar a{
-        margin:1.5rem;
-        padding:1.5rem;
-        background:#fff;
-        border:.1rem solid rgba(0,0,0,.1);
+    .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, .1);
         display: block;
     }
 }
