@@ -1,0 +1,12 @@
+@import '../../main';
+
+.main{
+    
+    @include sectionHeading();
+}
+.boxContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding: $sectionPadding;
+}
