@@ -8,12 +8,14 @@ import product6 from './img-6.jpg'
 import product7 from './img-7.jpg'
 import product8 from './img-8.jpg'
 import product9 from './img-9.jpg'
-
+import aboutUsVideo from './about-vid.mp4'
 
 export const footerLocalImages = {
     payment,
 }
-
+export const localVideos = {
+    aboutUsVideo
+}
 export const cardLocalImages = {
     product1,
     product2,
