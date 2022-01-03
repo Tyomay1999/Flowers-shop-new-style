@@ -1,6 +1,5 @@
 import React from 'react'
 import cartStyles from './cart.module.scss'
-import {cardLocalImages} from "../../Assets/images/imagesContrller";
 import ProductModel from "./productCartModel";
 
 const Cart = ({history}) => {
@@ -8,7 +7,7 @@ const Cart = ({history}) => {
         <div className={cartStyles.main}>
             <div className={cartStyles.blockLeft}>
                 <div className={cartStyles.wrapper}>
-                   <ProductModel/>
+                    <ProductModel/>
                 </div>
             </div>
             <div className={cartStyles.blockRight}>

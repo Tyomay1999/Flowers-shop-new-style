@@ -1,5 +1,98 @@
 @import "../../main";
 
+@mixin wrapper {
+  .wrapper {
+    position: relative;
+    width: 180px;
+    height: 30px;
+    margin: 20px 15px 0 0;
+
+    label, .label {
+      position: absolute;
+      top: -5px;
+      left: 0;
+      font-size: 1rem;
+    }
+
+    input {
+      background: none;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid $contentColor;
+
+      &:placeholder-shown {
+        border-bottom-color: #6e6e6e;
+      }
+
+      &:placeholder-shown ~ label {
+        top: 7px;
+        font-size: 1.7rem;
+        left: 8px;
+      }
+    }
+
+    .label {
+      top: -15px;
+    }
+
+    textarea {
+      background: none;
+      padding-top: 10px;
+      width: 200px;
+      min-height: 60px;
+      border-bottom: 2px solid $contentColor;
+
+      &:placeholder-shown {
+        border-bottom-color: #6e6e6e;
+      }
+
+      &:placeholder-shown ~ label {
+        top: 15px;
+        font-size: 1.7rem;
+        left: 8px;
+      }
+    }
+
+    .custom-select {
+      position: relative;
+      height: 100%;
+      display: block;
+      width: 175px;
+      margin-right: 15px;
+      border-bottom: .5px solid $contentColor;
+      z-index: 10;
+    }
+
+    .custom-select select {
+      border: none;
+      outline: none;
+      background: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 0;
+      display: block;
+      width: 100%;
+      padding: 6px 10px 3px 6px;
+      font-size: 1.74rem;
+    }
+
+    .custom-select:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      line-height: 28px;
+      content: "∨";
+      text-align: center;
+      color: $contentColor;
+      font-size: 1.74rem;
+      z-index: -1;
+    }
+  }
+}
+
 .main {
   margin-top: $headerheight;
   width: 100%;
@@ -10,11 +103,12 @@
 
   .shippingDetails, .paymentInfo {
     width: 45%;
-    height: 300px;
+    min-height: 600px;
     border-radius: 5px;
     box-shadow: 4px 4px 14px gray;
     border: $borderStandard;
     text-align: center;
+    padding: 10px;
 
     h1 {
       font-size: 2rem;
@@ -30,41 +124,357 @@
     }
 
     .content {
-      margin-top: 30px;
+      margin-top: 20px;
       width: 100%;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      padding-bottom: 20px;
 
-      .wrapper {
-        position: relative;
-        width: 180px;
-        height: 30px;
-        margin: 20px 15px 0 0;
+      @include wrapper();
+    }
+  }
 
-        label {
+  .paymentInfo {
+    position: relative;
+    //credit card
+    .credit-card-box {
+      perspective: 1000px;
+      width: 320px;
+      height: 180px;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &:hover .flip,
+      &.hover .flip {
+        transform: rotateY(180deg);
+      }
+
+      .front,
+      .back {
+        width: 320px;
+        height: 180px;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        background: linear-gradient(135deg, #bd6772, #53223f);
+        position: absolute;
+        color: #fff;
+        top: 0;
+        left: 0;
+        text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+        box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
+
+        &::before {
+          content: '';
           position: absolute;
-          top: -5px;
-          left: 0;
-          font-size: 1rem;
-        }
-
-        input {
           width: 100%;
           height: 100%;
-          border-bottom: 1px solid $contentColor;
+          top: 0;
+          left: 0;
+          background: url('http://cdn.flaticon.com/svg/44/44386.svg') no-repeat center;
+          background-size: cover;
+          opacity: .05;
+        }
+      }
 
-          &:placeholder-shown {
-            border-bottom-color: #6e6e6e;
-          }
+      .flip {
+        transition: 1s;
+        transform-style: preserve-3d;
+        position: relative;
+      }
 
-          &:placeholder-shown ~ label {
-            top: 7px;
-            font-size: 1.7rem;
-            left: 8px;
-          }
+      .logo {
+        position: absolute;
+        top: 9px;
+        right: 20px;
+        width: 60px;
+
+        svg {
+          width: 20%;
+          height: auto;
+          fill: #fff;
+        }
+      }
+
+      .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+      }
+
+      .back {
+        transform: rotateY(180deg);
+
+        .logo {
+          top: 185px;
+        }
+
+      }
+
+      .chip {
+        position: absolute;
+        width: 60px;
+        height: 45px;
+        top: 20px;
+        left: 20px;
+        background: linear-gradient(135deg, hsl(269, 54%, 87%) 0%, hsl(200, 64%, 89%) 44%, hsl(18, 55%, 94%) 100%);;
+        border-radius: 8px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          border: 4px solid hsla(0, 0, 50, .1);
+          width: 80%;
+          height: 70%;
+          border-radius: 5px;
+        }
+      }
+
+      .strip {
+        background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 30px;
+        left: 0;
+      }
+
+      .number {
+        position: absolute;
+        margin: 0 auto;
+        top: 75px;
+        left: 0;
+        right: 0;
+        font-size: 2rem;
+      }
+
+      label {
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-shadow: none;
+        text-transform: uppercase;
+        font-weight: normal;
+        opacity: 0.5;
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .card-holder,
+      .card-expiration-date {
+        position: absolute;
+        margin: 0 auto;
+        top: 130px;
+        left: 9px;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+
+        label {
+          font-size: 1.1rem;
+        }
+      }
+
+      .card-expiration-date {
+        text-align: right;
+        left: auto;
+        right: 20px;
+      }
+
+      .ccv {
+        height: 36px;
+        background: #fff;
+        width: 30%;
+        border-radius: 5px;
+        top: 110px;
+        left: 0;
+        right: 180px;
+        position: absolute;
+        margin: 0 auto;
+        color: #000;
+        text-align: left;
+        padding: 10px;
+
+        label {
+          margin: -25px 0 14px;
+          color: #fff;
+        }
+      }
+
+
+    }
+
+    .cardContainer {
+      margin-top: 220px;
+      width: 100%;
+      height: 300px;
+
+      .cardNumbers {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        p{
+          position: absolute;
+          top: -20px;
+        }
+        input {
+          width: 70px;
+          height: 30px;
+          border-radius: 5px;
+          border: 1px solid $contentColor;
+        }
+      }
+
+      .cardHolder {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @include wrapper();
+      }
+
+      .cardExpires {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @include wrapper();
+      }
+
+      button {
+        cursor: pointer;
+        margin-top: 30px;
+        padding: 1.1rem 6rem;
+        font-size: 2rem;
+        border-radius: 5px;
+        background: none;
+        border: $borderStandard;
+
+        &:hover {
+          background: $contentColor;
+          color: whitesmoke;
+        }
+
+        &:active {
+          transform: scale(.95);
         }
       }
     }
+  }
+}
+
+@media (min-width: 1122px) {
+  .main {
+    .shippingDetails, .paymentInfo {
+      min-height: 400px;
+
+      .content {
+        margin-top: 10px;
+      }
+    }
+
+    .paymentInfo {
+      margin-top: 30px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 930px) and (min-width: 701px) {
+  .main {
+    .paymentInfo {
+      .credit-card-box {
+        width: 245px;
+        height: 150px;
+
+        .front,
+        .back {
+          width: 245px;
+          height: 150px;
+        }
+
+        .chip {
+          width: 50px;
+          height: 35px;
+        }
+
+        .card-holder,
+        .card-expiration-date {
+          top: 110px;
+          left: 9px;
+        }
+
+        .ccv {
+          height: 30px;
+          left: 150px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .main {
+    flex-direction: column;
+
+    .shippingDetails, .paymentInfo {
+      width: 100%;
+      min-height: 420px;
+
+      .content {
+        margin-top: 10px;
+      }
+    }
+
+    .paymentInfo {
+      margin-top: 30px;
+    }
+  }
+
+}
+
+@media (max-width: 501px) {
+  .main {
+    .shippingDetails, .paymentInfo {
+      min-height: 570px;
+    }
+
+    .paymentInfo {
+      .credit-card-box {
+        width: 245px;
+        height: 150px;
+
+        .front,
+        .back {
+          width: 245px;
+          height: 150px;
+        }
+
+        .chip {
+          width: 50px;
+          height: 35px;
+        }
+
+        .card-holder,
+        .card-expiration-date {
+          top: 110px;
+        }
+
+        .ccv {
+          height: 30px;
+          left: 150px;
+        }
+      }
+
+    }
+
   }
 }
