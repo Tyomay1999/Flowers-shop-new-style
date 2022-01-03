@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header className={headerStyles.main}>
             <input type="checkbox" name="" id="toggler" className={headerStyles.toggler} />
-            <label htmlFor="toggler" className='bi bi-list'></label>
+            <label htmlFor="toggler" className='bi bi-list'/>
 
             <Link to="/" className={headerStyles.logo}>Logo<span>.</span></Link>
 
@@ -20,9 +20,9 @@ const Header = () => {
             </nav>
 
             <div className={headerStyles.icons}>
-                <i className="bi bi-heart"></i>
-                <i className="bi bi-cart"></i>
-                <i className="bi bi-person"></i>
+                <i className="bi bi-heart" />
+                <Link to='/cart'><i className="bi bi-cart" /></Link>
+                <i className="bi bi-person" />
             </div>
         </header>
     )

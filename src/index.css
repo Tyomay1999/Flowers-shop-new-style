@@ -13,7 +13,13 @@
   text-transform: capitalize;
   transition: .2s linear;
 }
-
+.app{
+  width: 100%;
+}
+.app-content{
+  width: 100%;
+  min-height: calc(100vh - 80px - 130px);
+}
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -49,4 +55,24 @@ a {
     font-size: 50%;
   }
 
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+}
+::-webkit-scrollbar-corner {
+  background: #eaeaea;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border: 1px solid #eaeaea;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6e6e6e;
+}
+::-webkit-scrollbar-track {
+  border: 1px solid #eaeaea;
+  background-color: #eaeaea;
 }

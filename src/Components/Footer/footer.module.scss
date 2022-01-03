@@ -1,7 +1,11 @@
 @import '../../main';
 .main{
+    border-top: 1px solid rgba(110, 110, 110, 0.41);
+    position: relative;
     width: 100%;
     padding: $sectionPadding;
+    z-index: 100;
+    background: #FFFFFF;
     .box-container{
         display: flex;
         flex-wrap: wrap;

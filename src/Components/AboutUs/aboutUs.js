@@ -11,7 +11,7 @@ const AboutUs = () => {
             <div className={aboutUsStyles.row}>
 
                 <div className={aboutUsStyles['video-container']}>
-                    <video src={localVideos.aboutUsVideo} loop={true} autoplay muted={true} />
+                    <video src={localVideos.aboutUsVideo} loop={true} autoPlay muted={true} />
                     <h3>best flower sellers</h3>
                 </div>
 

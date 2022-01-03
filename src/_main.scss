@@ -2,8 +2,7 @@
 $headerheight: 80px !default;
 //fonts
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap');
-$FONT: 'Kaisei HarunoUmi',
-serif !default;
+$FONT: 'Kaisei HarunoUmi',serif !default;
 
 body {
   font-family: $FONT;
@@ -12,6 +11,7 @@ body {
 // COLORS
 $contentColor: #e84393 !default;
 $sectionPadding: 2rem 9% !default;
+$borderStandard: 2px solid $contentColor;
 $contentDark: #CD4040 !default;
 $textColorLigth: hsl(0, 0%, 96%) !default;
 $textColorDark: black !default;

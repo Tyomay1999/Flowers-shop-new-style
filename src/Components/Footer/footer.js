@@ -1,38 +1,11 @@
-import React, { useCallback, useState } from 'react'
+import React from 'react'
 import footerStyles from './footer.module.scss'
 import { footerLocalImages } from '../../Assets/images/imagesContrller'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { Link } from 'react-router-dom';
+import Iframe from "react-iframe";
 
-const containerStyle = {
-    width: '280px',
-    height: '170px'
-};
-
-const center = {
-    lat: 40.207211,
-    lng: 44.467629
-};
 
 const Footer = () => {
-
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyDWgAXPG_Xg3bzxxmA80PJuQJ7Qn0MN03Q"
-    })
-
-    const [, setMap] = useState(null)
-
-    const onLoad = useCallback(map => {
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [])
-
-    const onUnmount = useCallback(map => {
-        setMap(null)
-    }, [])
-
     return (
         <footer className={footerStyles.main}>
 
@@ -50,20 +23,15 @@ const Footer = () => {
                 <div className={footerStyles.box}>
                     <h3>locations</h3>
                     <span>Moscow</span>
-                    {
-                        isLoaded ? (
-                            <GoogleMap
-                                mapContainerStyle={containerStyle}
-                                center={center}
-                                zoom={10}
-                                onLoad={onLoad}
-                                onUnmount={onUnmount}
-                            >
-                                { /* Child components, such as markers, info windows, etc. */}
-                                <></>
-                            </GoogleMap>
-                        ) : <></>
-                    }
+                    <Iframe
+                        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.405406946073!2d44.488959315644045!3d40.20004407671282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd6bc6cf96ef%3A0x6932662afc4c86ff!2sBeeOnCode!5e0!3m2!1sen!2s!4v1636632487448!5m2!1sen!2s"
+                        width="250"
+                        height="210"
+                        id="myId"
+                        className="myClassname"
+                        display="initial"
+                        position="relative"
+                    />
                 </div>
 
                 <div className={footerStyles.box}>

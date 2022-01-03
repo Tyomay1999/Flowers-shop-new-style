@@ -11,9 +11,9 @@ const Card = ({ product }) => {
             <div className={cardStyles.image}>
                 <img src={photo} alt="" />
                 <div className={cardStyles.icons}>
-                    <i class="bi bi-heart"></i>
+                    <i className="bi bi-heart"></i>
                     <a href="#ss" className="cart-btn">add to cart</a>
-                    <i class="bi bi-share-fill"></i>
+                    <i className="bi bi-share-fill"></i>
                 </div>
             </div>
             <div className={cardStyles.content}>

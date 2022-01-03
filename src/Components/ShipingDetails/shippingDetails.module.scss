@@ -1,0 +1,70 @@
+@import "../../main";
+
+.main {
+  margin-top: $headerheight;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  padding: $sectionPadding;
+
+  .shippingDetails, .paymentInfo {
+    width: 45%;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 14px gray;
+    border: $borderStandard;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+
+      i {
+        margin-right: 5px;
+        font-size: 2.5rem;
+      }
+    }
+
+    span, i {
+      color: $contentColor;
+    }
+
+    .content {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .wrapper {
+        position: relative;
+        width: 180px;
+        height: 30px;
+        margin: 20px 15px 0 0;
+
+        label {
+          position: absolute;
+          top: -5px;
+          left: 0;
+          font-size: 1rem;
+        }
+
+        input {
+          width: 100%;
+          height: 100%;
+          border-bottom: 1px solid $contentColor;
+
+          &:placeholder-shown {
+            border-bottom-color: #6e6e6e;
+          }
+
+          &:placeholder-shown ~ label {
+            top: 7px;
+            font-size: 1.7rem;
+            left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
