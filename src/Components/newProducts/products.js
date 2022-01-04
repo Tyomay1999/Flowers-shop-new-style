@@ -4,7 +4,7 @@ import productsStyles from './products.module.scss'
 import cardStyles from '../Card/card.module.scss'
 import { v4 as uuidv4 } from 'uuid';
 import { newProducts } from './config';
-const Products = () => {
+const NewProducts = () => {
     return (
         <div className={productsStyles.main}>
             <h1 className={productsStyles.heading}> new <span>products</span> </h1>
@@ -22,4 +22,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default NewProducts

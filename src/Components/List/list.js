@@ -1,6 +1,6 @@
 import React from 'react'
 import listStyles from './list.module.scss'
-import Products from './../Products/products';
+import NewProducts from './../newProducts/products';
 import AboutUs from './../AboutUs/aboutUs';
 import Greetings from '../Greetings/greetings';
 import ContactUs from '../ContactUs/contactUs';
@@ -9,7 +9,7 @@ const List = () => {
         <div className={listStyles.main}>
             <Greetings />
             <AboutUs />
-            <Products />
+            <NewProducts />
             <ContactUs />
         </div>
     )

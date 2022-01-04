@@ -1,0 +1,87 @@
+@import "../../main";
+
+.main {
+  margin-top: $headerheight;
+  width: 100%;
+  min-height: 100vh;
+
+  .allProductsContainer {
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+
+
+    .filterContainer,.filterWrapper {
+      cursor: pointer;
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      border-radius: 5px;
+    }
+    .filterContainer{
+      width: 50px;
+      height: 50px;
+      background: $contentColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: animationsRevers 1s ease-in forwards;
+      & > i {
+        color: whitesmoke;
+        font-size: 3rem;
+      }
+      &:active{
+        transform: scale(.95);
+      }
+    }
+    .filterWrapper{
+      width: 350px;
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+      background: whitesmoke;
+      border: $borderStandard;
+      animation: animations 1s ease-in forwards;
+      h1{
+        text-align: center;
+        font-size: 2.5rem;
+        span{
+          color: $contentColor
+        }
+      }
+      .closeFilter{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        font-size: 3rem;
+        top: -20px;
+        right: -5px;
+      }
+    }
+  }
+}
+
+@keyframes animations {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+
+  100% {
+    width: 350px;
+    height: 450px;
+    z-index: 3;
+  }
+}
+
+@keyframes animationsRevers {
+  0% {
+    width: 350px;
+    height: 450px;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+  }
+}

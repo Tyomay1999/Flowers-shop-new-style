@@ -105,6 +105,7 @@ const ShippingDetails = () => {
                 </div>
             </div>
             <div className={shippingDetails.cardContainer}>
+                <h1>TOTAL<span>Payment</span>: 1000<span>$</span></h1>
                 <div className={shippingDetails.cardNumbers}>
                     <p>Card <span>numbers</span>:</p>
                     <input type='number' min={2} max={4} />-

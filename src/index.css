@@ -12,6 +12,8 @@
   text-decoration: none;
   text-transform: capitalize;
   transition: .2s linear;
+  list-style-type: none;
+
 }
 .app{
   width: 100%;
