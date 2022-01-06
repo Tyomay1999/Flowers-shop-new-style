@@ -1,5 +1,6 @@
 import React from 'react'
 import headerStyles from './header.module.scss'
+import logo from '../../Assets/images/logo.png'
 import { Link } from 'react-router-dom'
 
 
@@ -9,7 +10,9 @@ const Header = () => {
             <input type="checkbox" name="" id="toggler" className={headerStyles.toggler} />
             <label htmlFor="toggler" className='bi bi-list'/>
 
-            <Link to="/" className={headerStyles.logo}>Logo<span>.</span></Link>
+            <Link to="/" className={headerStyles.logo}>
+                <img src={logo} alt='logo' />
+            </Link>
 
             <nav className={headerStyles.navbar}>
                 <a href="#home">home</a>

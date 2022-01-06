@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import categoriesStyles from './categories.module.scss'
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 const categories = [
     {
@@ -92,7 +92,7 @@ const handlerCategories = (data) => {
 }
 
 const Categories = () => {
-    const [selectedCategoryType, setCategoryType] = useState(null)
+    // const [selectedCategoryType, setCategoryType] = useState(null)
 
     return (
         <div className={categoriesStyles.main}>

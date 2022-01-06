@@ -11,51 +11,141 @@
     min-height: 80vh;
 
 
-    .filterContainer,.filterWrapper {
+    .filterContainer, .filterWrapper {
       cursor: pointer;
       position: fixed;
       right: 30px;
       bottom: 30px;
       border-radius: 5px;
     }
-    .filterContainer{
+
+    .filterContainer {
       width: 50px;
       height: 50px;
       background: $contentColor;
       display: flex;
       justify-content: center;
       align-items: center;
-      animation: animationsRevers 1s ease-in forwards;
+      animation: animationsRevers .5s ease-in forwards;
+
       & > i {
         color: whitesmoke;
         font-size: 3rem;
       }
-      &:active{
+
+      &:active {
         transform: scale(.95);
       }
     }
-    .filterWrapper{
-      width: 350px;
-      height: 450px;
+
+    .filterWrapper {
+      width: 300px;
+      height: 350px;
       display: flex;
       flex-direction: column;
       background: whitesmoke;
       border: $borderStandard;
-      animation: animations 1s ease-in forwards;
-      h1{
+      animation: animations .5s ease-in forwards;
+
+      h1 {
         text-align: center;
         font-size: 2.5rem;
-        span{
+
+        span {
           color: $contentColor
         }
       }
-      .closeFilter{
+
+      .closeFilter {
         position: absolute;
         width: 20px;
         height: 20px;
         font-size: 3rem;
         top: -20px;
         right: -5px;
+      }
+
+      .content {
+        width: 100%;
+        height: 380px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .filterByPrice {
+          width: 90%;
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-end;
+
+          & > span {
+            color: $contentColor;
+            font-size: 2rem;
+          }
+
+          .wrapper {
+            position: relative;
+            width: 100px;
+            height: 30px;
+            margin: 20px 15px 0 0;
+
+            label, .label {
+              position: absolute;
+              top: -5px;
+              left: 0;
+              font-size: 1rem;
+            }
+
+            input {
+              background: none;
+              width: 100%;
+              height: 100%;
+              border-bottom: 1px solid $contentColor;
+
+              &:placeholder-shown {
+                border-bottom-color: #6e6e6e;
+              }
+
+              &:placeholder-shown ~ label {
+                top: 7px;
+                font-size: 1.7rem;
+                left: 8px;
+              }
+            }
+
+            .label {
+              top: -15px;
+            }
+          }
+        }
+      }
+
+      button {
+        cursor: pointer;
+        font-size: 1.67rem;
+        font-weight: 600;
+        height: 40px;
+        border-top: 2px solid $contentColor;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+
+        span {
+          color: $contentColor;
+        }
+
+        &:hover {
+          background: $contentColor;
+          color: whitesmoke;
+
+          & > span {
+            color: black;
+          }
+        }
+
+        &:active {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -68,20 +158,32 @@
   }
 
   100% {
-    width: 350px;
-    height: 450px;
+    width: 300px;
+    height: 350px;
     z-index: 3;
   }
 }
 
 @keyframes animationsRevers {
   0% {
-    width: 350px;
-    height: 450px;
+    width: 300px;
+    height: 350px;
   }
 
   100% {
     width: 50px;
     height: 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main {
+    .allProductsContainer {
+      .filterContainer, .filterWrapper {
+        position: fixed;
+        right: 10px;
+        bottom: 15px;
+      }
+    }
   }
 }

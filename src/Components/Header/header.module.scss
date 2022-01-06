@@ -15,10 +15,20 @@
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 
     .logo {
+        position: relative;
+        width: 100px;
+        height: 100%;
         font-size: 3rem;
         color: #333;
         font-weight: bolder;
-
+        img{
+            position: absolute;
+            top: -40px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            transform: rotate(-90deg);
+        }
         span {
             color: $contentColor;
         }

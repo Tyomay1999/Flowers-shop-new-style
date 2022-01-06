@@ -1,0 +1,19 @@
+@import "../../../main";
+
+.main{
+  margin: auto;
+  height: 35px;
+  border: $borderStandard;
+  border-radius: 3px;
+  button{
+    height: 100%;
+    padding: .3rem;
+    cursor: pointer;
+    color: whitesmoke;
+    background: $contentColor;
+    font-size: 2rem;
+    &:active{
+      transform: scale(.95);
+    }
+  }
+}
