@@ -1,0 +1,91 @@
+@import "../../../styles/main";
+.container,.loadingFinished {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+
+  .wrapperLigth, .wrapperDark {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+
+    & > .loadingDark {
+      width: 500px;
+      //height: 100%;
+      animation: spin 8s infinite;
+
+    }
+
+    & > .loadingImage {
+      width: 800px;
+      animation: spin 6s infinite;
+      //height: 100%;
+    }
+
+    & > .loadingLigthDiv, .loadingDarkDiv {
+      position: absolute;
+      background: rgba(4, 4, 4, 0.5);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: loadingAnimation 3s infinite;
+    }
+
+    & > .loadingLigthDiv {
+      background: rgba(254, 254, 254, 0.5);
+    }
+  }
+
+  .wrapperDark {
+    background: black;
+  }
+
+}
+.loadingFinished{
+  animation: end 3s 1;
+}
+@keyframes end {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes loadingAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(25deg) scale(1.125);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .loadingImage {
+    width: 280px;
+    height: 280px;
+  }
+}
