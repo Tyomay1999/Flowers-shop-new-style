@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit'
 const commonReducer = createSlice({
     name: 'common',
     initialState: {
-        loading: false
+        loading: false,
     },
     reducers: {
         changeLoading: (state,action) => {
@@ -13,4 +13,5 @@ const commonReducer = createSlice({
 })
 
 export const {changeLoading} = commonReducer.actions
+
 export default commonReducer.reducer

@@ -1,0 +1,22 @@
+@import "styles/main";
+
+.main{
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  .similarProducts{
+    width: 100%;
+    padding: $sectionPadding;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    & > div {
+      margin: 5px;
+    }
+  }
+  @include sectionHeading();
+}

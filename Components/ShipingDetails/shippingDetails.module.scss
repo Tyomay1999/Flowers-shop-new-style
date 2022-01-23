@@ -245,6 +245,11 @@
           border: 1px solid $contentColor;
         }
       }
+      .errorMessage{
+        text-transform: none;
+        color: red;
+        font-size: .9rem;
+      }
 
       .cardHolder {
         width: 100%;

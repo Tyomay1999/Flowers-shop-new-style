@@ -3,7 +3,7 @@ import Footer from "../Components/Footer/footer";
 import Header from "../Components/Header/header";
 import AllProducts from "../Components/AllProducts/allProducts";
 
-const AllFlowersPage = ({props}) => {
+const AllFlowersPage = () => {
     return (
         <>
             <Head>
