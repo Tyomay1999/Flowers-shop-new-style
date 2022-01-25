@@ -1,6 +1,7 @@
 @import "../../styles/main";
 
 .main {
+  text-transform: capitalize;
   margin-top: $headerheight;
   width: 100%;
   min-height: 100vh;

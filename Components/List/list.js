@@ -8,8 +8,8 @@ const List = () => {
     return (
         <div className={listStyles.main}>
             <Greetings />
-            <AboutUs />
             <NewProducts />
+            <AboutUs />
             <ContactUs />
         </div>
     )

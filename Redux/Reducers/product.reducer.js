@@ -16,7 +16,6 @@ export const getSimilarProductThunk = createAsyncThunk(
     async (_,{rejectWithValue}) => {
         // const response = await fetch('url')
         try {
-
             return similarProducts
         } catch ( error ) {
             throw rejectWithValue(error.message)

@@ -9,7 +9,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -18,7 +20,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -27,7 +31,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -36,7 +42,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -45,7 +53,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -54,7 +64,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -63,7 +75,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -72,7 +86,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -81,7 +97,9 @@ export const newProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: true
+        isNew: true,
+        slug: uuidv4(),
+        inCart: false,
     },
 ]
 
@@ -93,7 +111,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -102,7 +122,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -111,7 +133,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -120,7 +144,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -129,7 +155,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -138,7 +166,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -147,7 +177,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -156,7 +188,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -165,7 +199,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -174,7 +210,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -183,7 +221,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -192,7 +232,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -201,7 +243,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -210,7 +254,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -219,7 +265,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -228,7 +276,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -237,7 +287,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -246,7 +298,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -255,7 +309,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -264,7 +320,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -273,7 +331,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -282,7 +342,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -291,7 +353,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -300,7 +364,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -309,7 +375,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -318,7 +386,9 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     },
     {
         id: uuidv4(),
@@ -327,6 +397,8 @@ export const similarProducts = [
         price: 12.99,
         lastPrice: 15.99,
         discount: 20,
-        isNew: false
+        isNew: false,
+        slug: uuidv4(),
+        inCart: false,
     }
 ]

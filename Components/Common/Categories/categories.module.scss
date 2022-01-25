@@ -3,6 +3,7 @@ $gradient-start : rgba(237, 110, 160, 0.42);
 $gradient-end : rgba(245, 124, 201, 0.28);
 
 .main{
+  text-transform: capitalize;
   width: 100%;
   display: flex;
   justify-content: center;
