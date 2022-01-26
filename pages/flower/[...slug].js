@@ -4,7 +4,6 @@ import Header from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
 import Product from "../../Components/Product/product";
 import SimilarProduct from "../../Components/Common/SimilarProduct/similarProduct";
-import { useSelector } from "react-redux";
 
 const Product_slug = ( props ) => {
     console.log( props.slug )

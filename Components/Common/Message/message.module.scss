@@ -1,0 +1,78 @@
+@import "styles/main";
+
+.main {
+  margin-top: $headerheight;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button { //TODO delete this section
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    color: whitesmoke;
+    background: $contentColor;
+  }
+
+  .messageContainer {
+    position: absolute;
+    top: 100px;
+    right: 5px;
+    max-width: 320px;
+    max-height: 70px;
+    padding: 2rem;
+    background: rgb(255, 148, 195);
+    border-radius: 5px;
+    border-left: 8px solid $contentColor;
+
+    .message {
+      color: whitesmoke;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .warningCircle, .closeButton {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .warningCircle {
+      left: .2rem;
+      color: $contentColor;
+
+      i {
+        font-size: 1.7rem;
+      }
+    }
+
+    .closeButton {
+      cursor: pointer;
+      right: .2rem;
+      color: whitesmoke;
+
+      i {
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .messageContainer.show {
+    animation: show_message 1s ease forwards;
+  }
+}
+
+@keyframes show_message {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

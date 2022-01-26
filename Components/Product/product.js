@@ -22,6 +22,7 @@ const Product = () => {
             <h2 className={productStyle.status}>{product?.isNew && 'New'}</h2>
             <h4>Pr<span>ice:</span> {product?.price}</h4>
             <h6>la<span>st</span> Pr<span>ice:</span> {product?.lastPrice}$</h6>
+            {/*TODO add share in this block*/}
             <button className={ productStyle.buy } onClick={ () => handlerBuy(router) }>Buy now</button>
         </div>
     </div>

@@ -7,9 +7,8 @@ require('dotenv').config()
 const isProd = process.env.NODE_ENV === "production";
 
 // workbox.setConfig({ debug: false });
-module.exports = withVideos()
 
-module.exports = withImages(withPWA({
+module.exports =withVideos( withImages(withPWA({
   images: {
     disableStaticImages: true
   },
@@ -23,4 +22,4 @@ module.exports = withImages(withPWA({
   //     localeDetection: false,
   //   }
   // })
-}))
+})))
