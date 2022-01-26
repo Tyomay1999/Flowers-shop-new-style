@@ -2,6 +2,7 @@ import React from 'react'
 import productStyle from './product.module.scss'
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { shareHandler } from "../Common/share";
 // import Card from "../Card/card";
 
 const handlerBuy = (router) => {
@@ -16,6 +17,9 @@ const Product = () => {
         <div className={productStyle.images}>
             <img src={ product?.photo } alt={ product?.name }/>
             <h2 className={productStyle.discount}>{product?.discount && `${product?.discount}%`}</h2>
+            {
+                shareHandler('Hunts',productStyle,30,true)
+            }
         </div>
         <div className={ productStyle.productInfo }>
             <h1>{ product?.name }</h1>

@@ -4,15 +4,7 @@ import {useDispatch} from "react-redux";
 import {selectProduct} from "../../Redux/Reducers/product.reducer";
 import {useRouter} from "next/router";
 import {addProduct} from "../../Redux/Reducers/cart.reducer";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {
-    FacebookShareButton, FacebookIcon,
-    VKShareButton, VKIcon,
-    ViberShareButton, ViberIcon,
-    WhatsappShareButton, WhatsappIcon,
-    FacebookMessengerShareButton, FacebookMessengerIcon,
-    TelegramShareButton, TelegramIcon
-} from "react-share";
+import { shareHandler } from "../Common/share";
 
 
 export const handlerCart = (e, product, dispatch) => {
@@ -46,32 +38,9 @@ const Card = ({product}) => {
                     {/*TODO change url and share design */}
                     <div className={cardStyles.shareBlock}>
                         <i className="bi bi-share-fill"/>
-
-                        <div className={cardStyles.share}>
-                            <FacebookShareButton url={shareUrl}>
-                                <FacebookIcon size={30} round={true}/>
-                            </FacebookShareButton>
-                            <VKShareButton  url={shareUrl}>
-                                <VKIcon size={30}  round={true}/>
-                            </VKShareButton>
-                            <TelegramShareButton url={shareUrl}>
-                                <TelegramIcon size={30} round={true}/>
-                            </TelegramShareButton>
-                            <ViberShareButton url={shareUrl}>
-                                <ViberIcon size={30} round={true}/>
-                            </ViberShareButton>
-                            <WhatsappShareButton url={shareUrl}>
-                                <WhatsappIcon size={30} round={true}/>
-                            </WhatsappShareButton>
-                            <FacebookMessengerShareButton url={shareUrl}>
-                                <FacebookMessengerIcon size={30} round={true}/>
-                            </FacebookMessengerShareButton>
-                            <div className={cardStyles.copyBox}>
-                                <CopyToClipboard text={`http://localhost:3000/flower/${product.slug}`}>
-                                    <i class="bi bi-files" />
-                                </CopyToClipboard>
-                            </div>
-                        </div>
+                        {
+                            shareHandler(shareUrl,cardStyles,30,true)
+                        }
                     </div>
                 </div>
             </div>
