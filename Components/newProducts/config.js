@@ -12,6 +12,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -23,6 +32,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -34,6 +52,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -45,6 +72,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -56,6 +92,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -67,6 +112,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -78,6 +132,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -89,6 +152,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -100,6 +172,15 @@ export const newProducts = [
         isNew: true,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
 ]
 
@@ -114,6 +195,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -125,6 +215,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -136,6 +235,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -147,6 +255,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -158,6 +275,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -169,6 +295,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -180,6 +315,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -191,6 +335,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -202,6 +355,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -213,6 +375,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -224,6 +395,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -235,6 +415,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -246,6 +435,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -257,6 +455,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -268,6 +475,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -279,6 +495,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -290,6 +515,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -301,6 +535,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -312,6 +555,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -323,6 +575,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -334,6 +595,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -345,6 +615,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -356,6 +635,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -367,6 +655,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -378,6 +675,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -389,6 +695,15 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     },
     {
         id: uuidv4(),
@@ -400,5 +715,14 @@ export const similarProducts = [
         isNew: false,
         slug: uuidv4(),
         inCart: false,
+        tags: ['color', 'type', 'single', 'bouquet'],
+        aboutFlower: `
+            Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium alias assumenda deleniti eos id ipsa labore laborum
+            reiciendis, sapiente soluta, suscipit tenetur voluptas. Asperiores 
+            aspernatur dignissimos, ea eligendi eum explicabo fugit harum in 
+            mollitia, neque nulla quasi qui rerum sapiente, tempora unde vitae 
+            voluptas voluptate. Doloremque in similique ullam! Ut.
+          `
     }
 ]

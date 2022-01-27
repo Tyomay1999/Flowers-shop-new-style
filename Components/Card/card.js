@@ -35,7 +35,7 @@ const Card = ({product}) => {
                     <i onClick={(e) => handlerCart(e, product, dispatch)}
                        className={`bi bi-cart-${product.inCart ? 'check' : 'plus'}`}/>
                     {/*<i className="bi bi-cart-check" />*/}
-                    {/*TODO change url and share design */}
+                    {/*TODO change url and share design with responsive*/}
                     <div className={cardStyles.shareBlock}>
                         <i className="bi bi-share-fill"/>
                         {
