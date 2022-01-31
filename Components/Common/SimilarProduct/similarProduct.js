@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react'
 import similarProductsStyles from './similarProduct.module.scss'
 import Card from "../../Card/card";
-import { newProducts } from "../../newProducts/config";
+import { newProducts, similarProducts } from "../../newProducts/config";
 import { v4 as uuidv4 } from "uuid";
 import cardStyles from "../../Card/card.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import productReducer, { getSimilarProductThunk } from "../../../Redux/Reducers/product.reducer";
+import { getSimilarProductThunk } from "../../../Redux/Reducers/product.reducer";
 
 const SimilarProduct = () => {
     const dispatch = useDispatch()
     const similarProduct = useSelector(state => state?.productReducer.similarProduct)
-    useEffect(() => {
-        dispatch(getSimilarProductThunk())
-    },[dispatch])
 
+    useEffect(() => {
+        dispatch(getSimilarProductThunk(similarProducts))
+    },[])
+    console.log(similarProduct,'<--------------------------similarProduct')
     // useEffect(() => {
     //     document.addEventListener('scroll', scrollHandler)
     //     return () => {

@@ -2,8 +2,9 @@ import Head from "next/head";
 import Footer from "../Components/Footer/footer";
 import Header from "../Components/Header/header";
 import AllProducts from "../Components/AllProducts/allProducts";
+import { allProducts } from "../Components/newProducts/config";
 
-const AllFlowersPage = () => {
+const AllFlowersPage = (props) => {
     return (
         <>
             <Head>
@@ -12,7 +13,7 @@ const AllFlowersPage = () => {
                 <title>All flowers</title>
             </Head>
             <Header />
-            <AllProducts />
+            <AllProducts products={props.products} />
             <Footer />
         </>
     )
@@ -23,7 +24,7 @@ export async function getStaticProps() {
     // const posts = await res.json()
     return {
         props: {
-            greeting: 'hello',
+            products: allProducts,
         },
     }
 }

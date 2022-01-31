@@ -3,12 +3,15 @@
 .main {
   text-transform: capitalize;
   margin-top: $headerheight;
+  padding: 0 2rem;
   width: 100%;
   min-height: 100vh;
-
+  display: flex;
   .allProductsContainer {
     display: flex;
-    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
     min-height: 80vh;
 
 
@@ -67,10 +70,10 @@
       }
 
       .content {
+        overflow: hidden scroll;
         width: 100%;
         height: 380px;
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
 
@@ -120,6 +123,29 @@
             }
           }
         }
+        .categoriesBlock{
+          margin-top: 10px;
+          width: 100%;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          li{
+            margin-top: 5px;
+            cursor: pointer;
+            font-size: 2rem;
+            border-bottom: 1px solid gray;
+            span{
+              font-size: .8rem;
+              color: $contentColor;
+            }
+            &:hover{
+              color: $contentColor;
+              border-color: $contentColor;
+              transition: border-color .5s, color .5s;
+            }
+          }
+        }
+
       }
 
       button {
@@ -176,7 +202,44 @@
     height: 50px;
   }
 }
-
+@media (max-width: 850px) {
+  .main{
+    flex-direction: column;
+    //.categoriesBlock{
+    //  width: 100%;
+    //  ul{
+    //    position: sticky;
+    //    width: 100%;
+    //    padding: 10px;
+    //    top: $headerheight;
+    //    border: $borderStandard;
+    //    border-radius: 8px;
+    //    li{
+    //      margin-top: 5px;
+    //      cursor: pointer;
+    //      font-size: 2rem;
+    //      border-bottom: 1px solid gray;
+    //      span{
+    //        font-size: 1.2rem;
+    //        color: $contentColor;
+    //      }
+    //      &:hover{
+    //        color: $contentColor;
+    //        border-color: $contentColor;
+    //        transition: border-color .5s, color .5s;
+    //      }
+    //    }
+    //  }
+    //}
+    .allProductsContainer {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 80%;
+      min-height: 80vh;
+    }
+    }
+}
 @media (max-width: 450px) {
   .main {
     .allProductsContainer {
