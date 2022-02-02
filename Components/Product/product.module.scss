@@ -1,7 +1,7 @@
 @import "styles/main";
 
 @mixin button {
-  .buy {
+  .buy, .addToCart {
     position: absolute;
     cursor: pointer;
     font-size: 2.3rem;
@@ -10,7 +10,7 @@
     border-radius: 8px;
     background: $contentColor;
     color: whitesmoke;
-
+    z-index: 3;
     &:active {
       transform: scale(.95);
     }
@@ -62,6 +62,7 @@
       display: flex;
       justify-content: center;
       .shareWrapper{
+        cursor: pointer;
         margin: 0 10px;
         &:last-child{
           padding: 7px;
@@ -133,7 +134,11 @@
     @include button();
     button{
       right: 30px;
-      bottom: -20px;
+      bottom: -35px;
+    }
+    .addToCart{
+      right: 180px;
+      //left: 30px;
     }
   }
   .similarBlock {
@@ -148,6 +153,7 @@
     .images {
       .share{
         .shareWrapper{
+          cursor: pointer;
           &:last-child{
             i{
               font-size: 15px;
@@ -178,6 +184,7 @@
        display: flex;
        justify-content: space-around;
        .shareWrapper{
+         cursor: pointer;
          &:last-child{
            i{
              font-size: 15px;
@@ -189,7 +196,7 @@
     .productInfo{
       button{
         right: 20px;
-        bottom: -15px;
+        bottom: -30px;
       }
     }
   }
@@ -211,6 +218,7 @@
         display: flex;
         justify-content: center;
         .shareWrapper{
+          cursor: pointer;
           margin: 0 8px;
           &:last-child{
             padding: 9px;

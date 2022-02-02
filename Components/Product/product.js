@@ -1,9 +1,10 @@
 import React from 'react'
 import productStyle from './product.module.scss'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import {shareHandler} from "../Common/share";
 import {v4 as uuidv4} from 'uuid'
+import {addProduct} from "../../Redux/Reducers/cart.reducer";
 // import Card from "../Card/card";
 
 const handlerBuy = (router) => {
@@ -13,7 +14,9 @@ const handlerTagClick = (router) => {
     router.push('/cart')
 }
 const Product = () => {
+    //TODO add lazy loader
     const router = useRouter()
+    const dispatch = useDispatch()
     const product = useSelector(state => state?.productReducer.selectedProduct)
     console.log(product)
     return <div className={productStyle.main}>
@@ -23,7 +26,7 @@ const Product = () => {
                 product?.isNew && <h2 className={productStyle.status}>New</h2>
             }
             {
-                product?.discount && <h2 className={productStyle.discount}>{product?.discount}%</h2>
+                product?.discount && <h2 className={productStyle.discount}>-{product?.discount}%</h2>
             }
             {
                 shareHandler('Hunts', productStyle, 30, true)
@@ -42,8 +45,8 @@ const Product = () => {
                     </li>)
                 }
             </ul>
-            {/*TODO add share in this block*/}
             <button className={productStyle.buy} onClick={() => handlerBuy(router)}>Buy now</button>
+            <button className={productStyle.addToCart} onClick={() => dispatch(addProduct(product))} ><i className="bi bi-cart-plus"/></button>
         </div>
     </div>
 }

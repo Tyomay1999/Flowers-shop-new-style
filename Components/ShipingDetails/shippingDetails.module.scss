@@ -10,6 +10,7 @@
 
   .shippingDetails, .paymentInfo {
     width: 45%;
+    max-width: 570px;
     min-height: 600px;
     border-radius: 5px;
     box-shadow: 4px 4px 14px gray;

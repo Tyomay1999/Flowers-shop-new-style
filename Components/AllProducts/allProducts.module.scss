@@ -6,14 +6,14 @@
   padding: 0 2rem;
   width: 100%;
   min-height: 100vh;
-  display: flex;
+  //display: flex;
   .allProductsContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
     min-height: 80vh;
-
+    margin-bottom: 40px;
 
     .filterContainer, .filterWrapper {
       cursor: pointer;
@@ -205,37 +205,10 @@
 @media (max-width: 850px) {
   .main{
     flex-direction: column;
-    //.categoriesBlock{
-    //  width: 100%;
-    //  ul{
-    //    position: sticky;
-    //    width: 100%;
-    //    padding: 10px;
-    //    top: $headerheight;
-    //    border: $borderStandard;
-    //    border-radius: 8px;
-    //    li{
-    //      margin-top: 5px;
-    //      cursor: pointer;
-    //      font-size: 2rem;
-    //      border-bottom: 1px solid gray;
-    //      span{
-    //        font-size: 1.2rem;
-    //        color: $contentColor;
-    //      }
-    //      &:hover{
-    //        color: $contentColor;
-    //        border-color: $contentColor;
-    //        transition: border-color .5s, color .5s;
-    //      }
-    //    }
-    //  }
-    //}
     .allProductsContainer {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      width: 80%;
       min-height: 80vh;
     }
     }

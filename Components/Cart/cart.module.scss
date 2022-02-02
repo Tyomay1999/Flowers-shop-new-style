@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
 
-  .blockLeft {
+  .blockLeft, .blockLeftEmpty {
     font-size: 2rem;
     width: 65%;
     min-height: 80vh;
@@ -96,7 +96,46 @@
       }
     }
   }
-
+  .blockLeftEmpty{
+    width: 100%;
+    .emptyBlock{
+      width: 100%;
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      h1{
+        text-transform: none;
+        text-align: center;
+        font-size: 3rem;
+      }
+      button{
+        cursor: pointer;
+        padding: 1.75rem 2rem;
+        margin-top: 35px;
+        font-size: 2rem;
+        border: $borderStandard;
+        border-radius: 7px;
+        box-shadow: 7px 7px 4px gray;
+        transition: color .5s , background .5s;
+        &:hover{
+          background: $contentColor;
+          color: black;
+          transition: color .5s , background .5s;
+          span{
+            color: whitesmoke;
+          }
+        }
+        &:active{
+          transform: scale(.95);
+        }
+      }
+      span{
+        color: $contentColor;
+      }
+    }
+  }
   .blockRight {
     width: 30%;
     .blockRightChild {

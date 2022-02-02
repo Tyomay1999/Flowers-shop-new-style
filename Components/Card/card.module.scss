@@ -1,5 +1,35 @@
 @import '../../styles/main';
-
+.isLoading{
+  display: none;
+}
+.lazyLoaderContainer{
+  background: linear-gradient(101.42deg, #f8dfff -0.04%, rgba(251, 223, 255, 0.27) 94.2%);
+  border: 1px solid #E2F1FF;
+  box-sizing: border-box;
+  border-radius: .5rem;
+  overflow: hidden;
+  max-width: 320px;
+  position: relative;
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, rgba(241, 38, 255, 0.09) 50%, transparent 100%);
+    animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  }
+}
+@keyframes load {
+  from{
+    left: -150px;
+  }
+  to{
+    left: 150%;
+  }
+}
 .box {
   margin: 5px 5px;
   flex: 1 1 -1;
@@ -85,6 +115,7 @@
         justify-content: space-around;
 
         .shareWrapper {
+          cursor: pointer;
           &:last-child {
             width: 40px;
             height: 40px;

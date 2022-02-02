@@ -10,7 +10,7 @@ const AllProducts = (props) => {
     const [isOpen, openFilter] = useState(false)
     return (
         <div onClick={() => openFilter(false)} className={allProductsStyles.main}>
-            {/*<Search witCategories={false}/>*/}
+            <Search witCategories={false}/>
             <div className={allProductsStyles.allProductsContainer}>
                 {/*<SimilarProduct />*/}
                 {
