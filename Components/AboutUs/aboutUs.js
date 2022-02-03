@@ -1,5 +1,6 @@
 import React from 'react'
 // import { localVideos } from '../../public/Assets/images/imagesContrller'
+import video from '../../public/Assets/images/about-vid.mp4'
 import aboutUsStyles from './aboutUs.module.scss'
 
 const AboutUs = () => {
@@ -11,7 +12,7 @@ const AboutUs = () => {
             <div className={aboutUsStyles.row}>
 
                 <div className={aboutUsStyles['video-container']}>
-                    <video src='../../public/Assets/images/about-vid.mp4' loop={true} autoPlay muted={true} />
+                    <video src={video} loop={true} autoPlay muted={true} />
                     <h3>best flower sellers</h3>
                 </div>
 

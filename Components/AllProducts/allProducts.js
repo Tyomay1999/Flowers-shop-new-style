@@ -12,7 +12,6 @@ const AllProducts = (props) => {
         <div onClick={() => openFilter(false)} className={allProductsStyles.main}>
             <Search witCategories={false}/>
             <div className={allProductsStyles.allProductsContainer}>
-                {/*<SimilarProduct />*/}
                 {
                     props.products?.map(product => {
                         return <Card product={product} />
