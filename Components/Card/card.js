@@ -34,6 +34,10 @@ const Card = ({product}) => {
     const router = useRouter()
     const dispatch = useDispatch()
     const {discount, photo, name, price, lastPrice, isNew} = product
+    useEffect(() => {
+        let flowerInCart = JSON.parse(window.localStorage.getItem('cart'))?.filter(flowerId => flowerId === product?.id)
+        setFlower(flowerInCart.length ? true : false)
+    },[product])
     const shareUrl = `http://localhost:3000/flower/${product.slug}`
     useEffect(() => {
         if (cardRef.current) {

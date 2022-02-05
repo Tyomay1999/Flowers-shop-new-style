@@ -13,6 +13,7 @@ const AllFlowersPage = (props) => {
                 <title>All flowers</title>
             </Head>
             <Header />
+            {/*TODO design problem in card witch situated in allProducts component*/}
             <AllProducts products={props.products} />
             <Footer />
         </>

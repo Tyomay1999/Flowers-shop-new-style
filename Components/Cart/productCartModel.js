@@ -12,9 +12,18 @@ const increment = (changerHook) => {
 const decrement = (changerHook) => {
     changerHook(prevCount => prevCount - 1)
 }
+
+export const handlerTrash = (product,dispatch) => {
+    let localStorageCart = JSON.parse(window.localStorage.getItem('cart'))
+    localStorageCart = localStorageCart?.filter(flower => flower !== product.id)
+    window.localStorage.setItem("cart", JSON.stringify(localStorageCart?.length ? [...localStorageCart] : []))
+    dispatch(removeProduct(product.id))
+}
+
 export const handlerBuy = (product,dispatch) => {
     dispatch(removeProduct(product.id))
 }
+
 const ProductModel = ({product}) => {
     const dispatch = useDispatch()
     const [count, changeCount] = useState(1)
@@ -28,9 +37,9 @@ const ProductModel = ({product}) => {
                 <p>{count}</p>
                 <button onClick={() => increment(changeCount)}>+</button>
             </div>
-            <button className={cartStyles.buy}>Buy</button>
+            <button onClick={() => handlerBuy(product,dispatch)} className={cartStyles.buy}>Buy</button>
             <button
-                onClick={() => handlerBuy(product,dispatch)}
+                onClick={() => handlerTrash(product,dispatch)}
                 className={cartStyles.removeProduct}><i className="bi bi-trash"/></button>
         </div>
     </>

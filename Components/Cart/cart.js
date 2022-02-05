@@ -7,6 +7,14 @@ import {v4 as uuidv4} from "uuid";
 import {useRouter} from "next/router";
 import {getCartProductsThunk} from "../../Redux/Reducers/cart.reducer";
 
+const handlerTotalPrice = (productsArray) => {
+    let totalPrice = 0;
+    productsArray.forEach(product => {
+        totalPrice += product.price
+    })
+    return Math.floor(totalPrice)
+}
+
 const Cart = () => {
     const dispatch = useDispatch()
     const cartProducts = useSelector(state => state?.cartReducer.cartProducts)
@@ -41,7 +49,7 @@ const Cart = () => {
                             })
                         }
                         <div className={cartStyles.total}>
-                            <p>TOT<span>AL:</span> 800<span>$</span></p>
+                            <p>TOT<span>AL:</span> { handlerTotalPrice(cartProducts) }<span>$</span></p>
                             <Link href='/checkout'>
                                 <button>Confirm</button>
                             </Link>
