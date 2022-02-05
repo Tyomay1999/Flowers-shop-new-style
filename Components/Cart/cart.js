@@ -1,15 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import cartStyles from './cart.module.scss'
 import Link from 'next/link'
 import ProductModel from "./productCartModel";
 import {useDispatch, useSelector} from "react-redux";
 import {v4 as uuidv4} from "uuid";
 import {useRouter} from "next/router";
+import {getCartProductsThunk} from "../../Redux/Reducers/cart.reducer";
 
 const Cart = () => {
-    const dipatch = useDispatch()
-    const router = useRouter()
+    const dispatch = useDispatch()
     const cartProducts = useSelector(state => state?.cartReducer.cartProducts)
+    useEffect(() => {
+        //loading true or lazy loading
+        dispatch(getCartProductsThunk(window.localStorage.getItem('cart')))
+    },[])
+    console.log(cartProducts,'<--------------------cartProducts')
+    const router = useRouter()
     return (
         <div className={cartStyles.main}>
             <div className={cartProducts.length ? cartStyles.blockLeft : cartStyles.blockLeftEmpty}>
