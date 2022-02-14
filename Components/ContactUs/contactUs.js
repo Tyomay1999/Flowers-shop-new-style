@@ -3,7 +3,6 @@ import contactUsStyles from './contactUs.module.scss'
 import contactUsImage from '../../public/Assets/images/contact-img.svg'
 import {handlerDebounce} from "../Common/functions";
 import {useDispatch} from "react-redux";
-import {sendCustomerMessage} from "../../Redux/Reducers/common.reducer";
 
 
 const ContactUs = () => {

@@ -1,10 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react'
 import cardStyles from './card.module.scss'
 import {useDispatch} from "react-redux";
-import {selectProduct} from "../../Redux/Reducers/product.reducer";
 import {useRouter} from "next/router";
-import {addProduct} from "../../Redux/Reducers/cart.reducer";
 import {shareHandler} from "../Common/share";
+import { selectProduct } from "../../Redux/Action/product.action";
 
 
 export const handlerCart = (e, product, dispatch, setFlowerInCart, isFlowerInCart) => {

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import similarProductsStyles from './similarProduct.module.scss'
 import Card from "../../Card/card";
-import { newProducts, similarProducts } from "../../newProducts/config";
+import { similarProducts } from "../../newProducts/config";
 import { v4 as uuidv4 } from "uuid";
 import cardStyles from "../../Card/card.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getSimilarProductThunk } from "../../../Redux/Reducers/product.reducer";
+import { getSimilarProductThunk } from "../../../Redux/Action/product.action";
 
 const SimilarProduct = () => {
     const dispatch = useDispatch()

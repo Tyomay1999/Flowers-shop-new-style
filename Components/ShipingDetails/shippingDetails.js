@@ -2,13 +2,18 @@ import React, {useState} from 'react'
 import shippingDetailsStyles from './shippingDetails.module.scss'
 import {v4 as uuidv4} from 'uuid';
 import {deliveryTime} from "./shippingDetailsFunctionality";
-import {retry} from "@reduxjs/toolkit/query";
-import {handlerDebounce} from "../Common/functions";
+
+export const validationRegExp = {
+    email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    numbersOnly:  /^[0-9]{8}/,
+    phoneNumberAM: /^\+?[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$/ ,// For Armenian phone numbers only. Please use +374-11-11-11-11 or 374-11-11-11-11 syntax ;)
+    fixedPhoneNumberAM: /^[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}$/, // For Armenian phone numbers only. Please use 010-11-11-11 syntax ;)
+    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,// Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number (without symbols ;)
+}
 
 const handlerValueValidation = (type, value) => {
     switch (type) {
         case 'number':
-            const numeralRegex = /\d{4}$/
             return numeralRegex.test(value)
         case 'letterOnly':
             const withoutNumberRegex = new RegExp(/[^\d]/g)

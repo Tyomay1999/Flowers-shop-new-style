@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { shareHandler } from "../Common/share";
 import { v4 as uuidv4 } from 'uuid'
-import { addProduct } from "../../Redux/Reducers/cart.reducer";
 import { handlerCart } from "../Card/card";
 // import Card from "../Card/card";
 

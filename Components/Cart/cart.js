@@ -5,7 +5,7 @@ import ProductModel from "./productCartModel";
 import {useDispatch, useSelector} from "react-redux";
 import {v4 as uuidv4} from "uuid";
 import {useRouter} from "next/router";
-import {getCartProductsThunk} from "../../Redux/Reducers/cart.reducer";
+import { getCartProductsThunk } from "../../Redux/Action/product.action";
 
 const handlerTotalPrice = (productsArray) => {
     let totalPrice = 0;
@@ -17,7 +17,7 @@ const handlerTotalPrice = (productsArray) => {
 
 const Cart = () => {
     const dispatch = useDispatch()
-    const cartProducts = useSelector(state => state?.cartReducer.cartProducts)
+    const cartProducts = useSelector(state => state?.productReducer.cartProducts)
     useEffect(() => {
         //loading true or lazy loading
         dispatch(getCartProductsThunk(window.localStorage.getItem('cart')))

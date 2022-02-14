@@ -12,7 +12,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -32,7 +31,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -52,7 +50,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -72,7 +69,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -92,7 +88,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -112,7 +107,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -132,7 +126,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -152,7 +145,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -172,7 +164,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -192,7 +183,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -212,7 +202,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -232,7 +221,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -252,7 +240,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -272,7 +259,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -292,7 +278,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -312,7 +297,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -332,7 +316,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -352,7 +335,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -372,7 +354,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -392,7 +373,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -412,7 +392,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -432,7 +411,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -452,7 +430,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -472,7 +449,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -492,7 +468,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -512,7 +487,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -532,7 +506,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -552,7 +525,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -572,7 +544,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -592,7 +563,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -612,7 +582,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -632,7 +601,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -652,7 +620,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -672,7 +639,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -692,7 +658,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -712,7 +677,6 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -732,7 +696,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -752,7 +715,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -772,7 +734,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -792,7 +753,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -812,7 +772,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -832,7 +791,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -852,7 +810,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -872,7 +829,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -892,7 +848,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -912,7 +867,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -932,7 +886,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -952,7 +905,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -972,7 +924,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -992,7 +943,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1012,7 +962,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1032,7 +981,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1052,7 +1000,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1072,7 +1019,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1092,7 +1038,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1112,7 +1057,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1132,7 +1076,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1152,7 +1095,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1172,7 +1114,6 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        inCart: false,
         tags: ['color', 'type', 'single', 'bouquet'],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.

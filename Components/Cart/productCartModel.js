@@ -1,9 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import cartStyles from './cart.module.scss'
-import {cardLocalImages} from "../../public/Assets/images/imagesContrller";
 import { useDispatch } from "react-redux";
-import products from "../newProducts/products";
-import { removeProduct } from "../../Redux/Reducers/cart.reducer";
+import { removeFlowerInCart } from "../../Redux/Action/product.action";
 
 const increment = (changerHook) => {
     changerHook(prevCount => prevCount + 1)
@@ -17,11 +15,11 @@ export const handlerTrash = (product,dispatch) => {
     let localStorageCart = JSON.parse(window.localStorage.getItem('cart'))
     localStorageCart = localStorageCart?.filter(flower => flower !== product.id)
     window.localStorage.setItem("cart", JSON.stringify(localStorageCart?.length ? [...localStorageCart] : []))
-    dispatch(removeProduct(product.id))
+    dispatch(removeFlowerInCart(product.id))
 }
 
 export const handlerBuy = (product,dispatch) => {
-    dispatch(removeProduct(product.id))
+    dispatch(removeFlowerInCart(product.id))
 }
 
 const ProductModel = ({product}) => {

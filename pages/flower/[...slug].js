@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Cart from "../../Components/Cart/cart";
 import Header from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
 import Product from "../../Components/Product/product";

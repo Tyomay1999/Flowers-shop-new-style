@@ -4,13 +4,13 @@ import productsStyles from './products.module.scss'
 import cardStyles from '../Card/card.module.scss'
 import {v4 as uuidv4} from 'uuid';
 import { useDispatch, useSelector } from "react-redux";
-import { getNewProductsThunk } from "../../Redux/Reducers/product.reducer";
+import { getNewFlowersThunk } from "../../Redux/Action/product.action";
 
 const NewProducts = () => {
     const dispatch = useDispatch();
-    const newProducts = useSelector(state => state.productReducer.newProducts)
+    const newProducts = useSelector(state => state?.productReducer.newProducts)
     useEffect(() => {
-        dispatch(getNewProductsThunk())
+        dispatch(getNewFlowersThunk())
     },[])
     return (
         <div className={productsStyles.main} id='newProducts'>

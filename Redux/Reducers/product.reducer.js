@@ -1,102 +1,36 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { newProducts, similarProducts } from "../../Components/newProducts/config";
+import {
+    GET_ALL_FLOWERS,
+    GET_CART_FLOWERS,
+    GET_NEW_FLOWERS,
+    GET_SIMILAR_FLOWERS,
+    REMOVE_FLOWER_IN_CART, SELECTED_PRODUCT
+} from "../Action/product.action";
 
-export const getNewProductsThunk = createAsyncThunk(
-    'product/getNewProductsThunk',
-    async ( _, { rejectedWithValue } ) => {
-        try {
-            return newProducts
-        } catch ( error ) {
-            return rejectedWithValue( error )
-        }
+
+const initialState = {
+    newProducts: null,
+    allProducts: null,
+    selectedProduct: null,
+    similarProduct: null,
+    cartProducts: []
+}
+
+export const productReducer = ( state = initialState, action ) => {
+    switch ( action.type ) {
+        case GET_ALL_FLOWERS:
+            return { ...state, allProducts: [...action.payload] }
+        case GET_NEW_FLOWERS:
+            return { ...state, newProducts: [...action.payload] }
+        case GET_SIMILAR_FLOWERS:
+            return { ...state, similarProduct: [...action.payload] }
+        case GET_CART_FLOWERS:
+            return {...state, cartProducts: [...action.payload]}
+        case REMOVE_FLOWER_IN_CART:
+            let cartProducts = state.cartProducts.filter(product => product.id !== action.payload)
+            return {...state, cartProducts: [...cartProducts]}
+        case SELECTED_PRODUCT:
+            return {...state, selectedProduct: action.payload}
+        default:
+            return state
     }
-)
-export const getSimilarProductThunk = createAsyncThunk(
-    'product/getSimilarProductThunk',
-    async ( _, { rejectWithValue } ) => {
-        // const response = await fetch('url')
-        try {
-            setTimeout( () => {
-            }, 3000 )
-                return similarProducts
-
-        } catch ( error ) {
-            return  rejectWithValue( error.message )
-        }
-    }
-)
-export const getAllProductsThunk = createAsyncThunk(
-    'product/getAllProductsThunk',
-    async ( _, { rejectedWithValue } ) => {
-        try {
-
-        } catch ( error ) {
-            return rejectedWithValue(error)
-        }
-
-    }
-)
-const productReducer = createSlice( {
-    name: 'product',
-    initialState: {
-        newProducts: null,
-        allProducts: null,
-        selectedProduct: null,
-        similarProduct: null,
-        status: null,
-        error: null
-    },
-    reducers: {
-        selectProduct: ( state, action ) => {
-            state.selectedProduct = action.payload
-        },
-        similarProduct: ( state, action ) => {
-            state.similarProduct = action.payload
-        },
-        setAllProducts: ( state, action ) => {
-            state.allProducts = action.payload
-        }
-    },
-    extraReducers: {
-        [ getSimilarProductThunk.pending ]: ( state ) => {
-            state.status = 'loading';
-            state.error = null
-        },
-        [ getSimilarProductThunk.fulfilled ]: ( state, action ) => {
-            state.status = 'resolved';
-            state.similarProduct = action.payload;
-        },
-        [ getSimilarProductThunk.rejected ]: ( state, action ) => {
-
-            state.status = 'rejected'
-            state.error = action.payload
-        },
-        [ getNewProductsThunk.pending ]: ( state ) => {
-            state.status = 'loading';
-            state.error = null
-        },
-        [ getNewProductsThunk.fulfilled ]: ( state, action ) => {
-            state.status = 'resolved';
-            state.newProducts = action.payload;
-        },
-        [ getNewProductsThunk.rejected ]: ( state, action ) => {
-            state.status = 'rejected'
-            state.error = action.payload
-        },
-        // [ getNewProductsThunk.pending ]: ( state ) => {
-        //     state.status = 'loading';
-        //     state.error = null
-        // },
-        // [ getAllProductsThunk.fulfilled ]: ( state, action ) => {
-        //     state.status = 'resolved';
-        //     state.newProducts = action.payload;
-        // },
-        // [ getAllProductsThunk.rejected ]: ( state, action ) => {
-        //     state.status = 'rejected'
-        //     state.error = action.payload
-        // },
-    }
-} )
-
-export const { selectProduct } = productReducer.actions
-export default productReducer.reducer
+}
