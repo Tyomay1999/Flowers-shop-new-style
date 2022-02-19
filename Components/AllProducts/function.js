@@ -13,13 +13,13 @@ export const filterOpenFunction = ( openFilter ) => {
         <div className={ allProductsStyles.content }>
             <div className={ allProductsStyles.filterByPrice }>
                 <div className={ allProductsStyles.wrapper }>
-                    <input defaultValue={ 0 } type='number' placeholder=' ' id='firstName'/>
-                    <label htmlFor='firstName'>In</label>
+                    <input defaultValue={ 0 } type='number' placeholder=' ' id='in'/>
+                    <label htmlFor='in'>In</label>
                 </div>
                 <span>-</span>
                 <div className={ allProductsStyles.wrapper }>
-                    <input type='number' placeholder=' ' id='firstName'/>
-                    <label htmlFor='firstName'>To</label>
+                    <input type='number' placeholder=' ' id='to'/>
+                    <label htmlFor='to'>To</label>
                 </div>
             </div>
             <ul className={ allProductsStyles.categoriesBlock }>

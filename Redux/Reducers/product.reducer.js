@@ -1,4 +1,5 @@
 import {
+    CHANGE_PRODUCT_QUANTITY,
     GET_ALL_FLOWERS,
     GET_CART_FLOWERS,
     GET_NEW_FLOWERS,
@@ -30,6 +31,9 @@ export const productReducer = ( state = initialState, action ) => {
             return {...state, cartProducts: [...cartProducts]}
         case SELECTED_PRODUCT:
             return {...state, selectedProduct: action.payload}
+        case CHANGE_PRODUCT_QUANTITY:
+           state.cartProducts[action.position].quantity = action.quantity
+           return {...state, cartProducts: [...state.cartProducts]}
         default:
             return state
     }

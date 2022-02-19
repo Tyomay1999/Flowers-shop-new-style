@@ -6,11 +6,19 @@ export const GET_NEW_FLOWERS = 'GET NEW FLOWERS'
 export const GET_CART_FLOWERS = 'GET CART FLOWERS'
 export const REMOVE_FLOWER_IN_CART = 'REMOVE FLOWER IN CART'
 export const SELECTED_PRODUCT = 'SELECTED PRODUCT'
+export const CHANGE_PRODUCT_QUANTITY = 'CHANGE PRODUCT QUANTITY'
 
 const setAllFlowers = payload => {
     return {
         type: GET_ALL_FLOWERS,
         payload
+    }
+}
+export const changeProductQuantity = (quantity,position) => {
+    return {
+        type: CHANGE_PRODUCT_QUANTITY,
+        quantity,
+        position
     }
 }
 const setNewFlowers = payload => {
@@ -70,7 +78,7 @@ export const getCartProductsThunk = payload => async dispatch => {
         await allProducts.forEach((flower, index) => {
             cartProducts.forEach(cartFlowerId => {
                 if (cartFlowerId === flower.id) {
-                    falseArray.push(flower)
+                    falseArray.push( { ...flower, quantity: 1 })
                 }
             })
         })

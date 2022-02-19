@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import cartStyles from './cart.module.scss'
 import { useDispatch } from "react-redux";
-import { removeFlowerInCart } from "../../Redux/Action/product.action";
+import { changeProductQuantity, removeFlowerInCart } from "../../Redux/Action/product.action";
 
 const increment = (changerHook) => {
     changerHook(prevCount => prevCount + 1)
@@ -22,18 +22,17 @@ export const handlerBuy = (product,dispatch) => {
     dispatch(removeFlowerInCart(product.id))
 }
 
-const ProductModel = ({product}) => {
+const ProductModel = ({product,position}) => {
     const dispatch = useDispatch()
-    const [count, changeCount] = useState(1)
     return <>
         <img src={product.photo} alt='flower1'/>
         <div className={cartStyles.productInfo}>
             <h1 className={cartStyles.flowerName}>{product.name}</h1>
-            <h2 className={cartStyles.productPrice}>{product.price * count}<span>$</span></h2>
+            <h2 className={cartStyles.productPrice}>{product.price * product.quantity}<span>$</span></h2>
             <div className={cartStyles.productCount}>
-                <button disabled={count <= 1} onClick={() => decrement(changeCount)}>-</button>
-                <p>{count}</p>
-                <button onClick={() => increment(changeCount)}>+</button>
+                <button disabled={product.quantity <= 1} onClick={() => dispatch(changeProductQuantity(product.quantity - 1, position))}>-</button>
+                <p>{product.quantity}</p>
+                <button onClick={() => dispatch(changeProductQuantity(product.quantity + 1, position))}>+</button>
             </div>
             <button onClick={() => handlerBuy(product,dispatch)} className={cartStyles.buy}>Buy</button>
             <button

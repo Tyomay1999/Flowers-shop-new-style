@@ -25,9 +25,9 @@ const Header = () => {
             </nav>
 
             <div className={headerStyles.icons}>
-                <i className="bi bi-heart"/>
+                {/*<i className="bi bi-heart"/>*/}
                 <Link href='/cart'><i className="bi bi-cart"/></Link>
-                <i className="bi bi-person"/>
+                {/*<i className="bi bi-person"/>*/}
             </div>
         </header>
     )
