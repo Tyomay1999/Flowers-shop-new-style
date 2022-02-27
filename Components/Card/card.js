@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {useRouter} from "next/router";
 import {shareHandler} from "../Common/share";
 import { selectProduct } from "../../Redux/Action/product.action";
+import { back_url, front_url } from "../../pages/api/sampleApi";
 
 
 export const handlerCart = (e, product, dispatch, setFlowerInCart, isFlowerInCart) => {
@@ -37,7 +38,7 @@ const Card = ({product}) => {
         let flowerInCart = JSON.parse(window.localStorage.getItem('cart'))?.filter(flowerId => flowerId === product?.id)
         setFlower(flowerInCart.length ? true : false)
     },[product])
-    const shareUrl = `http://localhost:3000/flower/${product.slug}`
+    const shareUrl = `${front_url}/flower/${product.slug}`
     useEffect(() => {
         if (cardRef.current) {
             cardRef.current.onload = () => setIsLoading(false)
@@ -55,7 +56,7 @@ const Card = ({product}) => {
             }
             {/*<div className={isLoading ? cardStyles.lazyImageLoader : cardStyles.image}>*/}
             <div className={cardStyles.image}>
-                <img ref={cardRef} src={photo} alt=""/>
+                <img ref={cardRef} src={`${back_url}/${photo}`} alt=""/>
                 <div onClick={(e) => e.stopPropagation()} className={cardStyles.icons}>
                     {/*<i className="bi bi-heart" />*/}
                     <i onClick={(e) => handlerCart(e, product, dispatch, setFlower, isFlowerInCart)}

@@ -3,6 +3,8 @@ import Footer from "../Components/Footer/footer";
 import Header from "../Components/Header/header";
 import AllProducts from "../Components/AllProducts/allProducts";
 import { allProducts } from "../Components/newProducts/config";
+import { fetchingDataWithAxiosMiddleware } from "../Redux/Action/common.action";
+import { ALL_FLOWERS_URL } from "./api/sampleApi";
 
 const AllFlowersPage = (props) => {
     return (
@@ -21,12 +23,28 @@ const AllFlowersPage = (props) => {
 }
 
 export async function getStaticProps() {
-    // const res = await fetch('https://.../posts')
-    // const posts = await res.json()
-    return {
-        props: {
-            products: allProducts,
-        },
+    try {
+        const response = await fetchingDataWithAxiosMiddleware("GET", ALL_FLOWERS_URL)
+        if(response?.status){
+            return {
+                props: {
+                    products: response.data?.flowers,
+                },
+            }
+        }
+        return {
+            props: {
+                products: allProducts,
+            },
+        }
+    }catch ( error ) {
+        console.log(error)
+        return {
+            props: {
+                products: allProducts,
+            },
+        }
+
     }
 }
 

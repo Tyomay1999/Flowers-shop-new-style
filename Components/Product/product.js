@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { shareHandler } from "../Common/share";
 import { v4 as uuidv4 } from 'uuid'
 import { handlerCart } from "../Card/card";
+import { back_url } from "../../pages/api/sampleApi";
 // import Card from "../Card/card";
 
 const handlerBuy = ( router ) => {
@@ -13,11 +14,11 @@ const handlerBuy = ( router ) => {
 const handlerTagClick = ( router ) => {
     router.push( '/cart' )
 }
-const Product = () => {
+const Product = ( { product }) => {
     //TODO add lazy loader
     const router = useRouter()
     const dispatch = useDispatch()
-    const product = useSelector( state => state?.productReducer.selectedProduct )
+    // const product = useSelector( state => state?.productReducer.selectedProduct )
     const [ isFlowerInCart, setFlowerInCart ] = useState( false )
     useEffect(() => {
         let flowerInCart = JSON.parse(window.localStorage.getItem('cart'))?.filter(flowerId => flowerId === product?.id)
@@ -25,15 +26,15 @@ const Product = () => {
     },[product])
     return <div className={ productStyle.main }>
         <div className={ productStyle.images }>
-            <img src={ product?.photo } alt={ product?.name }/>
+            <img src={ `${back_url}/${product?.photo}` } alt={ product?.name }/>
             {
-                product?.isNew && <h2 className={ productStyle.status }>New</h2>
+                product?.isNew ? <h2 className={ productStyle.status }>New</h2> : null
             }
             {
-                product?.discount && <h2 className={ productStyle.discount }>-{ product?.discount }%</h2>
+                product?.discount ? <h2 className={ productStyle.discount }>-{ product?.discount }%</h2> : null
             }
             {
-                shareHandler( 'Hunts', productStyle, 30, true )
+                shareHandler( `http://localhost:8080${router.asPath}`, productStyle, 30, true )
             }
         </div>
         <div className={ productStyle.productInfo }>

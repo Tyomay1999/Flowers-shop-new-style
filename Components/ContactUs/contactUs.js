@@ -3,18 +3,19 @@ import contactUsStyles from './contactUs.module.scss'
 import contactUsImage from '../../public/Assets/images/contact-img.svg'
 import {handlerDebounce} from "../Common/functions";
 import {useDispatch} from "react-redux";
+import { sendMessages } from "../../Redux/Action/common.action";
 
 
 const ContactUs = () => {
     const dispatch = useDispatch()
-    const [customerMessage, setCustomerMessage] = useState(null)
+    const [customerMessage, setCustomerMessage] = useState( { name: '' })
     return (
         <section className={contactUsStyles.contact} id="contact">
             <h1 className={contactUsStyles.heading}><span> contact </span> us </h1>
             <div className={contactUsStyles.row}>
                 <form onSubmit={(e) => {
                     e.preventDefault()
-                    dispatch(sendCustomerMessage(customerMessage))
+                    dispatch(sendMessages(customerMessage))
                 }} action="">
                     <input
                         type="text"

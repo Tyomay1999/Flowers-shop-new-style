@@ -1,0 +1,9 @@
+export const back_url = 'http://localhost:8000'
+export const front_url = 'http://localhost:8080'
+const defaultUrl = `${back_url}/api`
+export const ALL_CATEGORIES_URL = `${defaultUrl}/categories/all`
+export const GET_NEW_FLOWERS_URL = `${defaultUrl}/flower/new`
+export const GET_CART_FLOWERS_URL = `${defaultUrl}/flower/cart`
+export const ALL_FLOWERS_URL = `${defaultUrl}/flower/all`
+export const ADD_CUSTOMER_MESSAGE = `${defaultUrl}/customer/messages/send`
+export const GET_SIMILAR_PRODUCT = `${defaultUrl}/flower/similar`

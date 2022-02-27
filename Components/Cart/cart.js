@@ -30,7 +30,6 @@ const Cart = () => {
         //loading true or lazy loading
         dispatch(getCartProductsThunk(window.localStorage.getItem('cart')))
     },[])
-    console.log(cartProducts,'<--------------------cartProducts')
     const totalPrice = useCallback(() => handlerTotalPrice(cartProducts), [cartProducts])()
     return (
         <div className={cartStyles.main}>

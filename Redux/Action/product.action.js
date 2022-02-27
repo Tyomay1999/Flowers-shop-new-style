@@ -1,4 +1,11 @@
 import { allProducts, newProducts } from "../../Components/newProducts/config";
+import { fetchingDataWithAxiosMiddleware } from "./common.action";
+import {
+    ALL_FLOWERS_URL,
+    GET_CART_FLOWERS_URL,
+    GET_NEW_FLOWERS_URL,
+    GET_SIMILAR_PRODUCT
+} from "../../pages/api/sampleApi";
 
 export const GET_ALL_FLOWERS = 'GET ALL FLOWERS'
 export const GET_SIMILAR_FLOWERS = 'GET SIMILAR FLOWERS'
@@ -14,7 +21,7 @@ const setAllFlowers = payload => {
         payload
     }
 }
-export const changeProductQuantity = (quantity,position) => {
+export const changeProductQuantity = ( quantity, position ) => {
     return {
         type: CHANGE_PRODUCT_QUANTITY,
         quantity,
@@ -47,26 +54,32 @@ export const removeFlowerInCart = payload => {
     }
 }
 const similarProduct = payload => {
-    return{
+    return {
         type: GET_SIMILAR_FLOWERS,
         payload
     }
 }
 export const getAllFlowersThunk = () => async dispatch => {
     try {
-        // const data = await
+        const response = await fetchingDataWithAxiosMiddleware( "GET", ALL_FLOWERS_URL )
+        if ( response.status ) {
+            console.log( response.data )
+            await dispatch( setAllFlowers( response.data?.flowers ) )
+        }
     } catch ( error ) {
-        console.log(error)
+        console.log( error )
         throw error
     }
 }
 
 export const getNewFlowersThunk = () => async dispatch => {
     try {
-        //
-        return dispatch(setNewFlowers(newProducts))
+        const response = await fetchingDataWithAxiosMiddleware( "GET", GET_NEW_FLOWERS_URL )
+        if ( response.status ) {
+            return dispatch( setNewFlowers( response.data.newFlowers ) )
+        }
     } catch ( error ) {
-        console.log(error)
+        console.log( error )
         throw error
     }
 }
@@ -74,27 +87,38 @@ export const getNewFlowersThunk = () => async dispatch => {
 export const getCartProductsThunk = payload => async dispatch => {
     try {
         const falseArray = []
-        const cartProducts = JSON.parse(payload)
-        await allProducts.forEach((flower, index) => {
-            cartProducts.forEach(cartFlowerId => {
-                if (cartFlowerId === flower.id) {
-                    falseArray.push( { ...flower, quantity: 1 })
+        const cartProducts = JSON.parse( payload )
+        await allProducts.forEach( ( flower, index ) => {
+            cartProducts.forEach( cartFlowerId => {
+                if ( cartFlowerId === flower.id ) {
+                    falseArray.push( { ...flower, quantity: 1 } )
                 }
-            })
-        })
-        return dispatch(setCartData(falseArray))
+            } )
+        } )
+        const fd = new FormData()
+        fd.append("flowerIds", JSON.stringify(payload))
+        const response = await fetchingDataWithAxiosMiddleware("POST",GET_CART_FLOWERS_URL,fd)
+        if(response.status){
+            console.log(response.data.flowers)
+        }
+        return dispatch( setCartData( falseArray ) )
     } catch ( error ) {
-        console.log(error)
+        console.log( error )
         throw error
     }
 }
 
 export const getSimilarProductThunk = payload => async dispatch => {
     try {
-        //
-        return dispatch(similarProduct(payload))
+        const fd = new FormData()
+        fd.append( "categories", JSON.stringify( payload ) )
+        const response = await fetchingDataWithAxiosMiddleware( "POST", GET_SIMILAR_PRODUCT, fd )
+        console.log( response )
+        if ( response.status ) {
+            return dispatch( similarProduct( response.data.similarFlowers ) )
+        }
     } catch ( error ) {
-        console.log(error)
+        console.log( error )
         throw error
     }
 }
