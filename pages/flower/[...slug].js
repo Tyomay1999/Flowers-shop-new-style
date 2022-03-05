@@ -13,7 +13,7 @@ const Product_slug = ( props ) => {
                 <link rel='icon' href='/favicon.ico'/>
                 <link rel="stylesheet"
                       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
-                <title>Flower with slug</title>
+                <title>{ props.product.name }</title>
             </Head>
             <Header/>
             <Product product={props.product}/>
@@ -24,7 +24,6 @@ const Product_slug = ( props ) => {
 }
 
 export async function getServerSideProps( { params } ) {
-    // console.log(params.slug[0])
     try {
         const res = await fetchingDataWithAxiosMiddleware("GET",`http://localhost:8000/api/flower/slug/${params.slug[0]}`)
         return {

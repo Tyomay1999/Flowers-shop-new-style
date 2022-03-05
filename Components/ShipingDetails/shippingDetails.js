@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import shippingDetailsStyles from './shippingDetails.module.scss'
 import { v4 as uuidv4 } from 'uuid';
-import { deliveryTime } from "./shippingDetailsFunctionality";
-import { useSelector } from "react-redux";
+import { deliveryDate, deliveryTime, expiresDate } from "./shippingDetailsFunctionality";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import { sendOrderThunk } from "../../Redux/Action/product.action";
 
-
-export const validationRegExp = {
-    email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    numbersOnly: /^[0-9]{8}/,
-    phoneNumberAM: /^\+?[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$/,// For Armenian phone numbers only. Please use +374-11-11-11-11 or 374-11-11-11-11 syntax ;)
-    fixedPhoneNumberAM: /^[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}$/, // For Armenian phone numbers only. Please use 010-11-11-11 syntax ;)
-    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,// Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number (without symbols ;)
-}
 
 const handlerValueValidation = ( type, value ) => {
     switch ( type ) {
@@ -75,9 +69,16 @@ const valueLengthHandler = ( value, setErrorMessage ) => {
     }
     return console.log( false )
 }
+const handleOnInput = (e) => {
+    let maxNum = 4;
+    if (e.target.value.length > maxNum) {
+        e.target.value = e.target.value.slice(0, maxNum);
+    }
+}
 const cardNumbersError = 'Do not write longer than 4 characters and use only numbers'
 const ShippingDetails = () => {
     const router = useRouter()
+    const dispatch = useDispatch()
     const [ errorMessage, setErrorMessage ] = useState( { type: '', message: '' } )
     const [ shippingDetails, setShippingDetails ] = useState( {
         firstName: '',
@@ -107,7 +108,7 @@ const ShippingDetails = () => {
         }
     }, [] )
 
-    console.log( orderDetails, '<----------------------orderDetails' )
+    // console.log(shippingDetails,"<---shippingDetails", paymentDetails,"<-----paymentDetails", orderDetails, "<----orderDetails")
     return <div className={ shippingDetailsStyles.main }>
         <div className={ shippingDetailsStyles.shippingDetails }>
             <h1><i className="bi bi-truck"/>Shipping <span>Details</span></h1>
@@ -120,7 +121,7 @@ const ShippingDetails = () => {
                                handlerShippingDetails( 'firstName', e.target.value, shippingDetails, setShippingDetails )
                            }
                     />
-                    <label htmlFor='firstName'>First <span>Name*</span></label>
+                    <label htmlFor='firstName'>Recipient first <span>Name*</span></label>
                 </div>
                 <div className={ shippingDetailsStyles.wrapper }>
                     <input type='text' placeholder=' ' id='lastName'
@@ -129,7 +130,7 @@ const ShippingDetails = () => {
                                handlerShippingDetails( 'lastName', e.target.value, shippingDetails, setShippingDetails )
                            }
                     />
-                    <label htmlFor='lastName'>Last <span>Name</span></label>
+                    <label htmlFor='lastName'>Recipient Last <span>Name</span></label>
                 </div>
                 <div className={ shippingDetailsStyles.wrapper }>
                     <input type='email' placeholder=' ' id='Email'
@@ -138,7 +139,7 @@ const ShippingDetails = () => {
                                handlerShippingDetails( 'email', e.target.value, shippingDetails, setShippingDetails )
                            }
                     />
-                    <label htmlFor='Email'>Email <span>address</span></label>
+                    <label htmlFor='Email'>Your email <span>address</span></label>
                 </div>
                 <div className={ shippingDetailsStyles.wrapper }>
                     <input type='number' placeholder=' ' id='phone'
@@ -147,7 +148,7 @@ const ShippingDetails = () => {
                                handlerShippingDetails( 'phone', e.target.value, shippingDetails, setShippingDetails )
                            }
                     />
-                    <label htmlFor='phone'>Phone <span>*</span></label>
+                    <label htmlFor='phone'>Recipient <span>phone*</span></label>
                 </div>
                 <div className={ shippingDetailsStyles.wrapper }>
                     <input type='text' value='Moscow' disabled placeholder=' ' id='city'
@@ -164,12 +165,12 @@ const ShippingDetails = () => {
                                handlerShippingDetails( 'address', e.target.value, shippingDetails, setShippingDetails )
                            }
                     />
-                    <label htmlFor='Address'>Address <span>*</span></label>
+                    <label htmlFor='Address'>Recipient <span>address*</span></label>
                 </div>
                 <div className={ shippingDetailsStyles.wrapper }>
                     <label className={ shippingDetailsStyles[ 'custom-select' ] } htmlFor="styledSelect1">
                         <select id="styledSelect1" name="options"
-                                defaultValue={ shippingDetails.deliveryDate }
+                                value={shippingDetails.deliveryDate}
                                 onChange={ ( e ) =>
                                     handlerShippingDetails( 'deliveryDate', e.target.value, shippingDetails, setShippingDetails )
                                 }
@@ -178,7 +179,7 @@ const ShippingDetails = () => {
                                 Date of Delivery
                             </option>
                             {
-                                deliveryTime.map( ( date, index ) => {
+                                deliveryDate().map( ( date, index ) => {
                                     return <option value={ index } key={ uuidv4() }>
                                         { date }
                                     </option>
@@ -190,6 +191,7 @@ const ShippingDetails = () => {
                 <div className={ shippingDetailsStyles.wrapper }>
                     <label className={ shippingDetailsStyles[ 'custom-select' ] } htmlFor="styledSelect1">
                         <select id="styledSelect1" name="options"
+                                value={shippingDetails.deliveryTime}
                                 defaultValue={ shippingDetails.deliveryTime }
                                 onChange={ ( e ) =>
                                     handlerShippingDetails( 'deliveryTime', e.target.value, shippingDetails, setShippingDetails )
@@ -259,11 +261,12 @@ const ShippingDetails = () => {
             </div>
             <div className={ shippingDetailsStyles.cardContainer }>
                 <h1>TOTAL<span>Payment</span>: { orderDetails[0] }<span>$</span></h1>
-                <div className={ shippingDetailsStyles.cardNumbers }>
+                <form className={ shippingDetailsStyles.cardNumbers }>
                     <p>Card <span>numbers</span>:</p>
                     <input type='number'
+                           onInput={handleOnInput}
                            onChange={ ( e ) => {
-                               if ( e.target.value.length === 4 ) {
+                               if ( e.target.value.length < 5 ) {
                                    setErrorMessage( { type: '', message: '' } )
                                    return handlerPaymentDetails( 'cardNumberFirst', e.target.value, paymentDetails, setPaymentDetails )
                                }
@@ -271,8 +274,9 @@ const ShippingDetails = () => {
                            } }
                     />-
                     <input type='number'
+                           onInput={handleOnInput}
                            onChange={ ( e ) => {
-                               if ( e.target.value.length === 4 ) {
+                               if ( e.target.value.length < 5 ) {
                                    setErrorMessage( { type: '', message: '' } )
                                    return handlerPaymentDetails( 'cardNumberSecond', e.target.value, paymentDetails, setPaymentDetails )
                                }
@@ -281,8 +285,9 @@ const ShippingDetails = () => {
                            } }
                     />-
                     <input type='number'
+                           onInput={handleOnInput}
                            onChange={ ( e ) => {
-                               if ( e.target.value.length === 4 ) {
+                               if ( e.target.value.length === 4  ) {
                                    setErrorMessage( { type: '', message: '' } )
                                    return handlerPaymentDetails( 'cardNumberThird', e.target.value, paymentDetails, setPaymentDetails )
                                }
@@ -291,8 +296,9 @@ const ShippingDetails = () => {
                            } }
                     />-
                     <input type='number'
+                           onInput={handleOnInput}
                            onChange={ ( e ) => {
-                               if ( e.target.value.length === 4 ) {
+                               if ( e.target.value.length < 5 ) {
                                    setErrorMessage( { type: '', message: '' } )
                                    return handlerPaymentDetails( 'cardNumberForth', e.target.value, paymentDetails, setPaymentDetails )
                                }
@@ -300,7 +306,7 @@ const ShippingDetails = () => {
 
                            } }
                     />
-                </div>
+                </form>
                 {
                     errorMessage.type === 'card numbers' &&
                     <p className={ shippingDetailsStyles.errorMessage }>{ errorMessage.message }</p>
@@ -327,6 +333,7 @@ const ShippingDetails = () => {
                     <div className={ shippingDetailsStyles.wrapper }>
                         <label className={ shippingDetailsStyles[ 'custom-select' ] } htmlFor="styledSelect1">
                             <select id="styledSelect1" name="options"
+                                    value={paymentDetails.expires}
                                     onChange={ ( e ) =>
                                         handlerPaymentDetails( 'expires', e.target.value, paymentDetails, setPaymentDetails )
                                     }
@@ -335,7 +342,7 @@ const ShippingDetails = () => {
                                     Expires
                                 </option>
                                 {
-                                    deliveryTime.map( ( elem, index ) => {
+                                    expiresDate().map( ( elem, index ) => {
                                         return <option value={ index } key={ uuidv4() }>
                                             { elem }
                                         </option>
@@ -360,7 +367,15 @@ const ShippingDetails = () => {
                         <label htmlFor='CVV'>CVV <span>*</span></label>
                     </div>
                 </div>
-                <button disabled={ errorMessage.message }>Pay</button>
+                <button onClick={() => dispatch(sendOrderThunk(shippingDetails,orderDetails,paymentDetails))}
+                        // disabled={
+                        //     !shippingDetails.firstName || !shippingDetails.phone || !shippingDetails.address
+                        //     || !shippingDetails.deliveryTime || !shippingDetails.deliveryDate || !paymentDetails.cardNumberFirst
+                        //     || !paymentDetails.cardNumberSecond || !paymentDetails.cardNumberThird || !paymentDetails.cardNumberForth
+                        //     || !paymentDetails.cardHolderFirstName || !paymentDetails.cardHolderLastName || !paymentDetails.expires
+                        //     || !paymentDetails.cvv || !orderDetails[0]
+                        // }
+                >Pay</button>
             </div>
         </div>
     </div>

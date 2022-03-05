@@ -5,8 +5,15 @@ import AllProducts from "../Components/AllProducts/allProducts";
 import { allProducts } from "../Components/newProducts/config";
 import { fetchingDataWithAxiosMiddleware } from "../Redux/Action/common.action";
 import { ALL_FLOWERS_URL } from "./api/sampleApi";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setAllFlowers } from "../Redux/Action/product.action";
 
 const AllFlowersPage = (props) => {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(setAllFlowers(props.products))
+    },[])
     return (
         <>
             <Head>
@@ -15,13 +22,12 @@ const AllFlowersPage = (props) => {
                 <title>All flowers</title>
             </Head>
             <Header />
-            {/*TODO design problem in card witch situated in allProducts component*/}
             <AllProducts products={props.products} />
             <Footer />
         </>
     )
 }
-
+// TODO check getStaticProps
 export async function getStaticProps() {
     try {
         const response = await fetchingDataWithAxiosMiddleware("GET", ALL_FLOWERS_URL)

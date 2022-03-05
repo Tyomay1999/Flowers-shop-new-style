@@ -2,6 +2,7 @@ import React from 'react'
 import headerStyles from './header.module.scss'
 import logo from '../../public/Assets/images/logo.png'
 import Link from 'next/link'
+import Message from "../Common/Message/message";
 
 
 const Header = () => {
@@ -23,7 +24,7 @@ const Header = () => {
                 <Link href="#newProducts">New products</Link>
                 <Link href="#contact">contact</Link>
             </nav>
-
+            <Message />
             <div className={headerStyles.icons}>
                 {/*<i className="bi bi-heart"/>*/}
                 <Link href='/cart'><i className="bi bi-cart"/></Link>

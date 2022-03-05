@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import cartStyles from './cart.module.scss'
 import { useDispatch } from "react-redux";
 import { changeProductQuantity, removeFlowerInCart } from "../../Redux/Action/product.action";
+import { back_url } from "../../pages/api/sampleApi";
 
 const increment = (changerHook) => {
     changerHook(prevCount => prevCount + 1)
@@ -25,7 +26,7 @@ export const handlerBuy = (product,dispatch) => {
 const ProductModel = ({product,position}) => {
     const dispatch = useDispatch()
     return <>
-        <img src={product.photo} alt='flower1'/>
+        <img src={`${back_url}/${product.photo}`} alt='flower1'/>
         <div className={cartStyles.productInfo}>
             <h1 className={cartStyles.flowerName}>{product.name}</h1>
             <h2 className={cartStyles.productPrice}>{product.price * product.quantity}<span>$</span></h2>

@@ -8,42 +8,43 @@ import {
     VKShareButton, WhatsappIcon, WhatsappShareButton
 } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { setMessage } from "../../Redux/Action/common.action";
 
-export const shareHandler = (shareUrl,styleSheet,size,round) => {
-    return <div className={styleSheet.share}>
-        <div className={styleSheet.shareWrapper}>
-            <FacebookShareButton url={shareUrl}>
-                <FacebookIcon size={size} round={round}/>
+export const shareHandler = ( shareUrl, styleSheet, size, round, dispatch ) => {
+    return <div className={ styleSheet.share }>
+        <div className={ styleSheet.shareWrapper }>
+            <FacebookShareButton url={ shareUrl }>
+                <FacebookIcon size={ size } round={ round }/>
             </FacebookShareButton>
         </div>
-        <div className={styleSheet.shareWrapper}>
-            <VKShareButton  url={shareUrl}>
-                <VKIcon size={size}  round={round}/>
+        <div className={ styleSheet.shareWrapper }>
+            <VKShareButton url={ shareUrl }>
+                <VKIcon size={ size } round={ round }/>
             </VKShareButton>
         </div>
-        <div className={styleSheet.shareWrapper}>
-            <TelegramShareButton url={shareUrl}>
-                <TelegramIcon size={size} round={round}/>
+        <div className={ styleSheet.shareWrapper }>
+            <TelegramShareButton url={ shareUrl }>
+                <TelegramIcon size={ size } round={ round }/>
             </TelegramShareButton>
         </div>
-        <div className={styleSheet.shareWrapper}>
-            <ViberShareButton url={shareUrl}>
-                <ViberIcon size={size} round={round}/>
+        <div className={ styleSheet.shareWrapper }>
+            <ViberShareButton url={ shareUrl }>
+                <ViberIcon size={ size } round={ round }/>
             </ViberShareButton>
         </div>
-        <div className={styleSheet.shareWrapper}>
-            <WhatsappShareButton url={shareUrl}>
-                <WhatsappIcon size={size} round={round}/>
+        <div className={ styleSheet.shareWrapper }>
+            <WhatsappShareButton url={ shareUrl }>
+                <WhatsappIcon size={ size } round={ round }/>
             </WhatsappShareButton>
         </div>
-        <div className={styleSheet.shareWrapper}>
-            <FacebookMessengerShareButton url={shareUrl}>
-                <FacebookMessengerIcon size={size} round={round}/>
+        <div className={ styleSheet.shareWrapper }>
+            <FacebookMessengerShareButton url={ shareUrl }>
+                <FacebookMessengerIcon size={ size } round={ round }/>
             </FacebookMessengerShareButton>
         </div>
-        <div className={styleSheet.shareWrapper}>
-            <CopyToClipboard text={`${shareUrl}`}>
-                <i className="bi bi-files" />
+        <div className={ styleSheet.shareWrapper } onClick={() => dispatch(setMessage("Copied to clipboard"))}>
+            <CopyToClipboard text={ `${ shareUrl }` }>
+                <i className="bi bi-files"/>
             </CopyToClipboard>
         </div>
     </div>

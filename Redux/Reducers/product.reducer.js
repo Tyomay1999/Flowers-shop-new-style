@@ -4,16 +4,17 @@ import {
     GET_CART_FLOWERS,
     GET_NEW_FLOWERS,
     GET_SIMILAR_FLOWERS,
-    REMOVE_FLOWER_IN_CART, SELECTED_PRODUCT
+    REMOVE_FLOWER_IN_CART, SELECTED_PRODUCT, SET_CATEGORIES
 } from "../Action/product.action";
 
 
 const initialState = {
     newProducts: null,
-    allProducts: null,
+    allProducts: [],
     selectedProduct: null,
     similarProduct: null,
-    cartProducts: []
+    cartProducts: [],
+    categories: []
 }
 
 export const productReducer = ( state = initialState, action ) => {
@@ -31,6 +32,8 @@ export const productReducer = ( state = initialState, action ) => {
             return {...state, cartProducts: [...cartProducts]}
         case SELECTED_PRODUCT:
             return {...state, selectedProduct: action.payload}
+        case SET_CATEGORIES:
+            return {...state, categories: [...action.payload]}
         case CHANGE_PRODUCT_QUANTITY:
            state.cartProducts[action.position].quantity = action.quantity
            return {...state, cartProducts: [...state.cartProducts]}

@@ -1,7 +1,8 @@
 import React from 'react'
 import allProductsStyles from "./allProducts.module.scss";
+import { v4 as uuidv4 } from "uuid";
 
-export const filterOpenFunction = ( openFilter ) => {
+export const filterOpenFunction = ( openFilter, categories,handlerProductData, dispatch ) => {
     return <div
         onClick={ ( e ) => e.stopPropagation() }
         className={ allProductsStyles.filterWrapper }
@@ -23,50 +24,22 @@ export const filterOpenFunction = ( openFilter ) => {
                 </div>
             </div>
             <ul className={ allProductsStyles.categoriesBlock }>
-                <li>Category A <span>(123)</span></li>
-                <li>Category B <span>(123)</span></li>
-                <li>Category C <span>(123)</span></li>
-                <li>Category D <span>(123)</span></li>
-                <li>Category E <span>(123)</span></li>
-                <li>Category F <span>(123)</span></li>
-                <li>Category G <span>(123)</span></li>
-                <li>Category H <span>(123)</span></li>
-                <li>Category R <span>(123)</span></li>
-                <li>Category C <span>(123)</span></li>
-                <li>Category D <span>(123)</span></li>
-                <li>Category E <span>(123)</span></li>
-                <li>Category F <span>(123)</span></li>
-                <li>Category G <span>(123)</span></li>
-                <li>Category H <span>(123)</span></li>
-                <li>Category R <span>(123)</span></li>
-                <li>Category C <span>(123)</span></li>
-                <li>Category D <span>(123)</span></li>
-                <li>Category E <span>(123)</span></li>
-                <li>Category F <span>(123)</span></li>
-                <li>Category G <span>(123)</span></li>
-                <li>Category H <span>(123)</span></li>
-                <li>Category R <span>(123)</span></li>
-                <li>Category C <span>(123)</span></li>
-                <li>Category D <span>(123)</span></li>
-                <li>Category E <span>(123)</span></li>
-                <li>Category F <span>(123)</span></li>
-                <li>Category G <span>(123)</span></li>
-                <li>Category H <span>(123)</span></li>
-                <li>Category R <span>(123)</span></li>
-                <li>Category C <span>(123)</span></li>
-                <li>Category D <span>(123)</span></li>
-                <li>Category E <span>(123)</span></li>
-                <li>Category F <span>(123)</span></li>
-                <li>Category G <span>(123)</span></li>
-                <li>Category H <span>(123)</span></li>
-                <li>Category R <span>(123)</span></li>
-                <li>Category C <span>(123)</span></li>
-                <li>Category D <span>(123)</span></li>
-                <li>Category E <span>(123)</span></li>
-                <li>Category F <span>(123)</span></li>
-                <li>Category G <span>(123)</span></li>
-                <li>Category H <span>(123)</span></li>
-                <li>Category R <span>(123)</span></li>
+                {
+                    categories.map( category => {
+                        if ( category?.flower_ids?.length ) {
+                            return <li
+                                onClick={ async () => {
+                                    await handlerProductData(category,dispatch)
+                                }
+                                }
+                                key={ uuidv4() }>
+                                { category?.name }
+                                <span>({ category?.flower_ids?.length - 1 })</span>
+                            </li>
+                        }
+                        return null
+                    } )
+                }
             </ul>
         </div>
         <button>Conf<span>irm</span></button>

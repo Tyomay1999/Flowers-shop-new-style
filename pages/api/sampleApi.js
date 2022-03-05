@@ -7,3 +7,4 @@ export const GET_CART_FLOWERS_URL = `${defaultUrl}/flower/cart`
 export const ALL_FLOWERS_URL = `${defaultUrl}/flower/all`
 export const ADD_CUSTOMER_MESSAGE = `${defaultUrl}/customer/messages/send`
 export const GET_SIMILAR_PRODUCT = `${defaultUrl}/flower/similar`
+export const SET_ORDER = `${defaultUrl}/order/set`

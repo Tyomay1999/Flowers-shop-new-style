@@ -39,7 +39,7 @@
   position: relative;
   width: 300px;
   max-height: 380px;
-  .box:hover .image .icons {
+  &:hover .image .icons {
     bottom: 0;
   }
 

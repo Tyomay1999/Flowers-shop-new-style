@@ -5,24 +5,27 @@ import {useRouter} from "next/router";
 import {shareHandler} from "../Common/share";
 import { selectProduct } from "../../Redux/Action/product.action";
 import { back_url, front_url } from "../../pages/api/sampleApi";
+import { setMessage } from "../../Redux/Action/common.action";
 
 
 export const handlerCart = (e, product, dispatch, setFlowerInCart, isFlowerInCart) => {
     e.stopPropagation();
-    if (isFlowerInCart) {
+    if (isFlowerInCart) {//delete
         let localStorageCart = JSON.parse(window.localStorage.getItem('cart'))
         localStorageCart = localStorageCart?.filter(flower => flower !== product.id)
         window.localStorage.setItem("cart", JSON.stringify(localStorageCart?.length ? [...localStorageCart] : []))
+        dispatch(setMessage("Removed to your cart"))
     } else {
-        if (!window.localStorage.getItem("cart")) {
+        if (!window.localStorage.getItem("cart")) {//create
             window.localStorage.setItem("cart", JSON.stringify([product.id]))
-        } else {
+            dispatch(setMessage("Added to your cart"))
+        } else {//add
             const localStorageCart = JSON.parse(window.localStorage.getItem('cart'))
             window.localStorage.setItem("cart", JSON.stringify([...localStorageCart, product.id]))
         }
+        dispatch(setMessage("Added to your cart"))
     }
     setFlowerInCart(!isFlowerInCart)
-    // dispatch(addProduct(product))
 }
 export const chooseProduct = (product, dispatch) => {
     dispatch(selectProduct(product))
@@ -47,10 +50,15 @@ const Card = ({product}) => {
     return (
         <div
             onClick={() => {
-                router.push(`/flower/${product.slug}`)
+                router.push({
+                    pathname: `/flower/${product.slug}`,
+                    query: {
+                        flower: product.name
+                    }
+                })
                 chooseProduct(product, dispatch)
             }} className={isLoading ? cardStyles.lazyLoaderContainer : cardStyles.box}>
-            <span className={isLoading ? cardStyles.isLoading : cardStyles.discount}>-{discount}%</span>
+            { discount ? <span className={ isLoading ? cardStyles.isLoading : cardStyles.discount }>-{ discount }%</span> : null }
             {
                 isNew && <span className={isLoading ? cardStyles.isLoading : cardStyles.type}>new</span>
             }
@@ -61,21 +69,19 @@ const Card = ({product}) => {
                     {/*<i className="bi bi-heart" />*/}
                     <i onClick={(e) => handlerCart(e, product, dispatch, setFlower, isFlowerInCart)}
                        className={`bi bi-cart-${isFlowerInCart ? 'check' : 'plus'}`}/>
-                    {/*TODO change url and share design with responsive*/}
                     <div className={cardStyles.shareBlock}>
                         <i className="bi bi-share-fill"/>
                         {
-                            shareHandler(shareUrl, cardStyles, 30, true)
+                            shareHandler(shareUrl, cardStyles, 30, true, dispatch)
                         }
                     </div>
                 </div>
             </div>
             <div className={isLoading ? cardStyles.isLoading : cardStyles.content}>
                 <h3>{name}</h3>
-                <div className={cardStyles.price}> ${price} <span>${lastPrice}</span></div>
+                <div className={cardStyles.price}> ${price} {lastPrice ? <span>${lastPrice}</span> : null}</div>
             </div>
         </div>
     )
 }
-//TODO review jsx
 export default Card

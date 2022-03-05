@@ -34,7 +34,7 @@ const Product = ( { product }) => {
                 product?.discount ? <h2 className={ productStyle.discount }>-{ product?.discount }%</h2> : null
             }
             {
-                shareHandler( `http://localhost:8080${router.asPath}`, productStyle, 30, true )
+                shareHandler( `http://localhost:8080${router.asPath}`, productStyle, 30, true,dispatch )
             }
         </div>
         <div className={ productStyle.productInfo }>

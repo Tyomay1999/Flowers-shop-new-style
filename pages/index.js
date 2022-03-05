@@ -6,6 +6,12 @@ import Footer from "../Components/Footer/footer";
 import Header from "../Components/Header/header";
 import {useSelector} from "react-redux";
 
+//TODO review code
+//TODO testing and optimize components
+//TODO add api errors
+//TODO set loading
+//TODO check navigation
+
 export default function Home() {
     const loading = useSelector(state => state?.commonReducer.loading)
     if (loading) {

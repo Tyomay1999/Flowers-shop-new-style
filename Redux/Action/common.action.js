@@ -3,6 +3,19 @@ import { ADD_CUSTOMER_MESSAGE } from "../../pages/api/sampleApi";
 
 // export const SEND_CUSTOMER_MESSAGE = "SEND CUSTOMER MESSAGE"
 export const SET_ORDER_DETAILS = "SET ORDER DETAILS"
+export const SET_MESSAGE = "SET MESSAGE"
+export const CLEAR_MESSAGE = "CLEAR MESSAGE"
+
+export const setMessage = payload => {
+    return {
+        type: SET_MESSAGE,
+        payload
+    }
+}
+
+export const clearMessage = () => {
+    return { type: CLEAR_MESSAGE }
+}
 
 export const setOrderDetails = payload => {
     return {

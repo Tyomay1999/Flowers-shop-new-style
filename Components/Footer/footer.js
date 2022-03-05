@@ -1,18 +1,26 @@
 import React from 'react'
 import footerStyles from './footer.module.scss'
 import { footerLocalImages } from '../../public/Assets/images/imagesContrller'
-// import { Link } from 'react-router-dom';
 import Link from 'next/link'
 import Iframe from "react-iframe";
+import { CopyToClipboard } from "react-copy-to-clipboard/lib/Component";
+import { useDispatch } from "react-redux";
+import { setMessage } from "../../Redux/Action/common.action";
 
 
 const Footer = () => {
+    const dispatch = useDispatch()
+    const shopInfo = {
+        phone: '+123-456-7890',
+        email: 'example@mail.ru',
+        address: "Russia, Moscow - 400104"
+    }
     return (
-        <footer className={footerStyles.main}>
+        <footer className={ footerStyles.main }>
 
-            <div className={footerStyles['box-container']}>
+            <div className={ footerStyles[ 'box-container' ] }>
 
-                <div className={footerStyles.box}>
+                <div className={ footerStyles.box }>
                     <h3>quick links</h3>
                     <Link href='/'>home</Link>
                     <Link href='/'>about</Link>
@@ -21,7 +29,7 @@ const Footer = () => {
                     <Link href='/'>contact</Link>
                 </div>
 
-                <div className={footerStyles.box}>
+                <div className={ footerStyles.box }>
                     <h3>locations</h3>
                     <span>Moscow</span>
                     <Iframe
@@ -35,17 +43,31 @@ const Footer = () => {
                     />
                 </div>
 
-                <div className={footerStyles.box}>
+                <div className={ footerStyles.box }>
                     <h3>contact info</h3>
-                    <span>+123-456-7890</span>
-                    <span>example@gmail.com</span>
-                    <span>mumbai, india - 400104</span>
-                    <img src={footerLocalImages.payment} alt="" />
+                    <CopyToClipboard text={ shopInfo.phone }>
+                        <span onClick={ () => dispatch( setMessage( 'Coped to Clipboard' ) ) }>
+                            <a href={ `tel: ${ shopInfo.phone }` }>
+                                <i className="bi bi-telephone-forward-fill"/> { shopInfo.phone }
+                            </a>
+                        </span>
+                    </CopyToClipboard>
+                    <CopyToClipboard text={ shopInfo.email }>
+                        <span onClick={ () => dispatch( setMessage( 'Coped to Clipboard' ) ) }>
+                            <i className="bi bi-envelope"/> { shopInfo.email }
+                        </span>
+                    </CopyToClipboard>
+                    <CopyToClipboard text={ shopInfo.address }>
+                        <span onClick={ () => dispatch( setMessage( 'Coped to Clipboard' ) ) }>
+                            <i className="bi bi-geo-alt"/> { shopInfo.address }
+                        </span>
+                    </CopyToClipboard>
+                    <img src={ footerLocalImages.payment } alt=""/>
                 </div>
 
             </div>
 
-            {/* <div className={footerStyles.credit}> created by <span> @Tyomay1999 </span> | all rights reserved </div> */}
+            {/*<div className={ footerStyles.credit }> created by <span> @Tyomay1999 </span> | all rights reserved</div>*/}
 
         </footer>
     )

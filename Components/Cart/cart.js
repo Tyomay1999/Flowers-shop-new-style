@@ -25,11 +25,14 @@ const handlerConfirm = (cartProducts,totalPrice,dispatch,router) => {
 const Cart = () => {
     const router = useRouter()
     const dispatch = useDispatch()
-    const cartProducts = useSelector(state => state?.productReducer.cartProducts)
+    let cartProducts = useSelector(state => state?.productReducer.cartProducts)
     useEffect(() => {
         //loading true or lazy loading
         dispatch(getCartProductsThunk(window.localStorage.getItem('cart')))
     },[])
+    useEffect(() => {
+        cartProducts = cartProducts.map(product => product.quantity = 1)// TODO move this in back
+    },[cartProducts.length])
     const totalPrice = useCallback(() => handlerTotalPrice(cartProducts), [cartProducts])()
     return (
         <div className={cartStyles.main}>
@@ -52,8 +55,7 @@ const Cart = () => {
                         <h1>Total <span>Price</span></h1>
                         {
                             cartProducts.map(product => {
-                                console.log(product,'<------------------product')
-                                return <p style={{borderBottom: "1px solid pink"}}>{ product.quantity } x {product.name} ... {product.price * product.quantity}<span>$</span></p>
+                                return <p key={uuidv4()}  style={{borderBottom: "1px solid pink"}}>{ product.quantity } x {product.name} ... {product.price * product.quantity}<span>$</span></p>
                             })
                         }
                         <div className={cartStyles.total}>
