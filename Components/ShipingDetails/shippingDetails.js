@@ -4,24 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { deliveryDate, deliveryTime, expiresDate } from "./shippingDetailsFunctionality";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { sendOrderThunk } from "../../Redux/Action/product.action";
+import Loading from "../Common/Loading/loading";
 
 
-const handlerValueValidation = ( type, value ) => {
-    switch ( type ) {
-        case 'number':
-            return numeralRegex.test( value )
-        case 'letterOnly':
-            const withoutNumberRegex = new RegExp( /[^\d]/g )
-            return withoutNumberRegex.test( value )
-        case 'email':
-            const emailRegex = new RegExp( /[^\d]/g )
-            return emailRegex.test( value )
-        default:
-            return false
-    }
-}
 const handlerShippingDetails = ( type, value, state, stateHook ) => {
     switch ( type ) {
         case 'firstName':
@@ -63,22 +49,19 @@ const handlerPaymentDetails = ( type, value, state, stateHook ) => {
             return stateHook( { ...state, cvv: value } )
     }
 }
-const valueLengthHandler = ( value, setErrorMessage ) => {
-    if ( value.length === 4 ) {
-        return console.log( true )
-    }
-    return console.log( false )
-}
-const handleOnInput = (e) => {
+
+const handleOnInput = ( e ) => {
     let maxNum = 4;
-    if (e.target.value.length > maxNum) {
-        e.target.value = e.target.value.slice(0, maxNum);
+    if ( e.target.value.length > maxNum ) {
+        e.target.value = e.target.value.slice( 0, maxNum );
     }
 }
 const cardNumbersError = 'Do not write longer than 4 characters and use only numbers'
+
 const ShippingDetails = () => {
     const router = useRouter()
     const dispatch = useDispatch()
+    const isLoading = useSelector( state => state?.commonReducer.loading )
     const [ errorMessage, setErrorMessage ] = useState( { type: '', message: '' } )
     const [ shippingDetails, setShippingDetails ] = useState( {
         firstName: '',
@@ -108,8 +91,8 @@ const ShippingDetails = () => {
         }
     }, [] )
 
-    // console.log(shippingDetails,"<---shippingDetails", paymentDetails,"<-----paymentDetails", orderDetails, "<----orderDetails")
     return <div className={ shippingDetailsStyles.main }>
+        { isLoading && <Loading/> }
         <div className={ shippingDetailsStyles.shippingDetails }>
             <h1><i className="bi bi-truck"/>Shipping <span>Details</span></h1>
             <div className={ shippingDetailsStyles.content }>
@@ -170,7 +153,7 @@ const ShippingDetails = () => {
                 <div className={ shippingDetailsStyles.wrapper }>
                     <label className={ shippingDetailsStyles[ 'custom-select' ] } htmlFor="styledSelect1">
                         <select id="styledSelect1" name="options"
-                                value={shippingDetails.deliveryDate}
+                                value={ shippingDetails.deliveryDate }
                                 onChange={ ( e ) =>
                                     handlerShippingDetails( 'deliveryDate', e.target.value, shippingDetails, setShippingDetails )
                                 }
@@ -179,8 +162,8 @@ const ShippingDetails = () => {
                                 Date of Delivery
                             </option>
                             {
-                                deliveryDate().map( ( date, index ) => {
-                                    return <option value={ index } key={ uuidv4() }>
+                                deliveryDate().map( date => {
+                                    return <option value={ date } key={ uuidv4() }>
                                         { date }
                                     </option>
                                 } )
@@ -191,7 +174,7 @@ const ShippingDetails = () => {
                 <div className={ shippingDetailsStyles.wrapper }>
                     <label className={ shippingDetailsStyles[ 'custom-select' ] } htmlFor="styledSelect1">
                         <select id="styledSelect1" name="options"
-                                value={shippingDetails.deliveryTime}
+                                value={ shippingDetails.deliveryTime }
                                 defaultValue={ shippingDetails.deliveryTime }
                                 onChange={ ( e ) =>
                                     handlerShippingDetails( 'deliveryTime', e.target.value, shippingDetails, setShippingDetails )
@@ -201,8 +184,8 @@ const ShippingDetails = () => {
                                 Time of Delivery
                             </option>
                             {
-                                deliveryTime.map( ( time, index ) => {
-                                    return <option value={ index } key={ uuidv4() }>
+                                deliveryTime( '', shippingDetails.deliveryDate ).map( time => {
+                                    return <option value={ time } key={ uuidv4() }>
                                         { time }
                                     </option>
                                 } )
@@ -260,11 +243,11 @@ const ShippingDetails = () => {
                 </div>
             </div>
             <div className={ shippingDetailsStyles.cardContainer }>
-                <h1>TOTAL<span>Payment</span>: { orderDetails[0] }<span>$</span></h1>
+                <h1>TOTAL<span>Payment</span>: { orderDetails[ 0 ] }<span>$</span></h1>
                 <form className={ shippingDetailsStyles.cardNumbers }>
                     <p>Card <span>numbers</span>:</p>
                     <input type='number'
-                           onInput={handleOnInput}
+                           onInput={ handleOnInput }
                            onChange={ ( e ) => {
                                if ( e.target.value.length < 5 ) {
                                    setErrorMessage( { type: '', message: '' } )
@@ -274,7 +257,7 @@ const ShippingDetails = () => {
                            } }
                     />-
                     <input type='number'
-                           onInput={handleOnInput}
+                           onInput={ handleOnInput }
                            onChange={ ( e ) => {
                                if ( e.target.value.length < 5 ) {
                                    setErrorMessage( { type: '', message: '' } )
@@ -285,9 +268,9 @@ const ShippingDetails = () => {
                            } }
                     />-
                     <input type='number'
-                           onInput={handleOnInput}
+                           onInput={ handleOnInput }
                            onChange={ ( e ) => {
-                               if ( e.target.value.length === 4  ) {
+                               if ( e.target.value.length === 4 ) {
                                    setErrorMessage( { type: '', message: '' } )
                                    return handlerPaymentDetails( 'cardNumberThird', e.target.value, paymentDetails, setPaymentDetails )
                                }
@@ -296,7 +279,7 @@ const ShippingDetails = () => {
                            } }
                     />-
                     <input type='number'
-                           onInput={handleOnInput}
+                           onInput={ handleOnInput }
                            onChange={ ( e ) => {
                                if ( e.target.value.length < 5 ) {
                                    setErrorMessage( { type: '', message: '' } )
@@ -333,17 +316,18 @@ const ShippingDetails = () => {
                     <div className={ shippingDetailsStyles.wrapper }>
                         <label className={ shippingDetailsStyles[ 'custom-select' ] } htmlFor="styledSelect1">
                             <select id="styledSelect1" name="options"
-                                    value={paymentDetails.expires}
-                                    onChange={ ( e ) =>
+                                    value={ paymentDetails.expires }
+                                    onChange={ ( e ) => {
                                         handlerPaymentDetails( 'expires', e.target.value, paymentDetails, setPaymentDetails )
+                                    }
                                     }
                             >
                                 <option value="">
                                     Expires
                                 </option>
                                 {
-                                    expiresDate().map( ( elem, index ) => {
-                                        return <option value={ index } key={ uuidv4() }>
+                                    expiresDate().map( elem => {
+                                        return <option value={ elem } key={ uuidv4() }>
                                             { elem }
                                         </option>
                                     } )
@@ -367,15 +351,16 @@ const ShippingDetails = () => {
                         <label htmlFor='CVV'>CVV <span>*</span></label>
                     </div>
                 </div>
-                <button onClick={() => dispatch(sendOrderThunk(shippingDetails,orderDetails,paymentDetails))}
-                        // disabled={
-                        //     !shippingDetails.firstName || !shippingDetails.phone || !shippingDetails.address
-                        //     || !shippingDetails.deliveryTime || !shippingDetails.deliveryDate || !paymentDetails.cardNumberFirst
-                        //     || !paymentDetails.cardNumberSecond || !paymentDetails.cardNumberThird || !paymentDetails.cardNumberForth
-                        //     || !paymentDetails.cardHolderFirstName || !paymentDetails.cardHolderLastName || !paymentDetails.expires
-                        //     || !paymentDetails.cvv || !orderDetails[0]
-                        // }
-                >Pay</button>
+                <button onClick={ () => dispatch( sendOrderThunk( shippingDetails, orderDetails, paymentDetails ) ) }
+                    // disabled={
+                    //     !shippingDetails.firstName || !shippingDetails.phone || !shippingDetails.address
+                    //     || !shippingDetails.deliveryTime || !shippingDetails.deliveryDate || !paymentDetails.cardNumberFirst
+                    //     || !paymentDetails.cardNumberSecond || !paymentDetails.cardNumberThird || !paymentDetails.cardNumberForth
+                    //     || !paymentDetails.cardHolderFirstName || !paymentDetails.cardHolderLastName || !paymentDetails.expires
+                    //     || !paymentDetails.cvv || !orderDetails[0]
+                    // }
+                >Pay
+                </button>
             </div>
         </div>
     </div>

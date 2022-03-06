@@ -17,6 +17,12 @@ module.exports =withVideos( withImages(withPWA({
     mode: 'production',
     // disable:!isProd
   },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    FRONT_URL: process.env.FRONT_URL,
+    BASE_URL_ENDPOINT: process.env.BASE_URL_ENDPOINT,
+
+  }
   // ...nextTranslate({
   //   i18n: {
   //     localeDetection: false,

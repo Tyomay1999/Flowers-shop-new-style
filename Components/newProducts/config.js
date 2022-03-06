@@ -1,5 +1,5 @@
-import {cardLocalImages} from '../../public/Assets/images/imagesContrller'
-import {v4 as uuidv4} from 'uuid'
+import { cardLocalImages } from '../../public/Assets/images/imagesContrller'
+import { v4 as uuidv4 } from 'uuid'
 
 
 export const allProducts = [
@@ -12,7 +12,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -31,7 +31,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -50,7 +50,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -69,7 +69,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -88,7 +88,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -107,7 +107,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -126,7 +126,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -145,7 +145,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -164,7 +164,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -183,7 +183,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -202,7 +202,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -221,7 +221,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -240,7 +240,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -259,7 +259,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -278,7 +278,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -297,7 +297,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -316,7 +316,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -335,7 +335,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -354,7 +354,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -373,7 +373,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -392,7 +392,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -411,7 +411,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -430,7 +430,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -449,7 +449,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -468,7 +468,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -487,7 +487,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -506,7 +506,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -525,7 +525,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -544,7 +544,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -563,7 +563,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -582,7 +582,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -601,7 +601,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -620,7 +620,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -639,7 +639,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -658,7 +658,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -677,7 +677,7 @@ export const allProducts = [
         discount: 20,
         isNew: true,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -696,7 +696,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -715,7 +715,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -734,7 +734,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -753,7 +753,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -772,7 +772,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -791,7 +791,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -810,7 +810,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -829,7 +829,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -848,7 +848,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -867,7 +867,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -886,7 +886,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -905,7 +905,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -924,7 +924,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -943,7 +943,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -962,7 +962,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -981,7 +981,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1000,7 +1000,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1019,7 +1019,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1038,7 +1038,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1057,7 +1057,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1076,7 +1076,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1095,7 +1095,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1114,7 +1114,7 @@ export const allProducts = [
         discount: 20,
         isNew: false,
         slug: uuidv4(),
-        tags: ['color', 'type', 'single', 'bouquet'],
+        tags: [ 'color', 'type', 'single', 'bouquet' ],
         aboutFlower: `
             Lorem50 ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium alias assumenda deleniti eos id ipsa labore laborum
@@ -1125,5 +1125,5 @@ export const allProducts = [
           `
     },
 ]
-export const similarProducts = allProducts.filter(flower => flower.isNew !== true)
-export const newProducts = allProducts.filter(flower => flower.isNew === true)
+export const similarProducts = allProducts.filter( flower => flower.isNew !== true )
+export const newProducts = allProducts.filter( flower => flower.isNew === true )

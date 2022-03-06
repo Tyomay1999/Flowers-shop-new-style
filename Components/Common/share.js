@@ -1,11 +1,17 @@
 import React from "react";
 import {
-    FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    FacebookMessengerShareButton,
     FacebookShareButton,
     TelegramIcon,
-    TelegramShareButton, ViberIcon, ViberShareButton,
+    TelegramShareButton,
+    ViberIcon,
+    ViberShareButton,
     VKIcon,
-    VKShareButton, WhatsappIcon, WhatsappShareButton
+    VKShareButton,
+    WhatsappIcon,
+    WhatsappShareButton
 } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { setMessage } from "../../Redux/Action/common.action";
@@ -42,7 +48,7 @@ export const shareHandler = ( shareUrl, styleSheet, size, round, dispatch ) => {
                 <FacebookMessengerIcon size={ size } round={ round }/>
             </FacebookMessengerShareButton>
         </div>
-        <div className={ styleSheet.shareWrapper } onClick={() => dispatch(setMessage("Copied to clipboard"))}>
+        <div className={ styleSheet.shareWrapper } onClick={ () => dispatch( setMessage( "Copied to clipboard" ) ) }>
             <CopyToClipboard text={ `${ shareUrl }` }>
                 <i className="bi bi-files"/>
             </CopyToClipboard>

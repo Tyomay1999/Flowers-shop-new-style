@@ -5,6 +5,16 @@ import { ADD_CUSTOMER_MESSAGE } from "../../pages/api/sampleApi";
 export const SET_ORDER_DETAILS = "SET ORDER DETAILS"
 export const SET_MESSAGE = "SET MESSAGE"
 export const CLEAR_MESSAGE = "CLEAR MESSAGE"
+export const CHANGE_LOADING = "CHANGE LOADING"
+export const CHOOSE_NETWORK_CONNECTION = "CHOOSE NETWORK CONNECTION"
+
+export const setLoading = payload => {
+    return {
+        type: CHANGE_LOADING,
+        payload
+    }
+}
+
 
 export const setMessage = payload => {
     return {
@@ -33,9 +43,10 @@ export const sendMessages = customer => async dispatch => {
         fd.append( 'message', customer.message )
         const response = await fetchingDataWithAxiosMiddleware( "POST", ADD_CUSTOMER_MESSAGE, fd )
         if ( response.status ) {
-            console.log( response.data )
+            dispatch(setMessage('Your message was send'))
         }
     } catch ( error ) {
+        dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
         throw error
     }
 }

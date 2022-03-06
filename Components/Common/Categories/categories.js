@@ -1,6 +1,6 @@
 import React from 'react'
 import categoriesStyles from './categories.module.scss'
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const categories = [
     {
@@ -71,35 +71,35 @@ const categories = [
         exact: false
     },
 ]
-const handlerCategories = (data) => {
-    return data.map(category => {
-        if (category.exact) {
-            return <li key={uuidv4()} className={categoriesStyles["menu-item"]}>
-                <span>{category.name}</span>
+const handlerCategories = ( data ) => {
+    return data.map( category => {
+        if ( category.exact ) {
+            return <li key={ uuidv4() } className={ categoriesStyles[ "menu-item" ] }>
+                <span>{ category.name }</span>
                 <ol className="sub-menu">
                     {
-                        category.exact.map(subCategory => {
-                            return <li key={uuidv4()} className={categoriesStyles["menu-item"]}>
-                                <span>{subCategory.name}</span>
+                        category.exact.map( subCategory => {
+                            return <li key={ uuidv4() } className={ categoriesStyles[ "menu-item" ] }>
+                                <span>{ subCategory.name }</span>
                             </li>
-                        })
+                        } )
                     }
                 </ol>
             </li>
         }
-        return <li key={uuidv4()} className={categoriesStyles["menu-item"]}><span>{category.name}</span></li>
-    })
+        return <li key={ uuidv4() } className={ categoriesStyles[ "menu-item" ] }><span>{ category.name }</span></li>
+    } )
 }
 
 const Categories = () => {
     // const [selectedCategoryType, setCategoryType] = useState(null)
 
     return (
-        <div className={categoriesStyles.main}>
-            <nav className={categoriesStyles.menu}>
+        <div className={ categoriesStyles.main }>
+            <nav className={ categoriesStyles.menu }>
                 <ol>
                     {
-                        handlerCategories(categories)
+                        handlerCategories( categories )
                     }
                 </ol>
             </nav>

@@ -1,11 +1,11 @@
-const debounce = (callBack,wait) => {
+const debounce = ( callBack, wait ) => {
     let timer
-    return (...args) => {
-        if (timer) {
-            clearTimeout(timer)
+    return ( ...args ) => {
+        if ( timer ) {
+            clearTimeout( timer )
         }
-        timer = setTimeout(() => callBack(...args), wait)
+        timer = setTimeout( () => callBack( ...args ), wait )
     }
 }
 
-export const handlerDebounce = debounce(callBack => callBack(), 300)
+export const handlerDebounce = debounce( callBack => callBack(), 300 )

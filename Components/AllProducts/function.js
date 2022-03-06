@@ -2,7 +2,7 @@ import React from 'react'
 import allProductsStyles from "./allProducts.module.scss";
 import { v4 as uuidv4 } from "uuid";
 
-export const filterOpenFunction = ( openFilter, categories,handlerProductData, dispatch ) => {
+export const filterOpenFunction = ( openFilter, categories, handlerProductData, dispatch ) => {
     return <div
         onClick={ ( e ) => e.stopPropagation() }
         className={ allProductsStyles.filterWrapper }
@@ -29,12 +29,12 @@ export const filterOpenFunction = ( openFilter, categories,handlerProductData, d
                         if ( category?.flower_ids?.length ) {
                             return <li
                                 onClick={ async () => {
-                                    await handlerProductData(category,dispatch)
+                                    await handlerProductData( category, dispatch )
                                 }
                                 }
                                 key={ uuidv4() }>
                                 { category?.name }
-                                <span>({ category?.flower_ids?.length - 1 })</span>
+                                <span>({ category?.flower_ids?.length })</span>
                             </li>
                         }
                         return null

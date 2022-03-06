@@ -22,11 +22,11 @@ const Footer = () => {
 
                 <div className={ footerStyles.box }>
                     <h3>quick links</h3>
-                    <Link href='/'>home</Link>
-                    <Link href='/'>about</Link>
-                    <Link href='/'>products</Link>
-                    <Link href='/'>review</Link>
-                    <Link href='/'>contact</Link>
+                    <Link href="/#greetings">home</Link>
+                    <Link href="/#about">about</Link>
+                    <Link href="/all-flowers">products</Link>
+                    <Link href="/#newProducts">New products</Link>
+                    <Link href="/#contact">contact</Link>
                 </div>
 
                 <div className={ footerStyles.box }>
@@ -67,7 +67,7 @@ const Footer = () => {
 
             </div>
 
-            {/*<div className={ footerStyles.credit }> created by <span> @Tyomay1999 </span> | all rights reserved</div>*/}
+            {/*<div className={ footerStyles.credit }> created by <span> @Tyomay1999 </span> | all rights reserved</div>*/ }
 
         </footer>
     )
