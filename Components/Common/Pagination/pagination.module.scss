@@ -1,19 +1,34 @@
-@import "../../../styles/main";
+@import "styles/main";
 
 .main{
-  margin: auto;
+  margin: 0 10px 0 0;
   height: 35px;
-  border: $borderStandard;
   border-radius: 3px;
+  span{
+    padding: .3rem .4rem;
+    font-size: 2rem;
+    height: 100%;
+  }
   button{
     height: 100%;
-    padding: .3rem;
+    padding: 0 .3rem;
     cursor: pointer;
     color: whitesmoke;
     background: $contentColor;
     font-size: 2rem;
     &:active{
       transform: scale(.95);
+    }
+    &:disabled{
+      background: #eab3ff;
+    }
+    &:first-child{
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:last-child{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
   }
 }

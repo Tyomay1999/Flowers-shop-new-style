@@ -1,12 +1,30 @@
 import axios from "axios";
 import { ADD_CUSTOMER_MESSAGE } from "../../pages/api/sampleApi";
 
-// export const SEND_CUSTOMER_MESSAGE = "SEND CUSTOMER MESSAGE"
 export const SET_ORDER_DETAILS = "SET ORDER DETAILS"
 export const SET_MESSAGE = "SET MESSAGE"
 export const CLEAR_MESSAGE = "CLEAR MESSAGE"
 export const CHANGE_LOADING = "CHANGE LOADING"
 export const CHOOSE_NETWORK_CONNECTION = "CHOOSE NETWORK CONNECTION"
+export const CHANGE_PAGES = 'CHANGE PAGES'
+export const SET_PAGES_DATA = 'SET PAGES DATA'
+
+export const setPagesData = (payload, limit) => {
+    return {
+        type: SET_PAGES_DATA,
+        payload,
+        limit
+    }
+}
+
+export const changePage = (payload,limit) => {
+    return {
+        type: CHANGE_PAGES,
+        payload,
+        limit
+    }
+}
+
 
 export const setLoading = payload => {
     return {

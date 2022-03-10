@@ -1,10 +1,16 @@
 import { allProducts, newProducts } from "../../Components/newProducts/config";
-import { CHOOSE_NETWORK_CONNECTION, fetchingDataWithAxiosMiddleware, setLoading, setMessage } from "./common.action";
+import {
+    CHOOSE_NETWORK_CONNECTION,
+    fetchingDataWithAxiosMiddleware,
+    setLoading,
+    setMessage,
+    setPagesData
+} from "./common.action";
 import {
     ALL_CATEGORIES_URL,
-    ALL_FLOWERS_URL,
+    ALL_FLOWERS_URL, GET_ALL_FLOWERS_URL,
     GET_CART_FLOWERS_URL,
-    GET_NEW_FLOWERS_URL,
+    GET_NEW_FLOWERS_URL, GET_PRODUCTS_BY_SEARCH,
     GET_SIMILAR_PRODUCT, SET_ORDER
 } from "../../pages/api/sampleApi";
 
@@ -77,6 +83,7 @@ export const getProductByCategory = payload => async dispatch => {
         fd.append( "flower_ids", JSON.stringify( payload.flower_ids ) )
         const response = await fetchingDataWithAxiosMiddleware( "POST", ALL_FLOWERS_URL, fd )
         if ( response.status ) {
+            console.log(response.data, '<resp data')
             dispatch( setAllFlowers( response.data?.flowers ) )
             dispatch( setMessage( payload.name ) )
             dispatch( setLoading( false ) )
@@ -103,14 +110,19 @@ export const getCategoriesThunk = () => async dispatch => {
     }
 }
 
-export const getNewFlowersThunk = () => async dispatch => {
+export const getNewFlowersThunk = (page = 1 , limit = 6) => async dispatch => {
     try {
+        const filters = {
+            page,
+            limit
+        }
         await dispatch( setLoading( true ) )
-        const response = await fetchingDataWithAxiosMiddleware( "GET", GET_NEW_FLOWERS_URL )
+        const response = await fetchingDataWithAxiosMiddleware( "POST", GET_NEW_FLOWERS_URL, JSON.stringify(filters) )
         if ( response.status ) {
-            dispatch( setNewFlowers( response.data.newFlowers ) )
+            console.log(response.data)
+            dispatch(setPagesData(response.data.count, limit))
+            dispatch( setNewFlowers( response.data.flowers ) )
             await dispatch( setLoading( false ) )
-
         }
     } catch ( error ) {
         dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
@@ -137,12 +149,15 @@ export const getCartProductsThunk = payload => async dispatch => {
     }
 }
 
-export const getSimilarProductThunk = payload => async dispatch => {
+export const getSimilarProductThunk = (payload,page = 1, limit=3) => async dispatch => {
     try {
         const fd = new FormData()
         fd.append( "categories", JSON.stringify( payload ) )
+        fd.append("limit", `${limit}`)
+        fd.append("page", `${page}`)
         const response = await fetchingDataWithAxiosMiddleware( "POST", GET_SIMILAR_PRODUCT, fd )
         if ( response.status ) {
+            dispatch(setPagesData(response.data.count, limit))
             return dispatch( similarProduct( response.data.similarFlowers ) )
         }
     } catch ( error ) {
@@ -164,6 +179,44 @@ export const sendOrderThunk = ( shippingDetails, orderDetails, paymentDetails ) 
         }
     } catch ( error ) {
         dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
+        throw error
+    }
+}
+
+export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 100000], limit = 3) => {
+    return async dispatch => {
+        try {
+            const filters = JSON.stringify({
+                category_id,
+                prices,
+                limit,
+                page
+            })
+            const response = await fetchingDataWithAxiosMiddleware("POST", GET_ALL_FLOWERS_URL, filters)
+            if (response.status) {
+                console.log(response.data)
+                dispatch(setPagesData(response.data.count, limit))
+                await dispatch(setAllFlowers(response.data.flowers))
+            }
+            // await dispatch(getAllProducts(newProducts))
+        } catch (error) {
+            await dispatch(setMessage(error.message))
+            throw error
+        }
+    }
+}
+export const getProductBySearchThunk = (payload,limit = 3) =>  async dispatch => {
+    try {
+        const fd = new FormData()
+        fd.append("name", payload)
+        const response = await fetchingDataWithAxiosMiddleware("POST", GET_PRODUCTS_BY_SEARCH, fd)
+        if (response.status) {
+            console.log(response.data)
+            dispatch(setPagesData(response.data.count, limit))
+            await dispatch(setAllFlowers(response.data.flowers))
+        }
+    } catch (error) {
+        await dispatch(setMessage(error.message))
         throw error
     }
 }

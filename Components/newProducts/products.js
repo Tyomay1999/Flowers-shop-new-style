@@ -6,17 +6,20 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from "react-redux";
 import { getNewFlowersThunk } from "../../Redux/Action/product.action";
 import Loading from "../Common/Loading/loading";
+import Pagination from "../Common/Pagination/pagination";
 
 const NewProducts = () => {
     const dispatch = useDispatch();
     const isLoading = useSelector( state => state?.commonReducer.loading )
+    const page = useSelector(state => state?.commonReducer.page)
+
     const newFlowers = useCallback( dispatch => {
-        dispatch( getNewFlowersThunk() )
-    }, [] )
+        dispatch( getNewFlowersThunk(page) )
+    }, [page] )
     const newProducts = useSelector( state => state?.productReducer.newProducts )
     useEffect( () => {
         newFlowers( dispatch )
-    }, [] )
+    }, [page] )
     return (
         <div className={ productsStyles.main } id='newProducts'>
             { isLoading && <Loading/> }
@@ -30,6 +33,9 @@ const NewProducts = () => {
                         </div>
                     } )
                 }
+            </div>
+            <div className={productsStyles.pagination}>
+                <Pagination/>
             </div>
         </div>
     )

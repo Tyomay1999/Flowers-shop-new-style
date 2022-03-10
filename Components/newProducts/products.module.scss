@@ -2,6 +2,7 @@
 
 .main{
     @include sectionHeading();
+    @include pagination();
 }
 .boxContainer{
     display: flex;

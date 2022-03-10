@@ -1,20 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import searchStyles from './search.module.scss'
-import Categories from "../Categories/categories";
+import {useDispatch} from "react-redux";
+import {getAllProductsThunk, getProductBySearchThunk} from "../../../Redux/Action/product.action";
 
-const Search = ( { witCategories } ) => {
+const Search = () => {
+    const dispatch = useDispatch()
+    const [searchValue, setSearchValue] = useState("all")
+
     return (
-        <div className={ searchStyles.main }>
-            <div className={ searchStyles.searchBlock }>
-                <div className={ searchStyles.wrapper }>
-                    <input type="text" placeholder=' ' id='search'/>
+        <div className={searchStyles.main}>
+            <div className={searchStyles.searchBlock}>
+                <div className={searchStyles.wrapper}>
+                    <input
+                        onChange={e => {
+                            if (e.target.value) {
+                                setSearchValue(e.target.value)
+                            } else {
+                                setSearchValue('all')
+                            }
+                        }}
+                        onKeyUp={e => {
+                            if (e.keyCode === 13) {
+                                console.log(searchValue)
+                                if (searchValue === 'all') {
+                                    dispatch(getAllProductsThunk())
+                                } else {
+                                    dispatch(getProductBySearchThunk(searchValue))
+                                }
+                            }
+                        }}
+                        type="text" placeholder=' ' id='search'/>
                     <label htmlFor='search'>Sea<span>rch</span></label>
-                    <i className="bi bi-search"/>
+                    <i onClick={() => {
+                        if (searchValue === 'all') {
+                            dispatch(getAllProductsThunk())
+                        } else {
+                            dispatch(getProductBySearchThunk(searchValue))
+                        }
+                    }} className="bi bi-search"/>
                 </div>
             </div>
-            {
-                witCategories && <Categories/>
-            }
         </div>
     )
 }

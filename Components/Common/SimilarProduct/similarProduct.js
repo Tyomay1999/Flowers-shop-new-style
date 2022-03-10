@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react'
 import similarProductsStyles from './similarProduct.module.scss'
 import Card from "../../Card/card";
-// import { similarProducts } from "../../newProducts/config";
 import { v4 as uuidv4 } from "uuid";
 import cardStyles from "../../Card/card.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getSimilarProductThunk } from "../../../Redux/Action/product.action";
 import Loading from "../Loading/loading";
+import allProductsStyles from "../../AllProducts/allProducts.module.scss";
+import Pagination from "../Pagination/pagination";
 
 const SimilarProduct = ( { categories } ) => {
     const dispatch = useDispatch()
     const similarProduct = useSelector( state => state?.productReducer.similarProduct )
     const isLoading = useSelector( state => state?.commonReducer.loading )
+    const page = useSelector(state => state?.commonReducer.page)
 
     useEffect( () => {
-        dispatch( getSimilarProductThunk( categories ) )
-    }, [ categories.length ] )
+        dispatch( getSimilarProductThunk( categories,page ) )
+    }, [ categories.length,page ] )
 
 
     return <div className={ similarProductsStyles.main }>
@@ -29,6 +31,9 @@ const SimilarProduct = ( { categories } ) => {
                     </div>
                 } )
             }
+        </div>
+        <div className={similarProductsStyles.pagination}>
+            <Pagination/>
         </div>
     </div>
 }

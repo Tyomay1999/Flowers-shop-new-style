@@ -1,9 +1,18 @@
-import { CHANGE_LOADING, CLEAR_MESSAGE, SET_MESSAGE, SET_ORDER_DETAILS } from "../Action/common.action";
+import {
+    CHANGE_LOADING,
+    CHANGE_PAGES,
+    CLEAR_MESSAGE,
+    SET_MESSAGE,
+    SET_ORDER_DETAILS,
+    SET_PAGES_DATA
+} from "../Action/common.action";
 
 const initialState = {
     loading: false,
     message: '',
-    orderDetails: []
+    orderDetails: [],
+    page: 1,
+    pagesCount: 1
 }
 
 export const commonReducer = (state = initialState, action) => {
@@ -16,6 +25,11 @@ export const commonReducer = (state = initialState, action) => {
             return {...state, message: ''}
         case SET_ORDER_DETAILS:
             return {...state, orderDetails: [...action.payload]}
+        case CHANGE_PAGES:
+            console.log(action.payload, "<------ action payload")
+            return {...state, page: action.payload}
+        case SET_PAGES_DATA:
+            return {...state, pagesCount: Math.ceil(action.payload / action.limit)}
         default:
             return state
     }
