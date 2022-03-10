@@ -152,6 +152,7 @@ $buttonsHoverDark: red !default;
   @if $I {
     i {
       position: absolute;
+      cursor: pointer;
       top: 5px;
       right: -20px;
       font-size: 2rem;

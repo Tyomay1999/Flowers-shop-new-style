@@ -3,6 +3,7 @@ import headerStyles from './header.module.scss'
 import logo from '../../public/Assets/images/logo.png'
 import Link from 'next/link'
 import Message from "../Common/Message/message";
+import {header_section} from "../Common/web-site-static-words";
 
 
 const Header = () => {
@@ -18,11 +19,11 @@ const Header = () => {
             </Link>
 
             <nav className={ headerStyles.navbar }>
-                <Link href="/#greetings">home</Link>
-                <Link href="/#about">about</Link>
-                <Link href="/all-flowers">products</Link>
-                <Link href="/#newProducts">New products</Link>
-                <Link href="/#contact">contact</Link>
+                <Link href="/#greetings">{header_section.home}</Link>
+                <Link href="/#about">{header_section.about}</Link>
+                <Link href="/all-flowers">{header_section.products}</Link>
+                <Link href="/#newProducts">{header_section.new_products}</Link>
+                <Link href="/#contact">{header_section.contact}</Link>
             </nav>
             <Message/>
             <div className={ headerStyles.icons }>

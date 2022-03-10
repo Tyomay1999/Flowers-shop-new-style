@@ -5,12 +5,11 @@ import Footer from "../Components/Footer/footer";
 import Header from "../Components/Header/header";
 
 //TODO add loading when search product
-//TODO add information when search result was empty
 //TODO check filtration with pagination
 //TODO add pagination
 //TODO check allFlowers page
 //TODO check delivery time logic
-//TODO change static words
+//TODO change EN words to RU
 
 export default function Home() {
     return (

@@ -5,6 +5,7 @@ import { handlerDebounce } from "../Common/functions";
 import { useDispatch } from "react-redux";
 import { sendMessages, setMessage } from "../../Redux/Action/common.action";
 import { isValidate } from "../Common/validation";
+import {contact_us_section} from "../Common/web-site-static-words";
 
 const messageControl = ( dispatch, info ) => {
     if ( !info.name ) {
@@ -40,7 +41,10 @@ const ContactUs = () => {
     }, [] )
     return (
         <section className={ contactUsStyles.contact } id="contact">
-            <h1 className={ contactUsStyles.heading }><span> contact </span> us </h1>
+            <h1 className={ contactUsStyles.heading }>
+                <span> {contact_us_section.heading_1} </span>
+                {contact_us_section.heading_2}
+            </h1>
             <div className={ contactUsStyles.row }>
                 <form onSubmit={ ( e ) => onSubmit( e, customerMessage, setCustomerMessage ) } action="">
                     <input
@@ -55,21 +59,21 @@ const ContactUs = () => {
                             setCustomerMessage( { ...customerMessage, email: e.target.value } )
                         }
                     } }
-                           placeholder="email" className={ contactUsStyles.box }/>
-                    <input type="number" placeholder="number" className={ contactUsStyles.box }
+                           placeholder={contact_us_section.email} className={ contactUsStyles.box }/>
+                    <input type="number" placeholder={contact_us_section.number} className={ contactUsStyles.box }
                            onChange={ ( e ) => {
                                if ( isValidate( 'numbersOnly', e.target.value ) ) {
                                    setCustomerMessage( { ...customerMessage, phone: e.target.value } )
                                }
                            } }
                     />
-                    <textarea className={ contactUsStyles.box } placeholder="message" id="" cols="30" rows="10"
+                    <textarea className={ contactUsStyles.box } placeholder={contact_us_section.message} id="" cols="30" rows="10"
                               onChange={ ( e ) => handlerDebounce( () => {
                                   if ( e.target.value.length > "please call me".length ) {
                                       setCustomerMessage( { ...customerMessage, message: e.target.value } )
                                   }
                               } ) }/>
-                    <input type="submit" value="send message" className={ contactUsStyles.btn }/>
+                    <input type="submit" value={contact_us_section.send_message} className={ contactUsStyles.btn }/>
                 </form>
 
                 <div className={ contactUsStyles.image }>

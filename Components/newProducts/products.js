@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getNewFlowersThunk } from "../../Redux/Action/product.action";
 import Loading from "../Common/Loading/loading";
 import Pagination from "../Common/Pagination/pagination";
+import {new_products_section} from "../Common/web-site-static-words";
 
 const NewProducts = () => {
     const dispatch = useDispatch();
@@ -23,8 +24,10 @@ const NewProducts = () => {
     return (
         <div className={ productsStyles.main } id='newProducts'>
             { isLoading && <Loading/> }
-            <h1 className={ productsStyles.heading }> new <span>products</span></h1>
-
+            <h1 className={ productsStyles.heading }>
+                {new_products_section.heading_1}
+                <span>{new_products_section.heading_2}</span>
+            </h1>
             <div className={ productsStyles.boxContainer }>
                 {
                     newProducts?.map( ( elem, index ) => {

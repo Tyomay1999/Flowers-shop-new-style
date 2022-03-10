@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { handlerCart } from "../Card/card";
 import { back_url } from "../../pages/api/sampleApi";
 import Loading from "../Common/Loading/loading";
+import {products_section} from "../Common/web-site-static-words";
 
 const handlerBuy = ( router ) => {
     router.push( '/cart' )
@@ -41,14 +42,18 @@ const Product = ( { product } ) => {
             <h4>Pr<span>ice:</span> { product?.price }</h4>
             <h6>la<span>st</span> Pr<span>ice:</span> { product?.lastPrice }$</h6>
             <ul>
-                <li>Tags :</li>
+                <li>{products_section.tags} :</li>
                 {
                     product?.tags?.map( tag => <li key={ uuidv4() }>
                         { tag }
                     </li> )
                 }
             </ul>
-            <button className={ productStyle.buy } onClick={ () => handlerBuy( router ) }>Buy now</button>
+            <button
+                className={ productStyle.buy }
+                onClick={ () => handlerBuy( router ) }>
+                {products_section.buy_now}
+            </button>
             <button className={ productStyle.addToCart }
                     onClick={ ( e ) => handlerCart( e, product, dispatch, setFlowerInCart, isFlowerInCart ) }><i
                 className={ `bi bi-cart-${ isFlowerInCart ? 'check' : 'plus' }` }/></button>

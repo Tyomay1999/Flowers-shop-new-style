@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { getCartProductsThunk } from "../../Redux/Action/product.action";
 import { setOrderDetails } from "../../Redux/Action/common.action";
 import Loading from "../Common/Loading/loading";
+import {cart_section} from "../Common/web-site-static-words";
 
 const handlerTotalPrice = ( productsArray ) => {
     let totalPrice = 0;
@@ -42,8 +43,14 @@ const Cart = () => {
                             </div>
                         } )
                         : <div className={ cartStyles.emptyBlock }>
-                            <h1>Your cart <span>is empty</span></h1>
-                            <button onClick={ () => router.push( '/all-flowers' ) }>Go pick <span>flowers</span></button>
+                            <h1>
+                                { cart_section.empty_message_part_1}
+                                <span>{ cart_section.empty_message_part_2}</span>
+                            </h1>
+                            <button onClick={ () => router.push( '/all-flowers' ) }>
+                                {cart_section.button_part_1}
+                                <span>{cart_section.button_part_2}</span>
+                            </button>
                         </div>
                 }
             </div>
@@ -51,7 +58,7 @@ const Cart = () => {
             {
                 cartProducts[ 0 ] && <div className={ cartStyles.blockRight }>
                     <div className={ cartStyles.blockRightChild }>
-                        <h1>Total <span>Price</span></h1>
+                        <h1>{cart_section.total} <span>{cart_section.price}</span></h1>
                         {
                             cartProducts.map( product => {
                                 return <p key={ uuidv4() }
@@ -60,9 +67,10 @@ const Cart = () => {
                             } )
                         }
                         <div className={ cartStyles.total }>
-                            <p>TOT<span>AL:</span> { totalPrice }<span>$</span></p>
+                            <p>{cart_section.total}<span>{cart_section.price}:</span> { totalPrice }<span>$</span></p>
                             <button
-                                onClick={ () => handlerConfirm( cartProducts, totalPrice, dispatch, router ) }>Confirm
+                                onClick={ () => handlerConfirm( cartProducts, totalPrice, dispatch, router ) }>
+                                {cart_section.confirm}
                             </button>
                         </div>
                     </div>

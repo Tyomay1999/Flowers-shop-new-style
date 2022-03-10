@@ -1,21 +1,20 @@
 import React from 'react'
 import greetingsStyles from './greetings.module.scss'
 import { useRouter } from "next/router";
+import {greetings_section} from "../Common/web-site-static-words";
 
 const Greetings = () => {
     const router = useRouter()
     return (
         <section className={ greetingsStyles.greetings } id="greetings">
-
             <div className={ greetingsStyles.content }>
-                <h3>fresh flowers</h3>
-                <span> natural & beautiful flowers </span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum ut minus corrupti dolorum
-                    dolore assumenda iste voluptate dolorem pariatur.</p>
-                <button onClick={ () => router.push( '/all-flowers' ) } className={ greetingsStyles.btn }>shop now
+                <h3>{greetings_section.heading}</h3>
+                <span> {greetings_section.title} </span>
+                <p>{greetings_section.description}</p>
+                <button onClick={ () => router.push( '/all-flowers' ) }
+                        className={ greetingsStyles.btn }>{greetings_section.button}
                 </button>
             </div>
-
         </section>
     )
 }

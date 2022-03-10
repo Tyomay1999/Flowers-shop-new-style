@@ -6,6 +6,7 @@ import Iframe from "react-iframe";
 import { CopyToClipboard } from "react-copy-to-clipboard/lib/Component";
 import { useDispatch } from "react-redux";
 import { setMessage } from "../../Redux/Action/common.action";
+import {footer_section} from "../Common/web-site-static-words";
 
 
 const Footer = () => {
@@ -21,17 +22,17 @@ const Footer = () => {
             <div className={ footerStyles[ 'box-container' ] }>
 
                 <div className={ footerStyles.box }>
-                    <h3>quick links</h3>
-                    <Link href="/#greetings">home</Link>
-                    <Link href="/#about">about</Link>
-                    <Link href="/all-flowers">products</Link>
-                    <Link href="/#newProducts">New products</Link>
-                    <Link href="/#contact">contact</Link>
+                    <h3>{footer_section.quick_links}</h3>
+                    <Link href="/#greetings">{footer_section.home}</Link>
+                    <Link href="/#about">{footer_section.about}</Link>
+                    <Link href="/all-flowers">{footer_section.products}</Link>
+                    <Link href="/#newProducts">{footer_section.new_products}</Link>
+                    <Link href="/#contact">{footer_section.contact}</Link>
                 </div>
 
                 <div className={ footerStyles.box }>
-                    <h3>locations</h3>
-                    <span>Moscow</span>
+                    <h3>{footer_section.locations}</h3>
+                    <span>{footer_section.city}</span>
                     <Iframe
                         url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.405406946073!2d44.488959315644045!3d40.20004407671282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd6bc6cf96ef%3A0x6932662afc4c86ff!2sBeeOnCode!5e0!3m2!1sen!2s!4v1636632487448!5m2!1sen!2s"
                         width="250"
@@ -44,7 +45,7 @@ const Footer = () => {
                 </div>
 
                 <div className={ footerStyles.box }>
-                    <h3>contact info</h3>
+                    <h3>{footer_section.contact_info}</h3>
                     <CopyToClipboard text={ shopInfo.phone }>
                         <span onClick={ () => dispatch( setMessage( 'Coped to Clipboard' ) ) }>
                             <a href={ `tel: ${ shopInfo.phone }` }>

@@ -8,6 +8,7 @@ import { getSimilarProductThunk } from "../../../Redux/Action/product.action";
 import Loading from "../Loading/loading";
 import allProductsStyles from "../../AllProducts/allProducts.module.scss";
 import Pagination from "../Pagination/pagination";
+import {similar_products_section} from "../web-site-static-words";
 
 const SimilarProduct = ( { categories } ) => {
     const dispatch = useDispatch()
@@ -21,7 +22,10 @@ const SimilarProduct = ( { categories } ) => {
 
 
     return <div className={ similarProductsStyles.main }>
-        <h1 className={ similarProductsStyles.heading }> Similar <span>products</span></h1>
+        <h1 className={ similarProductsStyles.heading }>
+            {similar_products_section.heading_1}
+            <span> {similar_products_section.heading_2}</span>
+        </h1>
         <div className={ similarProductsStyles.similarProducts }>
             { isLoading && <Loading/> }
             {

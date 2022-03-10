@@ -8,6 +8,7 @@ import { ALL_FLOWERS_URL } from "./api/sampleApi";
 import { useDispatch } from "react-redux";
 import { useCallback, useEffect } from "react";
 import { setAllFlowers } from "../Redux/Action/product.action";
+import {pages_words} from "../Components/Common/web-site-static-words";
 
 const AllFlowersPage = ( props ) => {
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ const AllFlowersPage = ( props ) => {
                 <link rel='icon' href='/favicon.ico'/>
                 <link rel="stylesheet"
                       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
-                <title>All flowers</title>
+                <title>{pages_words.all_flowers}</title>
             </Head>
             <Header/>
             <AllProducts products={ props.products }/>
