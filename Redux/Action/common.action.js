@@ -1,11 +1,11 @@
 import axios from "axios";
 import { ADD_CUSTOMER_MESSAGE } from "../../pages/api/sampleApi";
+import { messages } from "../../Components/Common/web-site-static-words";
 
 export const SET_ORDER_DETAILS = "SET ORDER DETAILS"
 export const SET_MESSAGE = "SET MESSAGE"
 export const CLEAR_MESSAGE = "CLEAR MESSAGE"
 export const CHANGE_LOADING = "CHANGE LOADING"
-export const CHOOSE_NETWORK_CONNECTION = "CHOOSE NETWORK CONNECTION"
 export const CHANGE_PAGES = 'CHANGE PAGES'
 export const SET_PAGES_DATA = 'SET PAGES DATA'
 
@@ -61,10 +61,10 @@ export const sendMessages = customer => async dispatch => {
         fd.append( 'message', customer.message )
         const response = await fetchingDataWithAxiosMiddleware( "POST", ADD_CUSTOMER_MESSAGE, fd )
         if ( response.status ) {
-            dispatch(setMessage('Your message was send'))
+            dispatch(setMessage(messages.message_sent))
         }
     } catch ( error ) {
-        dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
+        dispatch(setMessage(messages.network_connection))
         throw error
     }
 }

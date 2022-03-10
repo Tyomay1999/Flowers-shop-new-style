@@ -80,6 +80,7 @@ export const footer_section = {
 export const contact_us_section = {
     heading_1: "связаь",
     heading_2: "с нами",
+    name:"Имя",
     email: "Эл. адрес",
     number: "Телефон",
     message: "сообщение",
@@ -105,6 +106,18 @@ export const pages_words = {
     all_flowers: "Все цветы",
     cart: "Корзина",
     checkout_page: "Страница оформления заказа",
+}
+
+export const messages = {
+    message_sent: "Ваше сообщение отправлено",
+    write_name: "Напишите свое имя",
+    check_email: "Проверьте свою электронную почту",
+    check_phone:  "Проверьте свой номер телефона",
+    messages_hint: "В сообщении нужно больше 5 слов",
+    removed_from_cart: "Удалено из вашей корзины",
+    added_to_cart: "Добавлено в вашу корзину",
+    coped_to_clipboard: "Скопировано в буфер обмена",
+    network_connection: "проверьте подключение к сети"
 }
 
 //EN version
@@ -183,6 +196,7 @@ export const pages_words = {
 // export const contact_us_section = {
 //     heading_1: "contact",
 //     heading_2: "us",
+//     name: "name",
 //     email: "email",
 //     number: "number",
 //     message: "message",

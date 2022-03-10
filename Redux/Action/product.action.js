@@ -1,6 +1,4 @@
-import { allProducts, newProducts } from "../../Components/newProducts/config";
 import {
-    CHOOSE_NETWORK_CONNECTION,
     fetchingDataWithAxiosMiddleware,
     setLoading,
     setMessage,
@@ -13,6 +11,7 @@ import {
     GET_NEW_FLOWERS_URL, GET_PRODUCTS_BY_SEARCH,
     GET_SIMILAR_PRODUCT, SET_ORDER
 } from "../../pages/api/sampleApi";
+import { messages } from "../../Components/Common/web-site-static-words";
 
 export const GET_ALL_FLOWERS = 'GET ALL FLOWERS'
 export const GET_SIMILAR_FLOWERS = 'GET SIMILAR FLOWERS'
@@ -90,7 +89,7 @@ export const getProductByCategory = payload => async dispatch => {
         }
     } catch ( error ) {
         dispatch( setLoading( false ) )
-        dispatch( setMessage( CHOOSE_NETWORK_CONNECTION ) )
+        dispatch( setMessage( messages.network_connection ) )
         throw error
     }
 }
@@ -104,7 +103,7 @@ export const getCategoriesThunk = () => async dispatch => {
             await dispatch( setLoading( false ) )
         }
     } catch ( error ) {
-        dispatch( setMessage( CHOOSE_NETWORK_CONNECTION ) )
+        dispatch( setMessage( messages.network_connection ) )
         await dispatch( setLoading( false ) )
         throw error
     }
@@ -125,7 +124,7 @@ export const getNewFlowersThunk = (page = 1 , limit = 6) => async dispatch => {
             await dispatch( setLoading( false ) )
         }
     } catch ( error ) {
-        dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
+        dispatch(setMessage(messages.network_connection))
         await dispatch( setLoading( false ) )
         throw error
     }
@@ -143,7 +142,7 @@ export const getCartProductsThunk = payload => async dispatch => {
             await dispatch( setLoading( false ) )
         }
     } catch ( error ) {
-        dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
+        dispatch(setMessage(messages.network_connection))
         await dispatch( setLoading( false ) )
         throw error
     }
@@ -161,7 +160,7 @@ export const getSimilarProductThunk = (payload,page = 1, limit=3) => async dispa
             return dispatch( similarProduct( response.data.similarFlowers ) )
         }
     } catch ( error ) {
-        dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
+        dispatch(setMessage(messages.network_connection))
         throw error
     }
 }
@@ -178,7 +177,7 @@ export const sendOrderThunk = ( shippingDetails, orderDetails, paymentDetails ) 
             // return dispatch( similarProduct( response.data.similarFlowers ) )
         }
     } catch ( error ) {
-        dispatch(setMessage(CHOOSE_NETWORK_CONNECTION))
+        dispatch(setMessage(messages.network_connection))
         throw error
     }
 }

@@ -6,6 +6,7 @@ import { shareHandler } from "../Common/share";
 import { selectProduct } from "../../Redux/Action/product.action";
 import { back_url, front_url } from "../../pages/api/sampleApi";
 import { setMessage } from "../../Redux/Action/common.action";
+import { messages } from "../Common/web-site-static-words";
 
 
 export const handlerCart = ( e, product, dispatch, setFlowerInCart, isFlowerInCart ) => {
@@ -14,16 +15,16 @@ export const handlerCart = ( e, product, dispatch, setFlowerInCart, isFlowerInCa
         let localStorageCart = JSON.parse( window.localStorage.getItem( 'cart' ) )
         localStorageCart = localStorageCart?.filter( flower => flower !== product.id )
         window.localStorage.setItem( "cart", JSON.stringify( localStorageCart?.length ? [ ...localStorageCart ] : [] ) )
-        dispatch( setMessage( "Removed to your cart" ) )
+        dispatch( setMessage( messages.removed_from_cart ) )
     } else {
         if ( !window.localStorage.getItem( "cart" ) ) {//create
             window.localStorage.setItem( "cart", JSON.stringify( [ product.id ] ) )
-            dispatch( setMessage( "Added to your cart" ) )
+            dispatch( setMessage( messages.added_to_cart ) )
         } else {//add
             const localStorageCart = JSON.parse( window.localStorage.getItem( 'cart' ) )
             window.localStorage.setItem( "cart", JSON.stringify( [ ...localStorageCart, product.id ] ) )
         }
-        dispatch( setMessage( "Added to your cart" ) )
+        dispatch( setMessage( messages.added_to_cart ) )
     }
     setFlowerInCart( !isFlowerInCart )
 }

@@ -5,23 +5,23 @@ import { handlerDebounce } from "../Common/functions";
 import { useDispatch } from "react-redux";
 import { sendMessages, setMessage } from "../../Redux/Action/common.action";
 import { isValidate } from "../Common/validation";
-import {contact_us_section} from "../Common/web-site-static-words";
+import { contact_us_section, messages } from "../Common/web-site-static-words";
 
 const messageControl = ( dispatch, info ) => {
     if ( !info.name ) {
-        dispatch( setMessage( "Write your name" ) )
+        dispatch( setMessage( messages.write_name ) )
         return "name"
     }
     if ( !info.email ) {
-        dispatch( setMessage( 'Check your email' ) )
+        dispatch( setMessage( messages.check_email ) )
         return 'email'
     }
     if ( !info.phone ) {
-        dispatch( setMessage( "Check your phone number" ) )
+        dispatch( setMessage( messages.check_phone ) )
         return 'phone'
     }
     if ( !info.message ) {
-        dispatch( setMessage( "In message has needed more than 5 words" ) )
+        dispatch( setMessage( messages.messages_hint ) )
         return 'message'
     }
     return false
@@ -35,7 +35,7 @@ const ContactUs = () => {
         e.preventDefault()
         if ( !messageControl( dispatch, customerMessage ) ) {
             dispatch( sendMessages( customerMessage ) )
-            dispatch( setMessage( "Your message was send" ) )
+            dispatch( setMessage( messages.message_sent ) )
             setCustomerMessage( { ...customerMessageInitialState } )
         }
     }, [] )
@@ -52,7 +52,7 @@ const ContactUs = () => {
                         onChange={ ( e ) => handlerDebounce( () => {
                             setCustomerMessage( { ...customerMessage, name: e.target.value } )
                         } ) }
-                        placeholder="name"
+                        placeholder={ contact_us_section.name }
                         className={ contactUsStyles.box }/>
                     <input type="email" onChange={ ( e ) => {
                         if ( isValidate( 'email', e.target.value ) ) {

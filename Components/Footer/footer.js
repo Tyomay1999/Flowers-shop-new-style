@@ -6,7 +6,7 @@ import Iframe from "react-iframe";
 import { CopyToClipboard } from "react-copy-to-clipboard/lib/Component";
 import { useDispatch } from "react-redux";
 import { setMessage } from "../../Redux/Action/common.action";
-import {footer_section} from "../Common/web-site-static-words";
+import { footer_section, messages } from "../Common/web-site-static-words";
 
 
 const Footer = () => {
@@ -47,19 +47,19 @@ const Footer = () => {
                 <div className={ footerStyles.box }>
                     <h3>{footer_section.contact_info}</h3>
                     <CopyToClipboard text={ shopInfo.phone }>
-                        <span onClick={ () => dispatch( setMessage( 'Coped to Clipboard' ) ) }>
+                        <span onClick={ () => dispatch( setMessage( messages.coped_to_clipboard ) ) }>
                             <a href={ `tel: ${ shopInfo.phone }` }>
                                 <i className="bi bi-telephone-forward-fill"/> { shopInfo.phone }
                             </a>
                         </span>
                     </CopyToClipboard>
                     <CopyToClipboard text={ shopInfo.email }>
-                        <span onClick={ () => dispatch( setMessage( 'Coped to Clipboard' ) ) }>
+                        <span onClick={ () => dispatch( setMessage( messages.coped_to_clipboard ) ) }>
                             <i className="bi bi-envelope"/> { shopInfo.email }
                         </span>
                     </CopyToClipboard>
                     <CopyToClipboard text={ shopInfo.address }>
-                        <span onClick={ () => dispatch( setMessage( 'Coped to Clipboard' ) ) }>
+                        <span onClick={ () => dispatch( setMessage( messages.coped_to_clipboard ) ) }>
                             <i className="bi bi-geo-alt"/> { shopInfo.address }
                         </span>
                     </CopyToClipboard>
