@@ -26,7 +26,7 @@ const NewProducts = () => {
             { isLoading && <Loading/> }
             <h1 className={ productsStyles.heading }>
                 {new_products_section.heading_1}
-                <span>{new_products_section.heading_2}</span>
+                <span> {new_products_section.heading_2}</span>
             </h1>
             <div className={ productsStyles.boxContainer }>
                 {

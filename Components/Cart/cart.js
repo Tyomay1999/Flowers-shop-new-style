@@ -67,7 +67,7 @@ const Cart = () => {
                             } )
                         }
                         <div className={ cartStyles.total }>
-                            <p>{cart_section.total}<span>{cart_section.price}:</span> { totalPrice }<span>$</span></p>
+                            <p>{cart_section.total}<span> {cart_section.price}:</span> { totalPrice }<span>$</span></p>
                             <button
                                 onClick={ () => handlerConfirm( cartProducts, totalPrice, dispatch, router ) }>
                                 {cart_section.confirm}

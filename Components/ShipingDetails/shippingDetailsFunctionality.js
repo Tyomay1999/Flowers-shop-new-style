@@ -1,9 +1,22 @@
 //TODO delivery time need to change
+const formatAMPM = date => {//TODO check this function works
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    let strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+console.log(formatAMPM(new Date));
+
 export const deliveryTime = ( type, selectedDay ) => {
     const date = new Date();
     let day = date.getDate(),
         month = date.getMonth() < 10 ? `0${ date.getMonth() + 1 }` : date.getMonth() + 1,
         year = date.getFullYear() - 2000;
+
     if ( selectedDay === `${ day }-${ month }-${ year }` ) {
         const times = [
             {
@@ -58,7 +71,7 @@ export const deliveryTime = ( type, selectedDay ) => {
         let time = new Date().getHours()
         const timers = []
         times.forEach( timer => {
-            if ( timer.clock >= time + 12 ) {
+            if ( timer.clock >= time  ) {
                 timers.push( timer.deliveryTime )
             }
         } )

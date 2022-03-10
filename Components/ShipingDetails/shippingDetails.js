@@ -110,7 +110,7 @@ const ShippingDetails = () => {
                     />
                     <label htmlFor='firstName'>
                         {shipping_details_section.recipient_first_name}
-                        <span>{shipping_details_section.name_word}*</span></label>
+                        <span>*</span></label>
                 </div>
                 <div className={shippingDetailsStyles.wrapper}>
                     <input type='text' placeholder=' ' id='lastName'
@@ -121,7 +121,6 @@ const ShippingDetails = () => {
                     />
                     <label htmlFor='lastName'>
                         {shipping_details_section.recipient_last_name}
-                        <span>{shipping_details_section.name_word}</span>
                     </label>
                 </div>
                 <div className={shippingDetailsStyles.wrapper}>
@@ -133,7 +132,6 @@ const ShippingDetails = () => {
                     />
                     <label htmlFor='Email'>
                         {shipping_details_section.your_email}
-                        <span> {shipping_details_section.address_word}</span>
                     </label>
                 </div>
                 <div className={shippingDetailsStyles.wrapper}>
@@ -144,12 +142,12 @@ const ShippingDetails = () => {
                            }
                     />
                     <label htmlFor='phone'>
-                        {shipping_details_section.recipient}
-                        <span> {shipping_details_section.phone_word}*</span>
+                        {shipping_details_section.phone_word}
+                        <span> *</span>
                     </label>
                 </div>
                 <div className={shippingDetailsStyles.wrapper}>
-                    <input type='text' value='Moscow' disabled placeholder=' ' id='city'
+                    <input type='text' value='Москва' disabled placeholder=' ' id='city'
                         // onChange={(e) =>
                         //     handlerShippingDetails('city',e.target.value,shippingDetails,setShippingDetails)
                         // }
@@ -164,8 +162,8 @@ const ShippingDetails = () => {
                            }
                     />
                     <label htmlFor='Address'>
-                        {shipping_details_section.recipient}
-                        <span> {shipping_details_section.address_word} *</span>
+                        {shipping_details_section.address_word}
+                        <span>*</span>
                     </label>
                 </div>
                 <div className={shippingDetailsStyles.wrapper}>
@@ -176,7 +174,7 @@ const ShippingDetails = () => {
                                     handlerShippingDetails('deliveryDate', e.target.value, shippingDetails, setShippingDetails)
                                 }
                         >
-                            <option value="">
+                            <option value="" selected disabled hidden>
                                 {shipping_details_section.date_of_delivery}
                             </option>
                             {
@@ -198,7 +196,7 @@ const ShippingDetails = () => {
                                     handlerShippingDetails('deliveryTime', e.target.value, shippingDetails, setShippingDetails)
                                 }
                         >
-                            <option value="">
+                            <option value="" selected disabled hidden>
                                 {shipping_details_section.time_of_delivery}
                             </option>
                             {
@@ -222,7 +220,7 @@ const ShippingDetails = () => {
                     <label className={shippingDetailsStyles.label} htmlFor='message'>
                         {shipping_details_section.your_personal}
                         <span> {shipping_details_section.message_word}
-                        </span> on <span> {shipping_details_section.card_word}</span>
+                        </span> на <span> {shipping_details_section.card_word}</span>
                     </label>
                 </div>
             </div>
@@ -266,11 +264,9 @@ const ShippingDetails = () => {
                 </div>
             </div>
             <div className={shippingDetailsStyles.cardContainer}>
-                <h1>TOTAL<span> Payment</span>: {orderDetails[0]}<span>$</span></h1>
+                <h1>Всего к <span> оплате</span>: {orderDetails[0]}<span>$</span></h1>
                 <form className={shippingDetailsStyles.cardNumbers}>
-                    <p>
-                        {shipping_details_section.card_word}
-                        <span> {shipping_details_section.number_word}</span>:</p>
+                    <p>Номера <span> карт</span>:</p>
                     <input type='number'
                            onInput={handleOnInput}
                            onChange={(e) => {
@@ -328,7 +324,7 @@ const ShippingDetails = () => {
                         />
                         <label htmlFor='firstName'>
                             {shipping_details_section.first_word_of_name}
-                            <span>{shipping_details_section.name_word}*</span></label>
+                            <span>*</span></label>
                     </div>
                     <div className={shippingDetailsStyles.wrapper}>
                         <input type='text' placeholder=' ' id='lastName'
@@ -338,7 +334,7 @@ const ShippingDetails = () => {
                         />
                         <label htmlFor='lastName'>
                             {shipping_details_section.surname_word}
-                            <span>{shipping_details_section.name_word}*</span></label>
+                            <span>*</span></label>
                     </div>
                 </div>
                 <div className={shippingDetailsStyles.cardExpires}>

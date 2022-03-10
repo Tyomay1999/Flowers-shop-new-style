@@ -17,11 +17,11 @@ const AboutUs = () => {
                 </div>
                 <div className={aboutUsStyles.content}>
                     <h3>{about_us_section.content_title}</h3>
-                    <p>{about_us_section.description}</p>
-                    <p>{about_us_section.description}</p>
-                    <a href="#sq" className={aboutUsStyles.btn}>
-                        {about_us_section.button}
-                    </a>
+                    <p>{about_us_section.description_part_1}</p>
+                    <p>{about_us_section.description_part_2}</p>
+                    {/*<a href="#sq" className={aboutUsStyles.btn}>*/}
+                    {/*    {about_us_section.button}*/}
+                    {/*</a>*/}
                 </div>
             </div>
         </section>
