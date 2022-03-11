@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import {sendOrderThunk} from "../../Redux/Action/product.action";
 import Loading from "../Common/Loading/loading";
-import {shipping_details_section} from "../Common/web-site-static-words";
+import {currency, shipping_details_section} from "../Common/web-site-static-words";
 
 
 const handlerShippingDetails = (type, value, state, stateHook) => {
@@ -264,7 +264,7 @@ const ShippingDetails = () => {
                 </div>
             </div>
             <div className={shippingDetailsStyles.cardContainer}>
-                <h1>Всего к <span> оплате</span>: {orderDetails[0]}<span>$</span></h1>
+                <h1>Всего к <span> оплате</span>: {orderDetails[0]}<span>{currency}</span></h1>
                 <form className={shippingDetailsStyles.cardNumbers}>
                     <p>Номера <span> карт</span>:</p>
                     <input type='number'

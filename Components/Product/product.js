@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { handlerCart } from "../Card/card";
 import { back_url } from "../../pages/api/sampleApi";
 import Loading from "../Common/Loading/loading";
-import {products_section} from "../Common/web-site-static-words";
+import {currency, products_section} from "../Common/web-site-static-words";
 
 const handlerBuy = ( router ) => {
     router.push( '/cart' )
@@ -39,8 +39,8 @@ const Product = ( { product } ) => {
         <div className={ productStyle.productInfo }>
             <h1>{ product?.name }</h1>
             <p className={ productStyle.aboutFlower }>{ product?.aboutFlower }</p>
-            <h4>Pr<span>ice:</span> { product?.price }</h4>
-            <h6>la<span>st</span> Pr<span>ice:</span> { product?.lastPrice }$</h6>
+            <h4>Pr<span>ice:</span> { product?.price } {currency}</h4>
+            <h6>la<span>st</span> Pr<span>ice:</span> { product?.lastPrice } {currency}</h6>
             <ul>
                 <li>{products_section.tags} :</li>
                 {

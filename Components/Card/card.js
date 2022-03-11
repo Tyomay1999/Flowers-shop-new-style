@@ -6,7 +6,7 @@ import { shareHandler } from "../Common/share";
 import { selectProduct } from "../../Redux/Action/product.action";
 import { back_url, front_url } from "../../pages/api/sampleApi";
 import { setMessage } from "../../Redux/Action/common.action";
-import { messages } from "../Common/web-site-static-words";
+import {currency, messages} from "../Common/web-site-static-words";
 
 
 export const handlerCart = ( e, product, dispatch, setFlowerInCart, isFlowerInCart ) => {
@@ -80,7 +80,7 @@ const Card = ( { product } ) => {
             </div>
             <div className={ isLoading ? cardStyles.isLoading : cardStyles.content }>
                 <h3>{ name }</h3>
-                <div className={ cardStyles.price }> ${ price } { lastPrice ? <span>${ lastPrice }</span> : null }</div>
+                <div className={ cardStyles.price }> {currency}{ price } { lastPrice ? <span>{currency}{ lastPrice }</span> : null }</div>
             </div>
         </div>
     )

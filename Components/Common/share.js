@@ -15,6 +15,7 @@ import {
 } from "react-share";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { setMessage } from "../../Redux/Action/common.action";
+import {messages} from "./web-site-static-words";
 
 export const shareHandler = ( shareUrl, styleSheet, size, round, dispatch ) => {
     return <div className={ styleSheet.share }>
@@ -48,7 +49,7 @@ export const shareHandler = ( shareUrl, styleSheet, size, round, dispatch ) => {
                 <FacebookMessengerIcon size={ size } round={ round }/>
             </FacebookMessengerShareButton>
         </div>
-        <div className={ styleSheet.shareWrapper } onClick={ () => dispatch( setMessage( "Copied to clipboard" ) ) }>
+        <div className={ styleSheet.shareWrapper } onClick={ () => dispatch( setMessage( messages.coped_to_clipboard ) ) }>
             <CopyToClipboard text={ `${ shareUrl }` }>
                 <i className="bi bi-files"/>
             </CopyToClipboard>

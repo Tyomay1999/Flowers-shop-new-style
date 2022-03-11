@@ -82,7 +82,6 @@ export const getProductByCategory = payload => async dispatch => {
         fd.append( "flower_ids", JSON.stringify( payload.flower_ids ) )
         const response = await fetchingDataWithAxiosMiddleware( "POST", ALL_FLOWERS_URL, fd )
         if ( response.status ) {
-            console.log(response.data, '<resp data')
             dispatch( setAllFlowers( response.data?.flowers ) )
             dispatch( setMessage( payload.name ) )
             dispatch( setLoading( false ) )
@@ -118,10 +117,9 @@ export const getNewFlowersThunk = (page = 1 , limit = 6) => async dispatch => {
         await dispatch( setLoading( true ) )
         const response = await fetchingDataWithAxiosMiddleware( "POST", GET_NEW_FLOWERS_URL, JSON.stringify(filters) )
         if ( response.status ) {
-            console.log(response.data)
             dispatch(setPagesData(response.data.count, limit))
             dispatch( setNewFlowers( response.data.flowers ) )
-            await dispatch( setLoading( false ) )
+            dispatch( setLoading( false ) )
         }
     } catch ( error ) {
         dispatch(setMessage(messages.network_connection))
@@ -172,9 +170,8 @@ export const sendOrderThunk = ( shippingDetails, orderDetails, paymentDetails ) 
         fd.append( "orderDetails", JSON.stringify( orderDetails ) )
         fd.append( "paymentDetails", JSON.stringify( paymentDetails ) )
         const response = await fetchingDataWithAxiosMiddleware( "POST", SET_ORDER, fd )
-        // console.log( response.data )
         if ( response.status ) {
-            // return dispatch( similarProduct( response.data.similarFlowers ) )
+            dispatch(setMessage(messages.order_confirmed))
         }
     } catch ( error ) {
         dispatch(setMessage(messages.network_connection))
@@ -185,6 +182,7 @@ export const sendOrderThunk = ( shippingDetails, orderDetails, paymentDetails ) 
 export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 100000], limit = 3) => {
     return async dispatch => {
         try {
+            dispatch(setLoading(true))
             const filters = JSON.stringify({
                 category_id,
                 prices,
@@ -193,9 +191,9 @@ export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 1000
             })
             const response = await fetchingDataWithAxiosMiddleware("POST", GET_ALL_FLOWERS_URL, filters)
             if (response.status) {
-                console.log(response.data)
                 dispatch(setPagesData(response.data.count, limit))
-                await dispatch(setAllFlowers(response.data.flowers))
+                dispatch(setAllFlowers(response.data.flowers))
+                dispatch(setLoading(false))
             }
             // await dispatch(getAllProducts(newProducts))
         } catch (error) {
@@ -210,9 +208,9 @@ export const getProductBySearchThunk = (payload,limit = 3) =>  async dispatch =>
         fd.append("name", payload)
         const response = await fetchingDataWithAxiosMiddleware("POST", GET_PRODUCTS_BY_SEARCH, fd)
         if (response.status) {
-            console.log(response.data)
             dispatch(setPagesData(response.data.count, limit))
-            await dispatch(setAllFlowers(response.data.flowers))
+            dispatch(setAllFlowers(response.data.flowers))
+            dispatch(setLoading(false))
         }
     } catch (error) {
         await dispatch(setMessage(error.message))

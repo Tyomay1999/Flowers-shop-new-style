@@ -26,7 +26,6 @@ export const commonReducer = (state = initialState, action) => {
         case SET_ORDER_DETAILS:
             return {...state, orderDetails: [...action.payload]}
         case CHANGE_PAGES:
-            console.log(action.payload, "<------ action payload")
             return {...state, page: action.payload}
         case SET_PAGES_DATA:
             return {...state, pagesCount: Math.ceil(action.payload / action.limit)}

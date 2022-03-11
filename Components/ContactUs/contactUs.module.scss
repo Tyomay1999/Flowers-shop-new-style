@@ -1,7 +1,6 @@
 @import '../../styles/main';
 
 .contact {
-    text-transform: capitalize;
     @include btnClasses();
     @include sectionHeading();
     padding: $sectionPadding;

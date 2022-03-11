@@ -9,15 +9,15 @@ import Loading from "../Common/Loading/loading";
 import Pagination from "../Common/Pagination/pagination";
 import {new_products_section} from "../Common/web-site-static-words";
 
-const NewProducts = () => {
+const NewProducts = (props) => {
     const dispatch = useDispatch();
     const isLoading = useSelector( state => state?.commonReducer.loading )
     const page = useSelector(state => state?.commonReducer.page)
+    const newProducts = useSelector( state => state?.productReducer.newProducts )
 
     const newFlowers = useCallback( dispatch => {
         dispatch( getNewFlowersThunk(page) )
     }, [page] )
-    const newProducts = useSelector( state => state?.productReducer.newProducts )
     useEffect( () => {
         newFlowers( dispatch )
     }, [page] )
@@ -37,9 +37,12 @@ const NewProducts = () => {
                     } )
                 }
             </div>
-            <div className={productsStyles.pagination}>
+            {
+                props.withoutPagination ? null :
+                <div className={productsStyles.pagination}>
                 <Pagination/>
             </div>
+            }
         </div>
     )
 }

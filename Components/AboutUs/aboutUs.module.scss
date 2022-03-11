@@ -1,7 +1,6 @@
 @import '../../styles/main';
 
 .about {
-    text-transform: capitalize;
     padding: $sectionPadding;
     @include sectionHeading();
     @include btnClasses();

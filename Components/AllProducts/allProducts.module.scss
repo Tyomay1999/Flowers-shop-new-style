@@ -1,7 +1,6 @@
 @import "../../styles/main";
 
 .main {
-  text-transform: capitalize;
   margin-top: $headerheight;
   padding: 0 2rem;
   width: 100%;
@@ -9,12 +8,12 @@
   @include pagination();
   //display: flex;
   .allProductsContainer {
+    margin: 40px 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     min-height: 80vh;
-    margin-bottom: 40px;
     .box {
       margin: 5px 5px;
       flex: 1 1 -1;

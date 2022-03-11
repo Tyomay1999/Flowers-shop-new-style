@@ -5,7 +5,7 @@ export const greetings_section = {
     фиалки, синие колокольчики, голубые незабудки и маленькие 
     звездочки-ромашки с белыми ресничками поднимают свои головки 
     к солнцу, радуясь теплу и свету.`,
-    button: 'магазин сейчас'
+    button: 'Посмотреть все цветы'
 }
 export const about_us_section = {
     heading_1: "О",
@@ -117,9 +117,14 @@ export const messages = {
     removed_from_cart: "Удалено из вашей корзины",
     added_to_cart: "Добавлено в вашу корзину",
     coped_to_clipboard: "Скопировано в буфер обмена",
-    network_connection: "проверьте подключение к сети"
+    network_connection: "проверьте подключение к сети",
+    order_confirmed: "Ваш заказ подтвержден"
 }
-
+export const currency = '₽'
+export const minMaxPrice = {
+    min: 0,
+    max: 100000
+}
 //EN version
 // export const greetings_section = {
 //     heading: "fresh flowers",

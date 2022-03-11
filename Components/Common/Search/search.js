@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import searchStyles from './search.module.scss'
 import {useDispatch} from "react-redux";
 import {getAllProductsThunk, getProductBySearchThunk} from "../../../Redux/Action/product.action";
+import {setLoading} from "../../../Redux/Action/common.action";
 
 const Search = () => {
     const dispatch = useDispatch()
@@ -21,7 +22,7 @@ const Search = () => {
                         }}
                         onKeyUp={e => {
                             if (e.keyCode === 13) {
-                                console.log(searchValue)
+                               dispatch(setLoading(true))
                                 if (searchValue === 'all') {
                                     dispatch(getAllProductsThunk())
                                 } else {
@@ -32,6 +33,7 @@ const Search = () => {
                         type="text" placeholder=' ' id='search'/>
                     <label htmlFor='search'>Sea<span>rch</span></label>
                     <i onClick={() => {
+                        dispatch(setLoading(true))
                         if (searchValue === 'all') {
                             dispatch(getAllProductsThunk())
                         } else {

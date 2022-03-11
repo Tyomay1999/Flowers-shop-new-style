@@ -1,7 +1,6 @@
 @import '../../styles/main';
 
 .greetings {
-    text-transform: capitalize;
     @include btnClasses();
     padding: $sectionPadding;
     display: flex;

@@ -1,8 +1,11 @@
 import React from 'react'
 import allProductsStyles from "./allProducts.module.scss";
 import { v4 as uuidv4 } from "uuid";
-
-export const filterOpenFunction = ( openFilter, categories, handlerProductData, dispatch ) => {
+import {getAllProductsThunk} from "../../Redux/Action/product.action";
+import {handlerDebounce} from "../Common/functions";
+import {minMaxPrice} from "../Common/web-site-static-words";
+//TODO set max and min size on price's inputs
+export const filterOpenFunction = ( openFilter, categories, chooseCategory,dispatch,prices, changePrise,page,categoryId ) => {
     return <div
         onClick={ ( e ) => e.stopPropagation() }
         className={ allProductsStyles.filterWrapper }
@@ -14,12 +17,30 @@ export const filterOpenFunction = ( openFilter, categories, handlerProductData, 
         <div className={ allProductsStyles.content }>
             <div className={ allProductsStyles.filterByPrice }>
                 <div className={ allProductsStyles.wrapper }>
-                    <input defaultValue={ 0 } type='number' placeholder=' ' id='in'/>
+                    <input
+                        onChange={e => {
+                            if(e.target.value){
+                                handlerDebounce(() => changePrise([+e.target.value,prices[1]]))
+                            }else{
+                                handlerDebounce(() => changePrise([minMaxPrice.min,prices[1]]))
+                            }
+                        }
+                        }
+                        defaultValue={ 0 } type='number' placeholder=' ' id='in'/>
                     <label htmlFor='in'>In</label>
                 </div>
                 <span>-</span>
                 <div className={ allProductsStyles.wrapper }>
-                    <input type='number' placeholder=' ' id='to'/>
+                    <input
+                        onChange={e => {
+                            if(e.target.value){
+                                handlerDebounce(() => changePrise([prices[0],+e.target.value]))
+                            }else{
+                                handlerDebounce(() => changePrise([prices[0],minMaxPrice.max]))
+                            }
+                        }
+                        }
+                        type='number' placeholder=' ' id='to'/>
                     <label htmlFor='to'>To</label>
                 </div>
             </div>
@@ -29,7 +50,8 @@ export const filterOpenFunction = ( openFilter, categories, handlerProductData, 
                         if ( category?.flower_ids?.length ) {
                             return <li
                                 onClick={ async () => {
-                                    await handlerProductData( category, dispatch )
+                                    chooseCategory(category)
+                                    // await handlerProductData( category, dispatch )
                                 }
                                 }
                                 key={ uuidv4() }>
@@ -42,7 +64,9 @@ export const filterOpenFunction = ( openFilter, categories, handlerProductData, 
                 }
             </ul>
         </div>
-        <button>Conf<span>irm</span></button>
+        <button
+            onClick={() => dispatch(getAllProductsThunk(page,categoryId,prices))}
+        >Conf<span>irm</span></button>
     </div>
 }
 

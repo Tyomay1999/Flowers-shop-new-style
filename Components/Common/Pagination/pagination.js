@@ -7,7 +7,7 @@ const Pagination = () => {
     const dispatch = useDispatch()
     const pagesCount = useSelector(state => state?.commonReducer.pagesCount)
     const page = useSelector(state => state?.commonReducer.page)
-
+    console.log('pagination render')
     return <div className={paginationStyles.main}>
         <button
             onClick={() => {

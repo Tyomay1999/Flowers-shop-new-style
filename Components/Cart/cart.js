@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { getCartProductsThunk } from "../../Redux/Action/product.action";
 import { setOrderDetails } from "../../Redux/Action/common.action";
 import Loading from "../Common/Loading/loading";
-import {cart_section} from "../Common/web-site-static-words";
+import {cart_section, currency} from "../Common/web-site-static-words";
 
 const handlerTotalPrice = ( productsArray ) => {
     let totalPrice = 0;
@@ -58,16 +58,16 @@ const Cart = () => {
             {
                 cartProducts[ 0 ] && <div className={ cartStyles.blockRight }>
                     <div className={ cartStyles.blockRightChild }>
-                        <h1>{cart_section.total} <span>{cart_section.price}</span></h1>
+                        <h1>{cart_section.total} <span>{cart_section.price}</span>{currency}</h1>
                         {
                             cartProducts.map( product => {
                                 return <p key={ uuidv4() }
-                                          style={ { borderBottom: "1px solid pink" } }>{ product.quantity } x { product.name } ... { product.price * product.quantity }<span>$</span>
+                                          style={ { borderBottom: "1px solid pink" } }>{ product.quantity } x { product.name } ... { product.price * product.quantity }<span>{currency}</span>
                                 </p>
                             } )
                         }
                         <div className={ cartStyles.total }>
-                            <p>{cart_section.total}<span> {cart_section.price}:</span> { totalPrice }<span>$</span></p>
+                            <p>{cart_section.total}<span> {cart_section.price}:</span> { totalPrice }<span>{currency}</span></p>
                             <button
                                 onClick={ () => handlerConfirm( cartProducts, totalPrice, dispatch, router ) }>
                                 {cart_section.confirm}
