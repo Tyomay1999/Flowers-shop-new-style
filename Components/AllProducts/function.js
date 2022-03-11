@@ -54,6 +54,7 @@ export const filterOpenFunction = ( openFilter, categories, chooseCategory,dispa
                                     // await handlerProductData( category, dispatch )
                                 }
                                 }
+                                style={categoryId === category.id ? {color: "rgba(232, 67, 147, 0.98)"} : {color: "black"}}
                                 key={ uuidv4() }>
                                 { category?.name }
                                 <span>({ category?.flower_ids?.length })</span>

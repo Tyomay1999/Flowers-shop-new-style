@@ -41,7 +41,7 @@ const AllProducts = () => {
     }, [products])
     const memorized_filter_block = useMemo(() => {
         return isOpen ? filterOpenFunction(openFilter, categories, chooseCategory, dispatch, prices, changePrise, page, category.id) : filterCloseFunction(openFilter)
-    }, [isOpen, categories, prices])
+    }, [isOpen, categories, prices,category.id])
     const memorized_pagination = useMemo(() => {
         return <Pagination/>
     }, [])

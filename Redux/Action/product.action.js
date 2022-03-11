@@ -11,7 +11,7 @@ import {
     GET_NEW_FLOWERS_URL, GET_PRODUCTS_BY_SEARCH,
     GET_SIMILAR_PRODUCT, SET_ORDER
 } from "../../pages/api/sampleApi";
-import { messages } from "../../Components/Common/web-site-static-words";
+import {data_limits, messages} from "../../Components/Common/web-site-static-words";
 
 export const GET_ALL_FLOWERS = 'GET ALL FLOWERS'
 export const GET_SIMILAR_FLOWERS = 'GET SIMILAR FLOWERS'
@@ -75,24 +75,6 @@ const setCategories = payload => {
     }
 }
 
-export const getProductByCategory = payload => async dispatch => {
-    try {
-        await dispatch( setLoading( true ) )
-        const fd = new FormData()
-        fd.append( "flower_ids", JSON.stringify( payload.flower_ids ) )
-        const response = await fetchingDataWithAxiosMiddleware( "POST", ALL_FLOWERS_URL, fd )
-        if ( response.status ) {
-            dispatch( setAllFlowers( response.data?.flowers ) )
-            dispatch( setMessage( payload.name ) )
-            dispatch( setLoading( false ) )
-        }
-    } catch ( error ) {
-        dispatch( setLoading( false ) )
-        dispatch( setMessage( messages.network_connection ) )
-        throw error
-    }
-}
-
 export const getCategoriesThunk = () => async dispatch => {
     try {
         await dispatch( setLoading( true ) )
@@ -108,8 +90,9 @@ export const getCategoriesThunk = () => async dispatch => {
     }
 }
 
-export const getNewFlowersThunk = (page = 1 , limit = 6) => async dispatch => {
+export const getNewFlowersThunk = (page = 1 ) => async dispatch => {
     try {
+        const limit = data_limits.new_product_limit
         const filters = {
             page,
             limit
@@ -146,9 +129,10 @@ export const getCartProductsThunk = payload => async dispatch => {
     }
 }
 
-export const getSimilarProductThunk = (payload,page = 1, limit=3) => async dispatch => {
+export const getSimilarProductThunk = (payload,page = 1) => async dispatch => {
     try {
         const fd = new FormData()
+        const limit = data_limits.similar_product_limit
         fd.append( "categories", JSON.stringify( payload ) )
         fd.append("limit", `${limit}`)
         fd.append("page", `${page}`)
@@ -179,9 +163,10 @@ export const sendOrderThunk = ( shippingDetails, orderDetails, paymentDetails ) 
     }
 }
 
-export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 100000], limit = 3) => {
+export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 100000]) => {
     return async dispatch => {
         try {
+            const limit = data_limits.all_product_limit
             dispatch(setLoading(true))
             const filters = JSON.stringify({
                 category_id,
@@ -202,13 +187,13 @@ export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 1000
         }
     }
 }
-export const getProductBySearchThunk = (payload,limit = 3) =>  async dispatch => {
+export const getProductBySearchThunk = payload =>  async dispatch => {
     try {
         const fd = new FormData()
         fd.append("name", payload)
         const response = await fetchingDataWithAxiosMiddleware("POST", GET_PRODUCTS_BY_SEARCH, fd)
         if (response.status) {
-            dispatch(setPagesData(response.data.count, limit))
+            dispatch(setPagesData(response.data.count, data_limits.searched_product_limit))
             dispatch(setAllFlowers(response.data.flowers))
             dispatch(setLoading(false))
         }

@@ -125,6 +125,12 @@ export const minMaxPrice = {
     min: 0,
     max: 100000
 }
+export const data_limits = {
+    all_product_limit: 3,
+    new_product_limit: 6,
+    similar_product_limit: 3,
+    searched_product_limit: 3,
+}
 //EN version
 // export const greetings_section = {
 //     heading: "fresh flowers",
