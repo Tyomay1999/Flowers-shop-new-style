@@ -13,7 +13,6 @@ import {minMaxPrice} from "../Common/web-site-static-words";
 
 
 const AllProducts = () => {
-    //TODO compile filters
     const dispatch = useDispatch()
     const categories = useSelector(state => state?.productReducer.categories)
     const products = useSelector(state => state?.productReducer.allProducts)
@@ -28,10 +27,9 @@ const AllProducts = () => {
     }, [])
 
     useEffect(() => {
-        dispatch(getAllProductsThunk(page, category.id))
+        dispatch(getAllProductsThunk(page, category.id, prices))
     }, [page, category.id])
 
-    console.log(prices, '<----------prices')
     const memorized_products = useMemo(() => {
         return products.map(product => {
             return <div className={allProductsStyles.box} key={uuidv4()}>

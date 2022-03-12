@@ -18,7 +18,6 @@ const AllFlowersPage = ( props ) => {
     useEffect( () => {
         setProducts()
     }, [] )
-    //TODO check render in allFlowers page
     return (
         <>
             <Head>

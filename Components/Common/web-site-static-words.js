@@ -54,7 +54,7 @@ export const shipping_details_section = {
     card_numbers: "номера карт"
 }
 export const products_section = {
-    tags: "теги",
+    tags: "Теги",
     buy_now: "Купи сейчас",
 }
 
@@ -118,7 +118,8 @@ export const messages = {
     added_to_cart: "Добавлено в вашу корзину",
     coped_to_clipboard: "Скопировано в буфер обмена",
     network_connection: "проверьте подключение к сети",
-    order_confirmed: "Ваш заказ подтвержден"
+    order_confirmed: "Ваш заказ подтвержден",
+    filtering_removed: "Фильтрация снята"
 }
 export const currency = '₽'
 export const minMaxPrice = {
@@ -130,6 +131,15 @@ export const data_limits = {
     new_product_limit: 6,
     similar_product_limit: 3,
     searched_product_limit: 3,
+}
+
+export const common_words = {
+    previous: "Предыдущая",
+    price: "Цена",
+    _new: "Новый",
+    confirm: "Подтверждать",
+    filter: "Фильтр",
+    search: "Поиск"
 }
 //EN version
 // export const greetings_section = {

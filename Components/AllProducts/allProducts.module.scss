@@ -14,6 +14,7 @@
     flex-wrap: wrap;
     width: 100%;
     min-height: 80vh;
+
     .box {
       margin: 5px 5px;
       flex: 1 1 -1;
@@ -23,6 +24,7 @@
       position: relative;
       width: 300px;
       max-height: 380px;
+
       .box:hover .image .icons {
         bottom: 0;
       }
@@ -57,6 +59,7 @@
     }
 
     .filterWrapper {
+      //position: relative;
       width: 300px;
       height: 350px;
       display: flex;
@@ -64,6 +67,24 @@
       background: #ffffff;
       border: $borderStandard;
       animation: animations .5s ease-in forwards;
+
+      .resetFilters {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        i {
+          font-size: 2rem;
+        }
+
+        &:hover {
+          transform: rotate(-360deg);
+          transition: rotate .2s;
+          i {
+            color: $contentColor;
+          }
+        }
+      }
 
       h1 {
         text-align: center;
@@ -137,22 +158,26 @@
             }
           }
         }
-        .categoriesBlock{
+
+        .categoriesBlock {
           margin-top: 10px;
           width: 100%;
           padding: 10px;
           display: flex;
           flex-direction: column;
-          li{
+
+          li {
             margin-top: 5px;
             cursor: pointer;
             font-size: 2rem;
             border-bottom: 1px solid gray;
-            span{
+
+            span {
               font-size: .8rem;
               color: $contentColor;
             }
-            &:hover{
+
+            &:hover {
               color: $contentColor;
               border-color: $contentColor;
               transition: border-color .5s, color .5s;
@@ -191,20 +216,23 @@
     }
 
   }
-    .notFound{
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      p{
-        text-transform: initial;
-        font-size: 2rem;
-        span{
-          color: $contentColor;
-        }
+
+  .notFound {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      text-transform: initial;
+      font-size: 2rem;
+
+      span {
+        color: $contentColor;
       }
     }
+  }
 }
 
 @keyframes animations {
@@ -231,17 +259,20 @@
     height: 50px;
   }
 }
+
 @media (max-width: 850px) {
-  .main{
+  .main {
     flex-direction: column;
+
     .allProductsContainer {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       min-height: 80vh;
     }
-    }
+  }
 }
+
 @media (max-width: 450px) {
   .main {
     .allProductsContainer {

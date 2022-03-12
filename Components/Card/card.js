@@ -6,7 +6,7 @@ import { shareHandler } from "../Common/share";
 import { selectProduct } from "../../Redux/Action/product.action";
 import { back_url, front_url } from "../../pages/api/sampleApi";
 import { setMessage } from "../../Redux/Action/common.action";
-import {currency, messages} from "../Common/web-site-static-words";
+import { common_words, currency, messages } from "../Common/web-site-static-words";
 
 
 export const handlerCart = ( e, product, dispatch, setFlowerInCart, isFlowerInCart ) => {
@@ -31,7 +31,9 @@ export const handlerCart = ( e, product, dispatch, setFlowerInCart, isFlowerInCa
 export const chooseProduct = ( product, dispatch ) => {
     dispatch( selectProduct( product ) )
 }
+
 const Card = ( { product } ) => {
+
     const [ isLoading, setIsLoading ] = useState( true )
     const [ isFlowerInCart, setFlower ] = useState( false )
     const cardRef = useRef( null )
@@ -62,7 +64,9 @@ const Card = ( { product } ) => {
             { discount ? <span
                 className={ isLoading ? cardStyles.isLoading : cardStyles.discount }>-{ discount }%</span> : null }
             {
-                isNew && <span className={ isLoading ? cardStyles.isLoading : cardStyles.type }>new</span>
+                isNew && <span className={ isLoading ? cardStyles.isLoading : cardStyles.type }>
+                    { common_words._new }
+                </span>
             }
             <div className={ cardStyles.image }>
                 <img ref={ cardRef } src={ `${ back_url }/${ photo }` } alt={ product.name }/>
@@ -80,7 +84,8 @@ const Card = ( { product } ) => {
             </div>
             <div className={ isLoading ? cardStyles.isLoading : cardStyles.content }>
                 <h3>{ name }</h3>
-                <div className={ cardStyles.price }> {currency}{ price } { lastPrice ? <span>{currency}{ lastPrice }</span> : null }</div>
+                <div className={ cardStyles.price }> { currency }{ price } { lastPrice ?
+                    <span>{ currency }{ lastPrice }</span> : null }</div>
             </div>
         </div>
     )

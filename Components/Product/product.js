@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { handlerCart } from "../Card/card";
 import { back_url } from "../../pages/api/sampleApi";
 import Loading from "../Common/Loading/loading";
-import {currency, products_section} from "../Common/web-site-static-words";
+import { common_words, currency, products_section } from "../Common/web-site-static-words";
 
 const handlerBuy = ( router ) => {
     router.push( '/cart' )
@@ -26,7 +26,7 @@ const Product = ( { product } ) => {
         <div className={ productStyle.images }>
             <img src={ `${ back_url }/${ product?.photo }` } alt={ product?.name }/>
             {
-                product?.isNew ? <h2 className={ productStyle.status }>New</h2> : null
+                product?.isNew ? <h2 className={ productStyle.status }>{ common_words._new }</h2> : null
             }
             {
                 product?.discount ? <h2 className={ productStyle.discount }>-{ product?.discount }%</h2> : null
@@ -39,10 +39,16 @@ const Product = ( { product } ) => {
         <div className={ productStyle.productInfo }>
             <h1>{ product?.name }</h1>
             <p className={ productStyle.aboutFlower }>{ product?.aboutFlower }</p>
-            <h4>Pr<span>ice:</span> { product?.price } {currency}</h4>
-            <h6>la<span>st</span> Pr<span>ice:</span> { product?.lastPrice } {currency}</h6>
+            <h4>{ common_words.price }<span>:</span> { product?.price } <span>{ currency }</span></h4>
+            {
+                product?.lastPrice ?
+                    <h6> { common_words.previous }
+                        <span>{ common_words.price.toLowerCase() }:</span> { product?.lastPrice } <span>{ currency }</span>
+                    </h6>
+                    : null
+            }
             <ul>
-                <li>{products_section.tags} :</li>
+                <li>{ products_section.tags } :</li>
                 {
                     product?.tags?.map( tag => <li key={ uuidv4() }>
                         { tag }
@@ -52,7 +58,7 @@ const Product = ( { product } ) => {
             <button
                 className={ productStyle.buy }
                 onClick={ () => handlerBuy( router ) }>
-                {products_section.buy_now}
+                { products_section.buy_now }
             </button>
             <button className={ productStyle.addToCart }
                     onClick={ ( e ) => handlerCart( e, product, dispatch, setFlowerInCart, isFlowerInCart ) }><i

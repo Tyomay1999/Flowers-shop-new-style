@@ -1,4 +1,5 @@
 import {
+    changePage,
     fetchingDataWithAxiosMiddleware,
     setLoading,
     setMessage,
@@ -11,7 +12,7 @@ import {
     GET_NEW_FLOWERS_URL, GET_PRODUCTS_BY_SEARCH,
     GET_SIMILAR_PRODUCT, SET_ORDER
 } from "../../pages/api/sampleApi";
-import {data_limits, messages} from "../../Components/Common/web-site-static-words";
+import { data_limits, messages, minMaxPrice } from "../../Components/Common/web-site-static-words";
 
 export const GET_ALL_FLOWERS = 'GET ALL FLOWERS'
 export const GET_SIMILAR_FLOWERS = 'GET SIMILAR FLOWERS'
@@ -163,7 +164,7 @@ export const sendOrderThunk = ( shippingDetails, orderDetails, paymentDetails ) 
     }
 }
 
-export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 100000]) => {
+export const getAllProductsThunk = (page = 1, category_id = 0, prices = [minMaxPrice.min, minMaxPrice.max]) => {
     return async dispatch => {
         try {
             const limit = data_limits.all_product_limit
@@ -180,7 +181,6 @@ export const getAllProductsThunk = (page = 1, category_id = 0, prices = [0, 1000
                 dispatch(setAllFlowers(response.data.flowers))
                 dispatch(setLoading(false))
             }
-            // await dispatch(getAllProducts(newProducts))
         } catch (error) {
             await dispatch(setMessage(error.message))
             throw error
