@@ -4,6 +4,7 @@ import Footer from "../../Components/Footer/footer";
 import Product from "../../Components/Product/product";
 import SimilarProduct from "../../Components/Common/SimilarProduct/similarProduct";
 import { fetchingDataWithAxiosMiddleware } from "../../Redux/Action/common.action";
+import { FLOWER_SLUG } from "../api/sampleApi";
 
 const Product_slug = ( props ) => {
     return (
@@ -24,7 +25,7 @@ const Product_slug = ( props ) => {
 
 export async function getServerSideProps( { params } ) {
     try {
-        const res = await fetchingDataWithAxiosMiddleware( "GET", `http://localhost:8000/api/flower/slug/${ params.slug[ 0 ] }` )
+        const res = await fetchingDataWithAxiosMiddleware( "GET", `${FLOWER_SLUG}/${ params.slug[ 0 ] }` )
         return {
             props: {
                 product: res.data.flower

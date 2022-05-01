@@ -10,3 +10,4 @@ export const GET_PRODUCTS_BY_SEARCH = `${defaultUrl}/flower/search`
 export const ADD_CUSTOMER_MESSAGE = `${defaultUrl}/customer/messages/send`
 export const GET_SIMILAR_PRODUCT = `${defaultUrl}/flower/similar`
 export const SET_ORDER = `${defaultUrl}/order/set`
+export const FLOWER_SLUG = `${defaultUrl}/flower/slug`
