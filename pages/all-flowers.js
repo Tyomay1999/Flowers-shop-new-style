@@ -2,7 +2,7 @@ import Head from "next/head";
 import Footer from "../Components/Footer/footer";
 import Header from "../Components/Header/header";
 import AllProducts from "../Components/AllProducts/allProducts";
-import { allProducts } from "../Components/newProducts/config";
+// import { allProducts } from "../Components/newProducts/config";
 import { fetchingDataWithAxiosMiddleware } from "../Redux/Action/common.action";
 import { ALL_FLOWERS_URL } from "./api/sampleApi";
 import { useDispatch } from "react-redux";
@@ -46,14 +46,14 @@ export async function getStaticProps() {
         }
         return {
             props: {
-                products: allProducts,
+                products: [],
             },
         }
     } catch ( error ) {
         console.log( error )
         return {
             props: {
-                products: allProducts,
+                products: [],
             },
         }
 
