@@ -9,7 +9,7 @@ import useInView from "react-cool-inview";
 
 const ContactUs = dynamic(() => import("../ContactUs/contactUs"))
 
-const List = () => {
+const  List = () => {
     const { observe, inView } = useInView();
     const memorize_new_products = useMemo(() => {
         return <NewProducts />

@@ -20,7 +20,7 @@ const Product = ( { product } ) => {
     const [ isFlowerInCart, setFlowerInCart ] = useState( false )
     useEffect( () => {
         let flowerInCart = JSON.parse( window.localStorage.getItem( 'cart' ) )?.filter( flowerId => flowerId === product?.id )
-        setFlowerInCart( flowerInCart.length ? true : false )
+        setFlowerInCart( flowerInCart?.length ? true : false )
     }, [ product ] )
     return <div className={ productStyle.main }>
         <div className={ productStyle.images }>

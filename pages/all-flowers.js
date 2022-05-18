@@ -11,6 +11,7 @@ import { setAllFlowers } from "../Redux/Action/product.action";
 import {pages_words} from "../Components/Common/web-site-static-words";
 
 const AllFlowersPage = ( props ) => {
+    console.log(props, "<--------------PROPS")
     const dispatch = useDispatch()
     const setProducts = useCallback( () => {
         dispatch( setAllFlowers( props.products ) )
@@ -34,13 +35,13 @@ const AllFlowersPage = ( props ) => {
 }
 
 // TODO check getStaticProps
-export async function getStaticProps() {
+export async function getServerSideProps() {
     try {
         const response = await fetchingDataWithAxiosMiddleware( "GET", ALL_FLOWERS_URL )
-        if ( response?.status ) {
+        if ( response?.data ) {
             return {
                 props: {
-                    products: response.data?.flowers,
+                    products: response.data?.flowers.rows,
                 },
             }
         }
@@ -50,13 +51,7 @@ export async function getStaticProps() {
             },
         }
     } catch ( error ) {
-        console.log( error )
-        return {
-            props: {
-                products: [],
-            },
-        }
-
+        throw error
     }
 }
 

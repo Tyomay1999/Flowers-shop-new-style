@@ -1,14 +1,14 @@
 // const nextTranslate = require('next-translate')
 const withImages = require('next-images')
 const withVideos = require('next-videos')
-const withPWA = require('next-pwa')
+// const withPWA = require('next-pwa')
 require('dotenv').config()
 
 // const isProd = process.env.NODE_ENV === "production";
 
 // workbox.setConfig({ debug: false });
 
-module.exports =withVideos( withImages(withPWA({
+module.exports =withVideos( withImages({
   images: {
     disableStaticImages: true
   },
@@ -27,4 +27,4 @@ module.exports =withVideos( withImages(withPWA({
   //     localeDetection: false,
   //   }
   // })
-})))
+}))

@@ -42,7 +42,7 @@ const Card = ( { product } ) => {
     const { discount, photo, name, price, lastPrice, isNew } = product
     useEffect( () => {
         let flowerInCart = JSON.parse( window.localStorage.getItem( 'cart' ) )?.filter( flowerId => flowerId === product?.id )
-        setFlower( flowerInCart.length ? true : false )
+        setFlower( flowerInCart?.length ? true : false )
     }, [ product ] )
     const shareUrl = `${ front_url }/flower/${ product.slug }`
     useEffect( () => {

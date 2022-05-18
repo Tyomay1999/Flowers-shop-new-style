@@ -70,7 +70,7 @@ export const filterOpenFunction = ( openFilter, categories, chooseCategory,dispa
                                 style={categoryId === category.id ? {color: "rgba(232, 67, 147, 0.98)"} : {color: "black"}}
                                 key={ uuidv4() }>
                                 { category?.name }
-                                <span>({ category.flower_ids.length })</span>
+                                <span>({ category.flower_ids?.length })</span>
                             </li>
                         }
                         return null

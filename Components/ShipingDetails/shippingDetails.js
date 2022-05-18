@@ -53,7 +53,7 @@ const handlerPaymentDetails = (type, value, state, stateHook) => {
 
 const handleOnInput = (e) => {
     let maxNum = 4;
-    if (e.target.value.length > maxNum) {
+    if (e.target.value?.length > maxNum) {
         e.target.value = e.target.value.slice(0, maxNum);
     }
 }
@@ -87,7 +87,7 @@ const ShippingDetails = () => {
     })
     const orderDetails = useSelector(state => state?.commonReducer.orderDetails)
     useEffect(() => {
-        if (!orderDetails.length) {
+        if (!orderDetails?.length) {
             return router.push('/cart')
         }
     }, [])
@@ -270,7 +270,7 @@ const ShippingDetails = () => {
                     <input type='number'
                            onInput={handleOnInput}
                            onChange={(e) => {
-                               if (e.target.value.length < 5) {
+                               if (e.target.value?.length < 5) {
                                    setErrorMessage({type: '', message: ''})
                                    return handlerPaymentDetails('cardNumberFirst', e.target.value, paymentDetails, setPaymentDetails)
                                }
@@ -280,7 +280,7 @@ const ShippingDetails = () => {
                     <input type='number'
                            onInput={handleOnInput}
                            onChange={(e) => {
-                               if (e.target.value.length < 5) {
+                               if (e.target.value?.length < 5) {
                                    setErrorMessage({type: '', message: ''})
                                    return handlerPaymentDetails('cardNumberSecond', e.target.value, paymentDetails, setPaymentDetails)
                                }
@@ -291,7 +291,7 @@ const ShippingDetails = () => {
                     <input type='number'
                            onInput={handleOnInput}
                            onChange={(e) => {
-                               if (e.target.value.length === 4) {
+                               if (e.target.value?.length === 4) {
                                    setErrorMessage({type: '', message: ''})
                                    return handlerPaymentDetails('cardNumberThird', e.target.value, paymentDetails, setPaymentDetails)
                                }
@@ -302,7 +302,7 @@ const ShippingDetails = () => {
                     <input type='number'
                            onInput={handleOnInput}
                            onChange={(e) => {
-                               if (e.target.value.length < 5) {
+                               if (e.target.value?.length < 5) {
                                    setErrorMessage({type: '', message: ''})
                                    return handlerPaymentDetails('cardNumberForth', e.target.value, paymentDetails, setPaymentDetails)
                                }
@@ -363,7 +363,7 @@ const ShippingDetails = () => {
                     <div className={shippingDetailsStyles.wrapper}>
                         <input type='text' placeholder=' ' id='CVV'
                                onChange={(e) => {
-                                   if (e.target.value.length === 3) {
+                                   if (e.target.value?.length === 3) {
                                        setErrorMessage({type: '', message: ''})
                                        return handlerPaymentDetails('cvv', e.target.value, paymentDetails, setPaymentDetails)
                                    }

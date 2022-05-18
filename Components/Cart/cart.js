@@ -35,9 +35,9 @@ const Cart = () => {
     const totalPrice = useCallback( () => handlerTotalPrice( cartProducts ), [ cartProducts ] )()
     return (
         <div className={ cartStyles.main }>
-            <div className={ cartProducts.length ? cartStyles.blockLeft : cartStyles.blockLeftEmpty }>
+            <div className={ cartProducts?.length ? cartStyles.blockLeft : cartStyles.blockLeftEmpty }>
                 {
-                    cartProducts.length ? cartProducts.map( ( product, index ) => {
+                    cartProducts?.length ? cartProducts.map( ( product, index ) => {
                             return <div key={ uuidv4() } className={ cartStyles.wrapper }>
                                 <ProductModel position={ index } product={ product }/>
                             </div>

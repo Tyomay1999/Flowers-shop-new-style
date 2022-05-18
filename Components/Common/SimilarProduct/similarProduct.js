@@ -18,7 +18,7 @@ const SimilarProduct = ( { categories } ) => {
 
     useEffect( () => {
         dispatch( getSimilarProductThunk( categories,page ) )
-    }, [ categories.length,page ] )
+    }, [ categories?.length,page ] )
 
 
     return <div className={ similarProductsStyles.main }>

@@ -69,7 +69,7 @@ const ContactUs = () => {
                     />
                     <textarea className={ contactUsStyles.box } placeholder={contact_us_section.message} id="" cols="30" rows="10"
                               onChange={ ( e ) => handlerDebounce( () => {
-                                  if ( e.target.value.length > "please call me".length ) {
+                                  if ( e.target.value?.length > "please call me".length ) {
                                       setCustomerMessage( { ...customerMessage, message: e.target.value } )
                                   }
                               } ) }/>

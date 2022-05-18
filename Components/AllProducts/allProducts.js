@@ -49,7 +49,7 @@ const AllProducts = () => {
             <Search witCategories={false}/>
             {isLoading && <Loading/>}
             {
-                products.length ?
+                products?.length ?
                     <div className={allProductsStyles.allProductsContainer}>
                         {
                             memorized_products
@@ -63,7 +63,7 @@ const AllProducts = () => {
                     </div>
             }
             {
-                products.length ? <div className={allProductsStyles.pagination}>
+                products?.length ? <div className={allProductsStyles.pagination}>
                         {
                             memorized_pagination
                         }
