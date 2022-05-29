@@ -1,14 +1,22 @@
 @import '../../styles/main';
 
 .greetings {
+    position: relative;
+    width: 100%;
     @include btnClasses();
     padding: $sectionPadding;
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background: url('../../public/Assets/images/greetings-bg.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     .content {
         max-width: 55rem;
 
