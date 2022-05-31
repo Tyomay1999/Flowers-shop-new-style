@@ -1,6 +1,6 @@
 export const greetings_section = {
-    heading: "свежие цветы",
-    title: "натуральные и красивые цветы",
+    heading: "Свежие цветы",
+    title: "Натуральные и красивые цветы",
     description: `Цветы – это глаза природы – фиолетовые бархатные 
     фиалки, синие колокольчики, голубые незабудки и маленькие 
     звездочки-ромашки с белыми ресничками поднимают свои головки 
@@ -10,8 +10,8 @@ export const greetings_section = {
 export const about_us_section = {
     heading_1: "О",
     heading_2: "нас",
-    video_title: 'лучшие продавцы цветов',
-    content_title: "почему выбрать нас?",
+    video_title: 'Лучшие продавцы цветов',
+    content_title: "Почему выбрать нас?",
     description_part_1: `Если путь к сердцу мужчины лежит через желудок, то путь
         к сердцу девушки – через роскошный букет цветов, от которого трудно
         отвести взгляд. Это признание в любви в наивысшей точке, и красота
@@ -25,7 +25,7 @@ export const about_us_section = {
        перспективы.`
 }
 export const new_products_section = {
-    heading_1: "новые",
+    heading_1: "Новые",
     heading_2: "цветы",
 }
 
@@ -60,30 +60,30 @@ export const products_section = {
 
 export const header_section = {
     home: "Домашняя страница",
-    about: "о нас",
-    products: "все продукты",
-    new_products: "новые продукты",
-    contact: "связаться с нами",
+    about: "О нас",
+    products: "Все продукты",
+    new_products: "Новые продукты",
+    contact: "Связаться с нами",
 }
 export const footer_section = {
     home: "Домашняя страница",
-    about: "о нас",
-    products: "все продукты",
-    new_products: "новые продукты",
-    contact: "связаться с нами",
+    about: "О нас",
+    products: "Все продукты",
+    new_products: "Новые продукты",
+    contact: "Связаться с нами",
     quick_links: "Быстрые ссылки",
-    locations: "место нахождения",
+    locations: "Место нахождения",
     city: 'Москва',
     contact_info: 'Контактная информация',
 }
 
 export const contact_us_section = {
-    heading_1: "связаь",
+    heading_1: "Связь",
     heading_2: "с нами",
     name:"Имя",
     email: "Эл. адрес",
     number: "Телефон",
-    message: "сообщение",
+    message: "Сообщение",
     send_message: "Отправить сообщение",
 }
 

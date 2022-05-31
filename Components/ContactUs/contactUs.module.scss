@@ -4,6 +4,9 @@
     @include btnClasses();
     @include sectionHeading();
     padding: $sectionPadding;
+    .heading {
+        text-transform: none;
+    }
     .row{
         display: flex;
         flex-wrap: wrap-reverse;

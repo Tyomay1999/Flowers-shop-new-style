@@ -12,9 +12,9 @@ import { footer_section, messages } from "../Common/web-site-static-words";
 const Footer = () => {
     const dispatch = useDispatch()
     const shopInfo = {
-        phone: '+123-456-7890',
-        email: 'example@mail.ru',
-        address: "Russia, Moscow - 400104"
+        phone: "+7-926-812-28-33",
+        email: "cvetkiflorici@gmail.com",
+        address: "Russia, Moscow - 121601"
     }
     return (
         <footer className={ footerStyles.main }>
@@ -26,7 +26,7 @@ const Footer = () => {
                     <Link href="/#greetings">{footer_section.home}</Link>
                     <Link href="/#about">{footer_section.about}</Link>
                     <Link href="/all-flowers">{footer_section.products}</Link>
-                    <Link href="/#newProducts">{footer_section.new_products}</Link>
+                    {/*<Link href="/#newProducts">{footer_section.new_products}</Link>*/}
                     <Link href="/#contact">{footer_section.contact}</Link>
                 </div>
 
@@ -34,7 +34,7 @@ const Footer = () => {
                     <h3>{footer_section.locations}</h3>
                     <span>{footer_section.city}</span>
                     <Iframe
-                        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.405406946073!2d44.488959315644045!3d40.20004407671282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd6bc6cf96ef%3A0x6932662afc4c86ff!2sBeeOnCode!5e0!3m2!1sen!2s!4v1636632487448!5m2!1sen!2s"
+                        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.6147662810085!2d37.487280999999996!3d55.765193999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd364d1e678e4c6c0!2zNTXCsDQ1JzU0LjciTiAzN8KwMjknMTQuMiJF!5e0!3m2!1sru!2s!4v1653984351098!5m2!1sru!2s"
                         width="250"
                         height="210"
                         id="myId"
